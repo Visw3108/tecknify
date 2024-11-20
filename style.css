@@ -296,8 +296,16 @@ body {
   z-index: 4;
   background-color: var(--white);
   box-shadow: var(--shadow-2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
+.header.scrolled {
+  background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent for effect */
+  box-shadow: var(--shadow-3);
+  transform: translateY(-5px); /* Slight upward motion */
+}
+
+/* Container Styles */
 .header .container {
   display: flex;
   justify-content: space-between;
@@ -313,6 +321,11 @@ body {
   display: block;
   width: 80px; /* Default size */
   height: auto; /* Maintain aspect ratio */
+  transition: width 0.3s ease; /* Smooth resizing effect */
+}
+
+.header.scrolled .logo img {
+  width: 70px; /* Smaller size when scrolled */
 }
 
 /* Navigation Menu Button */
@@ -399,8 +412,6 @@ body {
 }
 
 /* Responsive Design */
-
-/* For Tablets and Small Screens */
 @media (max-width: 1024px) {
   .nav-open-btn {
     display: block; /* Show the menu button */
@@ -419,7 +430,6 @@ body {
   }
 }
 
-/* For Mobile Devices */
 @media (max-width: 768px) {
   .logo img {
     width: 100px; /* Reduce logo size */
@@ -434,7 +444,6 @@ body {
   }
 }
 
-/* For Extra Small Devices */
 @media (max-width: 480px) {
   .logo img {
     width: 80px; /* Reduce logo size for extra small screens */
@@ -456,6 +465,7 @@ body {
     font-size: 25px;
   }
 }
+
 
 
 /*-----------------------------------*\

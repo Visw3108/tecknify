@@ -54,14 +54,17 @@ addEventOnElem(navLinks, "click", closeNavbar);
  * header active when scroll down
  */
 
-const header = document.querySelector("[data-header]");
+// Add scroll effect to header
+const header = document.querySelector('.header');
 
-const headerActive = function () {
-  window.scrollY > 100 ? header.classList.add("active")
-    : header.classList.remove("active");
-}
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
 
-addEventOnElem(window, "scroll", headerActive);
 
 
 
