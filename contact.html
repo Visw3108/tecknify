@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="form-box">
+            <h2>Get In Touch</h2>
+            <form action="#">
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone *</label>
+                <input type="text" id="phone" name="phone" required>
+
+                <label for="service">Select Your Service *</label>
+                <select id="service" name="service" required>
+                    <option value="SEO">SEO Optimization</option>
+                    <option value="WebDev">Web Development</option>
+                    <option value="AppDev">App Development</option>
+                </select>
+
+                <label>Would You Like To Schedule? *</label>
+                <label><input type="checkbox" name="schedule"> Yes, By Phone</label>
+                <label><input type="checkbox" name="schedule"> Yes, By Zoom!</label>
+                <label><input type="checkbox" name="schedule"> Yes, By Skype</label>
+                <label><input type="checkbox" name="schedule"> Not Yet, but can't wait to hear back!</label>
+
+                <label for="comment">Comment</label>
+                <textarea id="comment" name="comment"></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div class="contact-info-box">
+            <h2>Contact Info</h2>
+            <p><strong>Send E-Mail:</strong> info@tecknify.com</p>
+            <p><strong>INDIA Location:</strong> Plot No.1002/2430, IRC Village, Ps-Nayapalli, Dist-Khordha, Bhubaneswar, Odisha – 751015.</p>
+            <p><strong>Call Anytime India:</strong> +91 91247 36030</p>
+            <p><strong>USA Location:</strong> 411 University St, Seattle, USA</p>
+            <p><strong>Call Anytime USA:</strong> +1 828 538 4856</p>
+
+            <div class="social-links">
+                <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
