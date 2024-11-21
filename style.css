@@ -305,10 +305,10 @@ body {
   transform: translateY(-5px); /* Slight upward motion */
 }
 
-/* Ensure header background remains solid black on smaller screens */
+/* Ensure header background remains non-black on smaller screens */
 @media (max-width: 768px) {
   .header.scrolled {
-    background-color: var(--rich-black-fogra-39); /* Solid black for small screens */
+    background-color: rgba(255, 255, 255, 0.95); /* Non-black for small screens */
     transform: none; /* Disable upward motion for simplicity */
   }
 }
@@ -362,14 +362,17 @@ body {
 
 .navbar.active {
   visibility: visible;
-  transform: translateX(280px);
+  transform: translateX(280px); /* Slide in */
   transition-duration: 0.5s;
-  
+  background-color: var(--rich-black-fogra-39); /* Solid black when open */
 }
 
-/* Scrolled Navbar Background Fix */
-.header.scrolled .navbar {
-  
+/* Navbar background fix on smaller screens */
+@media (max-width: 768px) {
+  .header.scrolled + .navbar,
+  .header.scrolled .navbar {
+    background-color: var(--rich-black-fogra-39); /* Ensure navbar is black */
+  }
 }
 
 .navbar .wrapper {
@@ -495,6 +498,7 @@ body {
     font-size: 25px; /* Smaller close button */
   }
 }
+
 
 
 

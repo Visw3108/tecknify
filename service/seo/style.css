@@ -300,9 +300,17 @@
 }
 
 .header.scrolled {
-  background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent for effect */
+  background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent for desktop */
   box-shadow: var(--shadow-3);
   transform: translateY(-5px); /* Slight upward motion */
+}
+
+/* Ensure header background remains non-black on smaller screens */
+@media (max-width: 768px) {
+  .header.scrolled {
+    background-color: rgba(255, 255, 255, 0.95); /* Non-black for small screens */
+    transform: none; /* Disable upward motion for simplicity */
+  }
 }
 
 /* Container Styles */
@@ -344,7 +352,7 @@
   max-width: 280px;
   width: 100%;
   height: 100%;
-  background-color: var(--rich-black-fogra-39);
+  background-color: var(--rich-black-fogra-39); /* Always solid black */
   color: var(--white);
   padding: 30px 20px;
   visibility: hidden;
@@ -354,8 +362,17 @@
 
 .navbar.active {
   visibility: visible;
-  transform: translateX(280px);
+  transform: translateX(280px); /* Slide in */
   transition-duration: 0.5s;
+  background-color: var(--rich-black-fogra-39); /* Solid black when open */
+}
+
+/* Navbar background fix on smaller screens */
+@media (max-width: 768px) {
+  .header.scrolled + .navbar,
+  .header.scrolled .navbar {
+    background-color: var(--rich-black-fogra-39); /* Ensure navbar is black */
+  }
 }
 
 .navbar .wrapper {
@@ -421,6 +438,10 @@
     max-width: 240px; /* Reduce navbar width */
   }
 
+  .navbar.active {
+    background-color: var(--rich-black-fogra-39); /* Solid black for smaller screens */
+  }
+
   .navbar .logo img {
     width: 90px; /* Smaller logo */
   }
@@ -440,7 +461,11 @@
   }
 
   .navbar-link {
-    font-size: 14px;
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+
+  .navbar.active {
+    background-color: var(--rich-black-fogra-39); /* Maintain solid black background */
   }
 }
 
@@ -449,12 +474,20 @@
     width: 80px; /* Reduce logo size for extra small screens */
   }
 
+  .navbar {
+    max-width: 220px; /* Further reduce navbar width */
+  }
+
+  .navbar.active {
+    background-color: var(--rich-black-fogra-39); /* Ensure black background stays */
+  }
+
   .navbar .logo img {
     width: 70px; /* Reduce navbar logo size further */
   }
 
   .navbar-link {
-    font-size: 13px; /* Adjust link size for readability */
+    font-size: 13px; /* Adjust link size */
   }
 
   .nav-open-btn {
@@ -462,9 +495,10 @@
   }
 
   .nav-close-btn {
-    font-size: 25px;
+    font-size: 25px; /* Smaller close button */
   }
 }
+
   
   
   /*-----------------------------------*\
