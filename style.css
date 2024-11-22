@@ -507,10 +507,9 @@ body {
 /*-----------------------------------*\
   #HERO
 \*-----------------------------------*/
-
 .hero {
   background-color: var(--mint-cream);
-  padding-block-start: calc(var(--section-padding) + 50px);
+  padding-block-start: calc(var(--section-padding, 50px) + 50px);
   text-align: center;
   overflow: hidden;
 }
@@ -522,51 +521,97 @@ body {
 
 .hero-subtitle {
   color: var(--primery);
-  font-size: var(--fs-12);
-  font-weight: var(--fw-500);
-  max-width: max-content;
+  font-size: 18px;
+  font-weight: 500;
   margin-inline: auto;
   z-index: 0;
 }
 
 .hero-subtitle::before {
+  content: "";
+  position: relative;
   top: 8px;
   left: -20px;
   width: 15px;
   height: 2px;
-  background-color: var(--primery);
-}
-
-.hero-title { margin-block: 10px 15px; }
-
-.hero-text { color: var(--rich-black-fogra-29-1); }
-
-.hero .btn-group { margin-block-start: 40px; }
-
-.hero .btn-icon {
-  background-color: var(--primery);
-  color: var(--white);
-  font-size: 20px;
-  padding: 20px;
-  border-radius: 50%;
-  animation: pulse 2s ease infinite;
-}
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 var(--primery); }
-  100% { box-shadow: 0 0 0 20px transparent; }
-}
-
-.hero .flex-btn .span {
   color: var(--primery);
-  font-size: var(--fs-9);
+}
+
+.hero-title {
+  margin-block: 10px 15px;
+  font-size: 36px;
+  font-weight: bold;
+  color: var(--rich-black-fogra-29-1);
+}
+
+.hero-text {
+  font-size: 16px;
+  color: hsl(0, 0%, 30%);
+  line-height: 1.5;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.input-group.modern {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 50px;
+}
+
+.modern-input {
+  flex: 1;
+  padding: 14px 16px;
+  font-size: 16px;
+  border: 1px solid var(--rich-black-fogra-29-1);
+  border-radius: var(--radius-5);
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #555;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.modern-input::placeholder {
+  color: #aaa;
+  font-size: 15px;
+}
+
+.modern-input:focus {
+  border-color: var(--primary-color-hover);
+  box-shadow: 0 4px 12px rgba(0, 128, 128, 0.3);
+}
+
+.modern-submit {
   font-weight: var(--fw-600);
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: var(--radius-5);
+  max-width: max-content;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--rich-black-fogra-29-1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  cursor: pointer;
+  border: 1px solid var(--primery);
+}
+
+.modern-submit:hover,
+.modern-submit:focus {
+  background: linear-gradient(135deg, var(--primary-color-hover), var(--lavender-gray));
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05);
 }
 
 .hero-banner,
-.hero-banner > img { border-radius: 50%; }
+.hero-banner > img {
+  border-radius: 50%;
+}
 
 .hero-banner::before {
+  content: "";
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -577,6 +622,53 @@ body {
   background-size: contain;
   background-position: center;
   z-index: -1;
+}
+
+.partner-logos {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.certificate-logo {
+  max-width: 100px;
+  height: auto;
+  display: inline-block;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-logo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .input-group.modern {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .modern-submit {
+    width: 100%;
+    text-align: center;
+  }
+
+  .modern-input {
+    width: 100%;
+  }
+
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .hero-text {
+    font-size: 14px;
+  }
 }
 
 
@@ -641,6 +733,9 @@ body {
   #SERVICE
 \*-----------------------------------*/
 
+.service{
+  background-color: var(--mint-cream);
+}
 /* Base Styles */
 .service .section-text {
   margin-block: 15px 50px;
@@ -1071,14 +1166,14 @@ h2 {
 .testimonial-section {
   padding: 20px;
   text-align: center;
-  background-color: var(--rich-black-fogra-29-1);
+  background-color: var(--mint-cream);
 }
 
 .testimonial-title {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 20px;
-  color: #fff;
+  color: var(--rich-black-fogra-29-1);
   font-family: var(--ff-cuprum);
 }
 
