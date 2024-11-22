@@ -110,3 +110,77 @@ function movePortfolioCarousel() {
 
 // Automatically scroll every 5ms (speed can be adjusted)
 setInterval(movePortfolioCarousel, 10);
+
+
+/*---------------------- TESTIMONILA ------------------------*/
+
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.querySelector('.testimonial-container');
+  const cards = document.querySelectorAll('.testimonial-card');
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
+  let currentIndex = 0;
+
+  const moveToCard = (index) => {
+    const cardWidth = cards[0].offsetWidth + 20; // Include gap
+    const maxIndex = cards.length;
+
+    // Loop carousel
+    if (index >= maxIndex) {
+      currentIndex = 0;
+    } else if (index < 0) {
+      currentIndex = maxIndex - 1;
+    } else {
+      currentIndex = index;
+    }
+
+    container.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+  };
+
+  const startAutoScroll = () => {
+    setInterval(() => {
+      moveToCard(currentIndex + 1);
+    }, 3000);
+  };
+
+  prevBtn.addEventListener('click', () => {
+    moveToCard(currentIndex - 1);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    moveToCard(currentIndex + 1);
+  });
+
+  // Start auto scroll
+  startAutoScroll();
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const stats = document.querySelectorAll(".stat-item h2");
+
+  const animateCount = (el) => {
+    const target = parseInt(el.getAttribute("data-target"));
+    const speed = 200; // Speed of animation in milliseconds
+    const increment = Math.ceil(target / speed);
+
+    const updateCount = () => {
+      const current = parseInt(el.innerText);
+      if (current < target) {
+        el.innerText = current + increment > target ? target : current + increment;
+        requestAnimationFrame(updateCount);
+      } else {
+        el.innerText = target;
+      }
+    };
+
+    updateCount();
+  };
+
+  stats.forEach((stat) => animateCount(stat));
+});
+
+
+
+
+

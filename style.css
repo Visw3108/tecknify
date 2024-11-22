@@ -978,7 +978,220 @@ body {
 .features-card:hover :is(.card-title, .card-text) { color: var(--white); }
 
 
+.technology-stack-section {
+  text-align: center;
+  padding: 50px;
+  background-image: url('/assets/images/technology.jpg'); /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Makes the background fixed when scrolling */
+  color: white; /* Ensures the text stands out on the background */
+}
 
+h2 {
+  font-size: 3.7rem;
+  margin-bottom: 40px;
+  font-family: var(--ff-cuprum);
+}
+
+.technology-stack-marquee {
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.technology-stack-track {
+  display: flex;
+  animation: marquee 20s linear infinite;
+}
+
+.technology-stack-track img {
+  width: 100px;
+  margin: 0 20px;
+  flex-shrink: 0;
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .technology-stack-section {
+    padding: 40px;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .technology-stack-track img {
+    width: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .technology-stack-section {
+    padding: 30px;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .technology-stack-track img {
+    width: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .technology-stack-section {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .technology-stack-track img {
+    width: 60px;
+  }
+}
+
+
+/* --------------------TESTIMONIAL---------------- */
+
+.testimonial-section {
+  padding: 20px;
+  text-align: center;
+  background-color: var(--rich-black-fogra-29-1);
+}
+
+.testimonial-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #fff;
+  font-family: var(--ff-cuprum);
+}
+
+.testimonial-title .highlight {
+  color: #00bcd4;
+}
+
+.testimonial-carousel {
+  position: relative;
+  overflow: hidden;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.testimonial-container {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+  will-change: transform;
+}
+
+.testimonial-card {
+  background-color: #1e293b;
+  border-radius: 10px;
+  padding: 20px;
+  flex: 0 0 300px;
+  margin: 0 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.05);
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.testimonial-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.testimonial-role {
+  color: var(--white);
+  font-size: 0.9rem;
+}
+
+.testimonial-text {
+ /*  font-style: italic; */
+  color: #e2e8f0;
+  font-family: var(--ff-poppins);
+}
+
+/* Buttons */
+.testimonial-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #00bcd4;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 100;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.prev-btn {
+  left: 15px;
+}
+
+.next-btn {
+  right: 15px;
+}
+
+.testimonial-btn:hover {
+  background-color: #007b96;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .testimonial-title {
+    font-size: 1.5rem;
+  }
+
+  .testimonial-card {
+    width: 90%;
+  }
+
+  .testimonial-btn {
+    font-size: 1.2rem;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-title {
+    font-size: 1.2rem;
+  }
+
+  .testimonial-card {
+    padding: 15px;
+  }
+}
 
 
 /*-----------------------------------*\
@@ -1059,6 +1272,163 @@ body {
 .faq-card .card-action.active + .card-content { max-height: 500px; }
 
 
+
+.marketing-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  background: url('/assets/images/achivment.jpg') no-repeat center center/cover;
+  background-attachment: fixed; /* Keeps background fixed */
+  min-height: 60vh;
+  position: relative;
+}
+
+.content h1 {
+  font-size: 3.7rem;
+  margin-bottom: 10px;
+  color: var(--white);
+  font-family: var(--ff-cuprum);
+}
+
+.call-text {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-family: var(--ff-poppins);
+  color: antiquewhite;
+}
+
+.phone-number {
+  font-weight: bold;
+  color: #fff;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+  margin: 10px;
+}
+
+.stat-item h2 {
+  font-size: 2.5rem;
+  margin: 0;
+  transition: color 0.3s ease;
+  color: var(--white);
+}
+
+.stat-item p {
+  margin: 5px 0 0;
+  color: beige;
+  font-family: var(--ff-poppins);
+}
+
+.profile-images {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.profile-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  transform: scale(0);
+  animation: profileFadeIn 1s ease forwards;
+}
+
+.profile-img:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.profile-img:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.profile-img:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.profile-img:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+@keyframes profileFadeIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .content h1 {
+    font-size: 1.8rem;
+  }
+
+  .call-text {
+    font-size: 1.3rem;
+  }
+
+  .stat-item h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .content h1 {
+    font-size: 1.6rem;
+  }
+
+  .call-text {
+    font-size: 1.2rem;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .stat-item h2 {
+    font-size: 2rem;
+  }
+
+  .profile-img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content h1 {
+    font-size: 1.4rem;
+  }
+
+  .call-text {
+    font-size: 1rem;
+  }
+
+  .stat-item h2 {
+    font-size: 1.8rem;
+  }
+
+  .profile-img {
+    width: 40px;
+    height: 40px;
+  }
+}
 
 
 
