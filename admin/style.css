@@ -1,0 +1,137 @@
+/* Admin Stylesheet */
+body {
+  font-family: "Roboto", Areal, Vedana, Geneva, Tahoma, sans-serif;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+
+.navbar {
+  width: 100%;
+  background-color: rgb(231, 116, 7);
+  padding: 10px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar-brand {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff !important;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand img {
+  max-height: 40px;
+  margin-right: 10px;
+}
+
+h2 {
+  margin-top: 80px;
+  /* To ensure it doesn't overlap with the navbar */
+  text-align: center;
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.tab-content {
+  margin-top: 20px;
+}
+
+.form-container {
+  background-color: #ffffff;
+  color: #333;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 450px;
+  margin-top: 20px;
+}
+
+.nav-tabs {
+  border-bottom: none;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.nav-tabs .nav-link {
+  color: #6a11cb;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  background: transparent;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.nav-tabs .nav-link.active {
+  color: #fff;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  border-radius: 30px;
+}
+
+.nav-tabs .nav-link:hover {
+  color: #fff;
+  background: #6a11cb;
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  border: none;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(to right, #2575fc, #6a11cb);
+}
+
+.btn-success {
+  background: linear-gradient(to right, #42e695, #3bb2b8);
+  border: none;
+  transition: background 0.3s;
+}
+
+.btn-success:hover {
+  background: linear-gradient(to right, #3bb2b8, #42e695);
+}
+
+input.form-control {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+input.form-control:focus {
+  border-color: #6a11cb;
+  box-shadow: 0 0 5px rgba(106, 17, 203, 0.5);
+}
+
+.form-label {
+  font-weight: bold;
+  color: #555;
+}
+.forgot-password-link {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.forgot-password-link:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+#login .btn-primary {
+  margin-bottom: 10px; /* Adjust spacing between button and link */
+}
