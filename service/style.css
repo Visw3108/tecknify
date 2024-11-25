@@ -666,78 +666,267 @@ body {
 /*-----------------------------------*\
     #ABOUT
   \*-----------------------------------*/
-.aboutus-section {
-  padding: 50px 20px;
-  background-color: var(--background-color);
+/* General Section Styling */
+.our-services .section-text {
+  margin-block: 15px 50px;
+  color: #333;
+  font-size: 2rem;
 }
 
-.aboutus-container {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+.grid-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+  list-style: none;
+  padding: 0;
 }
 
-.aboutus-content {
-  flex: 1 1 50%; /* Reduced width to allow more space for the image */
+/* Keyframe Animation for Fade In Up */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Start from 20px below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End at original position */
+  }
 }
 
-.aboutus-content h1 {
-  color: var(--rich-black-fogra-29-1);
-  font-size: 3.7rem;
-  margin-bottom: 20px;
-  font-family: var(--ff-cuprum);
+/* Features Card Styling */
+.our-services-card {
+  position: relative;
+  background-color: var(--white);
+  padding: 40px 20px 20px; /* Added padding for spacing */
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0; /* Initially hidden */
+  animation: fadeInUp 0.6s ease-in-out forwards; /* Apply fade-in-up animation */
+  animation-delay: 0.2s; /* Slight delay for staggered effect */
 }
 
-.aboutus-content p {
+.our-services-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Number Styling */
+.our-services-card .card-number {
+  position: absolute;
+  top: 13px;
+  /*Properalignment*/left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-color-hover));
   color: var(--rich-black-fogra-29-1);
   font-size: 1.5rem;
-  margin-bottom: 20px;
-  font-family: var(--ff-poppins);
-  text-align: justify;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 
-.aboutus-image {
-  flex: 1 1 50%; /* Increased width of the image section */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.our-services-card:hover .card-number {
+  background: var(--lavender-gray); /* Only change background color */
+  color: hsl(0, 100%, 50%); /* Change the text color */
 }
 
-.aboutus-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Title and Text Styling */
+.our-services-card .card-title {
+  font-size: 1.2rem;
+  margin-top: 40px; /* Adjusted to avoid overlap */
+  margin-bottom: 10px;
+  color: hsl(188, 50%, 24%);
+  transition: color 0.3s ease;
 }
 
-/* Responsive Design */
+.our-services-card .card-text {
+  color: hsl(230, 19%, 81%);
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+/* Learn More Button */
+.learn-more-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  color: var(--primary-color);
+  background: var(--white);
+  border: 2px solid var(--primary-color);
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.learn-more-btn:hover {
+  color: var(--white);
+  background: var(--primary-color);
+}
+
+/* Responsive Styling */
+
+/* Tablet & Below (Medium Screens) */
+@media (max-width: 1024px) {
+  .grid-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .section-text {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile (Small Screens) */
 @media (max-width: 768px) {
-  .aboutus-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  .grid-list {
+    grid-template-columns: 1fr;
   }
 
-  .aboutus-content {
-    flex: 1 1 auto;
+  .section-title {
+    font-size: 1.3rem;
   }
 
-  .aboutus-content h1 {
-    font-size: 2rem;
+  .section-subtitle {
+    font-size: 1.1rem;
   }
 
-  .aboutus-content p {
+  .section-text {
+    font-size: 0.95rem;
+  }
+
+  /* Card Number Styling for Small Screens */
+  .our-services-card .card-number {
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem; /* Adjust font size */
+    padding: 15px;
+  }
+
+  /* Adjust card text size */
+  .our-services-card .card-text {
+    font-size: 0.9rem;
+  }
+
+  /* Adjust button size */
+  .learn-more-btn {
+    padding: 8px 16px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Extra Small Screens (Portrait Phones) */
+@media (max-width: 576px) {
+  .grid-list {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
+
+  .section-subtitle {
     font-size: 1rem;
   }
 
-  .aboutus-image {
-    flex: 1 1 auto;
-    margin-top: 20px;
+  .section-text {
+    font-size: 0.9rem;
+  }
+
+  /* Card number adjustments for smaller screens */
+  .our-services-card .card-number {
+    font-size: 1.1rem; /* Slightly smaller */
+    padding: 12px;
+  }
+
+  /* Title and text adjustments */
+  .our-services-card .card-title {
+    font-size: 1rem;
+  }
+
+  .our-services-card .card-text {
+    font-size: 0.85rem;
+  }
+
+  /* Learn More Button adjustments */
+  .learn-more-btn {
+    padding: 6px 14px;
+    font-size: 0.9rem;
   }
 }
+
+/* Larger Screens (Desktop) */
+@media (min-width: 1200px) {
+  .grid-list {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for large screens */
+  }
+
+  .section-title {
+    font-size: 2rem; /* Larger font for desktops */
+  }
+
+  .section-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .section-text {
+    font-size: 1.2rem;
+  }
+}
+
+/* Extra Large Screens (Wide Desktops or Large Tablets) */
+@media (min-width: 1400px) {
+  .grid-list {
+    grid-template-columns: repeat(3, 1fr); /* Keep 3 columns */
+    gap: 30px; /* Larger gap for extra large screens */
+  }
+
+  .section-title {
+    font-size: 2.5rem; /* Even larger title */
+  }
+
+  .section-subtitle {
+    font-size: 1.8rem;
+  }
+
+  .section-text {
+    font-size: 1.4rem;
+  }
+
+  .our-services-card .card-title {
+    font-size: 1.3rem;
+  }
+
+  .our-services-card .card-text {
+    font-size: 1rem;
+  }
+
+  /* Large Button */
+  .learn-more-btn {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+  }
+}
+
 
 /*-----------------------------------*\
     #SERVICE

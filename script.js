@@ -66,6 +66,50 @@ window.addEventListener('scroll', () => {
 });
 
 
+/* HERO */
+
+// Select elements from the DOM
+const inputField = document.querySelector('.modern-input');
+const submitButton = document.querySelector('.modern-submit');
+
+// Event listener for the submit button
+submitButton.addEventListener('click', () => {
+  const websiteAddress = inputField.value.trim(); // Get and trim the input value
+
+  if (websiteAddress) {
+    // If input is not empty, display the entered value
+    alert(`Thank you! We will analyze: ${websiteAddress}`);
+  } else {
+    // If input is empty, show an error message
+    alert('Please enter a valid website address!');
+  }
+});
+
+// Optional: Add Enter key functionality
+inputField.addEventListener('keypress', (event) => {
+  if (event.key === 'Enter') {
+    submitButton.click(); // Trigger the button click event
+  }
+});
+
+function openModal() {
+  document.getElementById('formModal').style.display = 'flex';
+}
+
+function closeModal() {
+  document.getElementById('formModal').style.display = 'none';
+}
+
+// Optional: Close modal when clicking outside the content
+window.onclick = function (event) {
+  const modal = document.getElementById('formModal');
+  if (event.target === modal) {
+    closeModal();
+  }
+};
+
+
+
 
 
 /**
@@ -110,3 +154,79 @@ function movePortfolioCarousel() {
 
 // Automatically scroll every 5ms (speed can be adjusted)
 setInterval(movePortfolioCarousel, 10);
+
+
+/*---------------------- TESTIMONILA ------------------------*/
+
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.querySelector('.testimonial-container');
+  const cards = document.querySelectorAll('.testimonial-card');
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
+  let currentIndex = 0;
+
+  const moveToCard = (index) => {
+    const cardWidth = cards[0].offsetWidth + 20; // Include gap
+    const maxIndex = cards.length;
+
+    // Loop carousel
+    if (index >= maxIndex) {
+      currentIndex = 0;
+    } else if (index < 0) {
+      currentIndex = maxIndex - 1;
+    } else {
+      currentIndex = index;
+    }
+
+    container.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+  };
+
+  const startAutoScroll = () => {
+    setInterval(() => {
+      moveToCard(currentIndex + 1);
+    }, 3000);
+  };
+
+  prevBtn.addEventListener('click', () => {
+    moveToCard(currentIndex - 1);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    moveToCard(currentIndex + 1);
+  });
+
+  // Start auto scroll
+  startAutoScroll();
+});
+
+/* ACHIVMENT */
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const stats = document.querySelectorAll(".stat-item h2");
+
+  const animateCount = (el) => {
+    const target = parseInt(el.getAttribute("data-target"));
+    const speed = 200; // Speed of animation in milliseconds
+    const increment = Math.ceil(target / speed);
+
+    const updateCount = () => {
+      const current = parseInt(el.innerText);
+      if (current < target) {
+        el.innerText = current + increment > target ? target : current + increment;
+        requestAnimationFrame(updateCount);
+      } else {
+        el.innerText = target;
+      }
+    };
+
+    updateCount();
+  };
+
+  stats.forEach((stat) => animateCount(stat));
+});
+
+
+
+
+
