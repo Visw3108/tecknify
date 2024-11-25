@@ -1746,8 +1746,9 @@ h3 {
   gap: 40px;
 }
 
-.footer .logo {
-  color: var(--white);
+.footer .logo-img {
+  max-width: 150px;  /* Adjust the width as needed */
+  height: auto;
 }
 
 .footer-text {

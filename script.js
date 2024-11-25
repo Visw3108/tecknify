@@ -219,5 +219,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+// footer.js
+document.addEventListener("DOMContentLoaded", () => {
+  // Select the placeholder element where the footer will be loaded
+  const footerPlaceholder = document.getElementById("footer-placeholder");
+
+  // Fetch the footer.html file and insert its content
+  fetch("footer.html")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Failed to load footer.");
+      }
+      return response.text();
+    })
+    .then(html => {
+      footerPlaceholder.innerHTML = html;
+    })
+    .catch(error => {
+      console.error("Error loading the footer:", error);
+    });
+});
 
 
