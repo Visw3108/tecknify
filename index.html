@@ -141,24 +141,18 @@
         </div>
       
         <!-- Modal Form -->
-        <div id="formModal" class="form-modal">
-          <div class="form-modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h2>Contact Form</h2>
-            <form>
-              <label for="name">Name:</label>
-              <input type="text" id="name" name="name" placeholder="Enter your name" required />
-      
-              <label for="email">Email:</label>
-              <input type="email" id="email" name="email" placeholder="Enter your email" required />
-      
-              <label for="message">Message:</label>
-              <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
-      
-              <button type="submit" class="btn modern-submit">Submit</button>
-            </form>
+        <div id="modal" class="modal">
+          <div class="modal-content">
+              <span class="close" onclick="closeModal()">&times;</span>
+              <h2>Request a Proposal Without a Website</h2>
+              <form class="proposal-form-without-site">
+                  <input type="text" placeholder="Your Name" required>
+                  <input type="email" placeholder="Your Email" required>
+                  <textarea placeholder="Describe Your Business" required></textarea>
+                  <button type="submit">Request Proposal</button>
+              </form>
           </div>
-        </div>
+      </div>
       </section>
       
       

@@ -85,26 +85,21 @@ submitButton.addEventListener('click', () => {
   }
 });
 
-// Optional: Add Enter key functionality
-inputField.addEventListener('keypress', (event) => {
-  if (event.key === 'Enter') {
-    submitButton.click(); // Trigger the button click event
-  }
-});
-
 function openModal() {
-  document.getElementById('formModal').style.display = 'flex';
+  const modal = document.getElementById('modal');
+  modal.style.display = 'block';
 }
 
 function closeModal() {
-  document.getElementById('formModal').style.display = 'none';
+  const modal = document.getElementById('modal');
+  modal.style.display = 'none';
 }
 
-// Optional: Close modal when clicking outside the content
-window.onclick = function (event) {
-  const modal = document.getElementById('formModal');
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+  const modal = document.getElementById('modal');
   if (event.target === modal) {
-    closeModal();
+      modal.style.display = 'none';
   }
 };
 

@@ -100,8 +100,32 @@
                 <input type="text" placeholder="Enter Website Address" required>
                 <button type="submit">GET MY FREE PROPOSAL</button>
             </form>
+    
+            <!-- Input group link for users without a site -->
+            <div class="input-group-link">
+                <p class="no-site-text">
+                    Don't have a site? 
+                    <button class="simple-text-button" onclick="openModal()">Click Here</button>
+                </p>
+            </div>
         </div>
     </section>
+    
+    <!-- Modal for additional form -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h2>Request a Proposal Without a Website</h2>
+          <form class="proposal-form-without-site">
+              <input type="text" placeholder="Your Name" required>
+              <input type="email" placeholder="Your Email" required>
+              <textarea placeholder="Describe Your Business" required></textarea>
+              <button type="submit">Request Proposal</button>
+          </form>
+      </div>
+  </div>
+    
+    
 
 
 
