@@ -126,78 +126,68 @@ addEventOnElem(accordionAction, "click", toggleAccordion);
 
  /*----------- PORTFOLIO  -------------*/
 
-
-// JavaScript to automatically scroll the portfolio carousel and allow for continuous looping
-
-const portfolioTrack = document.querySelector('.portfolio-track');
-
-// Function to reset the carousel position to create a seamless loop
-function resetPortfolioCarousel() {
-  portfolioTrack.style.transition = 'none';
-  portfolioTrack.style.transform = 'translateX(0)';
-  setTimeout(() => {
-    portfolioTrack.style.transition = 'transform 0.5s ease';
-  }, 50);
-}
-
-// Function to shift the carousel
-function movePortfolioCarousel() {
-  const totalWidth = portfolioTrack.scrollWidth;
-  const containerWidth = portfolioTrack.parentElement.offsetWidth;
-
-  if (portfolioTrack.scrollLeft + containerWidth >= totalWidth) {
-    resetPortfolioCarousel();
-  } else {
-    portfolioTrack.scrollLeft += 1;
-  }
-}
-
-// Automatically scroll every 5ms (speed can be adjusted)
-setInterval(movePortfolioCarousel, 10);
+ const portfolioCarousel = document.querySelector('.portfolio-carousel');
+ const portfolioTrack = document.querySelector('.portfolio-track');
+ const portfolioCards = document.querySelectorAll('.portfolio-card');
+ 
+ // Duplicate cards to create an infinite loop
+ portfolioCards.forEach(card => {
+   const clone = card.cloneNode(true);
+   portfolioTrack.appendChild(clone);
+ });
+ 
+ let isHovered = false; // Track hover state
+ let scrollAmount = 0; // Track current scroll position
+ 
+ // Scroll the carousel continuously
+ function scrollCarousel() {
+   if (!isHovered) {
+     scrollAmount += 1;
+     const totalScrollWidth = portfolioTrack.scrollWidth / 2;
+ 
+     // Reset scroll to the beginning when reaching the end
+     if (scrollAmount >= totalScrollWidth) {
+       scrollAmount = 0;
+       portfolioTrack.style.transition = 'none'; // Disable transition for reset
+       portfolioTrack.style.transform = `translateX(0px)`;
+     } else {
+       portfolioTrack.style.transition = 'transform 0.05s linear'; // Smooth scrolling
+       portfolioTrack.style.transform = `translateX(-${scrollAmount}px)`;
+     }
+   }
+ 
+   requestAnimationFrame(scrollCarousel); // Smooth loop
+ }
+ 
+ // Start scrolling
+ scrollCarousel();
+ 
+ // Stop scrolling on hover
+ portfolioCarousel.addEventListener('mouseenter', () => {
+   isHovered = true;
+ });
+ 
+ // Resume scrolling when hover ends
+ portfolioCarousel.addEventListener('mouseleave', () => {
+   isHovered = false;
+ });
+ 
 
 
 /*---------------------- TESTIMONILA ------------------------*/
-
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector('.testimonial-container');
-  const cards = document.querySelectorAll('.testimonial-card');
-  const prevBtn = document.querySelector('.prev-btn');
-  const nextBtn = document.querySelector('.next-btn');
-  let currentIndex = 0;
+  const cards = [...document.querySelectorAll('.testimonial-card')];
 
-  const moveToCard = (index) => {
-    const cardWidth = cards[0].offsetWidth + 20; // Include gap
-    const maxIndex = cards.length;
-
-    // Loop carousel
-    if (index >= maxIndex) {
-      currentIndex = 0;
-    } else if (index < 0) {
-      currentIndex = maxIndex - 1;
-    } else {
-      currentIndex = index;
-    }
-
-    container.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-  };
-
-  const startAutoScroll = () => {
-    setInterval(() => {
-      moveToCard(currentIndex + 1);
-    }, 3000);
-  };
-
-  prevBtn.addEventListener('click', () => {
-    moveToCard(currentIndex - 1);
+  // Duplicate the cards to create a seamless loop
+  cards.forEach((card) => {
+    const clone = card.cloneNode(true);
+    container.appendChild(clone);
   });
-
-  nextBtn.addEventListener('click', () => {
-    moveToCard(currentIndex + 1);
-  });
-
-  // Start auto scroll
-  startAutoScroll();
 });
+
+
+
 
 /* ACHIVMENT */
 
@@ -225,6 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   stats.forEach((stat) => animateCount(stat));
 });
+
 
 
 
