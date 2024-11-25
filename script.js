@@ -66,6 +66,50 @@ window.addEventListener('scroll', () => {
 });
 
 
+/* HERO */
+
+// Select elements from the DOM
+const inputField = document.querySelector('.modern-input');
+const submitButton = document.querySelector('.modern-submit');
+
+// Event listener for the submit button
+submitButton.addEventListener('click', () => {
+  const websiteAddress = inputField.value.trim(); // Get and trim the input value
+
+  if (websiteAddress) {
+    // If input is not empty, display the entered value
+    alert(`Thank you! We will analyze: ${websiteAddress}`);
+  } else {
+    // If input is empty, show an error message
+    alert('Please enter a valid website address!');
+  }
+});
+
+// Optional: Add Enter key functionality
+inputField.addEventListener('keypress', (event) => {
+  if (event.key === 'Enter') {
+    submitButton.click(); // Trigger the button click event
+  }
+});
+
+function openModal() {
+  document.getElementById('formModal').style.display = 'flex';
+}
+
+function closeModal() {
+  document.getElementById('formModal').style.display = 'none';
+}
+
+// Optional: Close modal when clicking outside the content
+window.onclick = function (event) {
+  const modal = document.getElementById('formModal');
+  if (event.target === modal) {
+    closeModal();
+  }
+};
+
+
+
 
 
 /**
@@ -154,6 +198,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Start auto scroll
   startAutoScroll();
 });
+
+/* ACHIVMENT */
 
 
 document.addEventListener("DOMContentLoaded", () => {

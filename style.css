@@ -28,7 +28,7 @@
   --primery_8: hsla(145, 63%, 42%, 0.08);
   --primery_5: hsla(145, 63%, 42%, 0.05);
   --light-gray: hsl(0, 0%, 80%);
-  --mint-cream: hsl(160, 100%, 98%);
+  --mint-cream: hsl(255, 67%, 96%);
   --cultured: hsl(0, 0%, 93%);
   --primery: hsl(14, 100%, 50%);
   --white: hsl(0, 0%, 100%);
@@ -507,6 +507,8 @@ body {
 /*-----------------------------------*\
   #HERO
 \*-----------------------------------*/
+/* General Hero Section Styles */
+/* General Hero Section Styles */
 .hero {
   background-color: var(--mint-cream);
   padding-block-start: calc(var(--section-padding, 50px) + 50px);
@@ -552,6 +554,7 @@ body {
   max-width: 600px;
 }
 
+/* Modern Input Section */
 .input-group.modern {
   display: flex;
   align-items: center;
@@ -604,26 +607,37 @@ body {
   transform: scale(1.05);
 }
 
-.hero-banner,
-.hero-banner > img {
-  border-radius: 50%;
+/* Text with Button Section */
+.input-group-link {
+  margin-top: 20px;
+  text-align: center; /* Centers the content horizontally */
 }
 
-.hero-banner::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 120%;
-  height: 120%;
-  background-image: url('../images/hero-pattern.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  z-index: -1;
+.no-site-text {
+  font-size: 16px;
+  color: var(--rich-black-fogra-29-1);
+  display: inline-flex; /* Ensures text and button stay in one line */
+  align-items: center;  /* Vertically centers the button with text */
+  gap: 5px;  /* Adds a small space between text and button */
 }
 
+.simple-text-button {
+  background: none;
+  border: none;
+  color: var(--primery);
+  text-decoration: underline;
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.simple-text-button:hover {
+  color: var(--primary-color-hover);
+  text-decoration: none;
+}
+
+
+/* Partner Logos */
 .partner-logos {
   margin-top: 30px;
   display: flex;
@@ -647,7 +661,123 @@ body {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-@media (max-width: 768px) {
+/* Modal Styles */
+.form-modal {
+  display: none; /* Initially hidden */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dim background */
+  justify-content: center;
+  align-items: center;
+}
+
+.form-modal-content {
+  background: #fff;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  border-radius: var(--radius-5);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  text-align: left;
+}
+
+.form-modal-content h2 {
+  margin-bottom: 15px;
+  font-size: 22px;
+  color: var(--rich-black-fogra-29-1);
+}
+
+.form-modal-content label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.form-modal-content input,
+.form-modal-content textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: var(--radius-5);
+  font-size: 14px;
+}
+
+.form-modal-content textarea {
+  height: 100px;
+  resize: none;
+}
+
+.form-modal-content .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Modal Form Display */
+.form-modal.show {
+  display: flex; /* Show modal */
+}
+
+/* Media Queries */
+
+/* For screens 1200px and above (larger devices like laptops and desktops) */
+@media (min-width: 1200px) {
+  .hero-title {
+    font-size: 48px;
+  }
+
+  .hero-text {
+    font-size: 18px;
+  }
+
+  .input-group.modern {
+    gap: 20px;
+  }
+
+  .modern-submit {
+    padding: 16px 32px;
+  }
+}
+
+/* For screens between 992px and 1199px (medium-sized screens like tablets and small desktops) */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .hero-title {
+    font-size: 40px;
+  }
+
+  .hero-text {
+    font-size: 16px;
+  }
+
+  .input-group.modern {
+    gap: 18px;
+  }
+
+  .modern-submit {
+    padding: 14px 28px;
+  }
+}
+
+/* For screens between 768px and 991px (tablets and smaller desktops) */
+@media (max-width: 991px) and (min-width: 768px) {
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .hero-text {
+    font-size: 14px;
+  }
+
   .input-group.modern {
     flex-direction: column;
     gap: 20px;
@@ -661,7 +791,10 @@ body {
   .modern-input {
     width: 100%;
   }
+}
 
+/* For screens between 576px and 767px (small tablets and larger mobile screens) */
+@media (max-width: 767px) and (min-width: 576px) {
   .hero-title {
     font-size: 28px;
   }
@@ -669,7 +802,52 @@ body {
   .hero-text {
     font-size: 14px;
   }
+
+  .input-group.modern {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .modern-submit {
+    width: 100%;
+    text-align: center;
+  }
+
+  .modern-input {
+    width: 100%;
+  }
 }
+
+/* For screens smaller than 576px (mobile screens) */
+@media (max-width: 575px) {
+  .hero-title {
+    font-size: 24px;
+  }
+
+  .hero-text {
+    font-size: 12px;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+  }
+
+  .input-group.modern {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .modern-submit {
+    width: 100%;
+    padding: 12px 24px;
+  }
+
+  .simple-text-button {
+    font-size: 14px;
+  }
+}
+
+
 
 
 
@@ -878,14 +1056,12 @@ body {
 /*-----------------------------------*\
   #PORTFOLIO
 \*-----------------------------------*/
-
-/* Portfolio Section */
 .portfolio-section {
-  padding: 30px 20px; /* Increased padding for height */
+  padding: 30px 20px;
   background-color: var(--lavender-gray);
   overflow: hidden;
   position: relative;
-  height: 500px; /* Increased section height */
+  height: 500px;
 }
 
 .portfolio-carousel {
@@ -907,31 +1083,25 @@ body {
   border-radius: var(--radius-5);
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 100%; /* Make cards flexible in height */
+  height: 100%;
   display: flex;
-  flex-direction: column; /* Ensure title/description are at the bottom */
-  justify-content: space-between; /* Push content to the bottom */
-}
-
-.portfolio-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .portfolio-img {
   width: 100%;
-  height: 60%; /* Adjust height of image */
-  object-fit: cover; /* Ensure image covers space */
+  height: 60%;
+  object-fit: cover;
 }
 
 .portfolio-card-content {
   padding: 20px;
   display: flex;
-  flex-direction: column; /* Align title/description vertically */
-  justify-content: flex-end; /* Push title/description to the bottom */
-  height: 40%; /* Ensure there's enough space for text */
-  background-color: rgba(255, 255, 255, 0.8); /* Light background for better contrast */
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 40%;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .portfolio-card-title {
@@ -941,28 +1111,37 @@ body {
   margin-bottom: 10px;
 }
 
-.portfolio-card-description {
-  font-size: 1.1rem;
-  color: var(--lavender-gray);
+/* Style for the Learn More button with a simple hover effect */
+.portfolio-learn-more-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  color: var(--white);
+  background-color: var(--rich-black-fogra-29-1);
+  text-decoration: none;
+  border-radius: var(--radius-5);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Center the section title and description */
-.portfolio-section-title,
-.portfolio-section-description {
-  text-align: center;
+.portfolio-learn-more-btn:hover {
+  background-color: var(--white);
   color: var(--rich-black-fogra-29-1);
 }
 
+.portfolio-learn-more-btn .arrow {
+  font-size: 1rem;
+  margin-left: 5px;
+}
+
+/* Center the section title */
 .portfolio-section-title {
-  font-size: 3.7rem; /* Increased font size */
+  text-align: center;
+  font-size: 3.7rem;
   font-weight: var(--fw-600);
   margin-bottom: 20px;
   font-family: var(--ff-cuprum);
-}
-
-.portfolio-section-description {
-  font-size: 1.2rem; /* Adjusted font size */
-  margin-bottom: 40px; /* Space between description and carousel */
+  color: var(--rich-black-fogra-29-1);
 }
 
 /* Carousel Scroll Animation */
@@ -979,48 +1158,42 @@ body {
 @media (max-width: 768px) {
   .portfolio-card {
     min-width: 250px;
-    height: 350px; /* Adjust card height on smaller screens */
+    height: 350px;
   }
 
   .portfolio-card-title {
     font-size: 1.3rem;
   }
 
-  .portfolio-card-description {
-    font-size: 1rem;
+  .portfolio-learn-more-btn {
+    font-size: 0.9rem;
   }
 
   .portfolio-section-title {
     font-size: 2rem;
-  }
-
-  .portfolio-section-description {
-    font-size: 1rem;
   }
 }
 
 @media (max-width: 576px) {
   .portfolio-card {
     min-width: 200px;
-    height: 300px; /* Adjust card height for very small screens */
+    height: 300px;
   }
 
   .portfolio-card-title {
     font-size: 1.1rem;
   }
 
-  .portfolio-card-description {
-    font-size: 0.9rem;
+  .portfolio-learn-more-btn {
+    font-size: 0.8rem;
   }
 
   .portfolio-section-title {
     font-size: 1.8rem;
   }
-
-  .portfolio-section-description {
-    font-size: 0.9rem;
-  }
 }
+
+
 
 
 
@@ -1072,6 +1245,8 @@ body {
 
 .features-card:hover :is(.card-title, .card-text) { color: var(--white); }
 
+
+                         /* TECHNOLOGY-CAROUSAL */
 
 .technology-stack-section {
   text-align: center;
@@ -1375,8 +1550,8 @@ h2 {
   justify-content: center;
   text-align: center;
   padding: 20px;
-  background: url('/assets/images/achivment.jpg') no-repeat center center/cover;
-  background-attachment: fixed; /* Keeps background fixed */
+  background: url('/assets/images/achivment1.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
   min-height: 60vh;
   position: relative;
 }
@@ -1386,18 +1561,6 @@ h2 {
   margin-bottom: 10px;
   color: var(--white);
   font-family: var(--ff-cuprum);
-}
-
-.call-text {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  font-family: var(--ff-poppins);
-  color: antiquewhite;
-}
-
-.phone-number {
-  font-weight: bold;
-  color: #fff;
 }
 
 .stats {
@@ -1425,70 +1588,43 @@ h2 {
   font-family: var(--ff-poppins);
 }
 
-.profile-images {
+/* Social Media Logos Section */
+.social-media-logos {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 15px;
   margin-top: 20px;
   flex-wrap: wrap;
 }
 
-.profile-img {
+.social-logo {
+  display: inline-block;
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  border: 2px solid #fff;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  opacity: 0;
-  transform: scale(0);
-  animation: profileFadeIn 1s ease forwards;
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-.profile-img:nth-child(1) {
-  animation-delay: 0.2s;
+.social-logo:hover {
+  transform: scale(1.1);
+  background-color: var(--lavender-gray);
 }
 
-.profile-img:nth-child(2) {
-  animation-delay: 0.4s;
-}
-
-.profile-img:nth-child(3) {
-  animation-delay: 0.6s;
-}
-
-.profile-img:nth-child(4) {
-  animation-delay: 0.8s;
-}
-
-@keyframes profileFadeIn {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+.social-img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
-  .content h1 {
-    font-size: 1.8rem;
-  }
-
-  .call-text {
-    font-size: 1.3rem;
-  }
-
-  .stat-item h2 {
-    font-size: 2.2rem;
-  }
-}
-
 @media (max-width: 768px) {
   .content h1 {
     font-size: 1.6rem;
-  }
-
-  .call-text {
-    font-size: 1.2rem;
   }
 
   .stats {
@@ -1500,9 +1636,14 @@ h2 {
     font-size: 2rem;
   }
 
-  .profile-img {
+  .social-logo {
     width: 50px;
     height: 50px;
+  }
+
+  .social-img {
+    width: 25px;
+    height: 25px;
   }
 }
 
@@ -1511,19 +1652,21 @@ h2 {
     font-size: 1.4rem;
   }
 
-  .call-text {
-    font-size: 1rem;
-  }
-
   .stat-item h2 {
     font-size: 1.8rem;
   }
 
-  .profile-img {
+  .social-logo {
     width: 40px;
     height: 40px;
   }
+
+  .social-img {
+    width: 20px;
+    height: 20px;
+  }
 }
+
 
 
 

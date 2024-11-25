@@ -111,38 +111,21 @@
               <button class="btn modern-submit">GET MY FREE PROPOSAL</button>
             </div>
       
+            <!-- Added Link Section -->
+            <div class="input-group-link">
+              <p class="no-site-text">
+                Don't have a site? 
+                <button class="simple-text-button" onclick="openModal()">Click Here</button>
+              </p>
+            </div>
+      
             <!-- Added Multiple Logos Section -->
             <div class="partner-logos">
-              <img
-                src="/assets/images/logo1.png"
-                alt="Inc 5000"
-                class="certificate-logo"
-              />
-              <img
-                src="./assets/images/logo2.png"
-                alt="Google Partner"
-                class="certificate-logo"
-              />
-              <img
-                src="./assets/images/logo3.png"
-                alt="Microsoft Advertising Partner"
-                class="certificate-logo"
-              />
-              <img
-                src="./assets/images/logo4.png"
-                alt="Meta Business Partner"
-                class="certificate-logo"
-              />
-              <img
-                src="./assets/images/logo5.png"
-                alt="IFA Member"
-                class="certificate-logo"
-              />
-              <!-- <img
-                src="./assets/images/logo6.png"
-                alt="Shopify Partner"
-                class="certificate-logo"
-              /> -->
+              <img src="/assets/images/logo1.png" alt="Inc 5000" class="certificate-logo" />
+              <img src="./assets/images/logo2.png" alt="Google Partner" class="certificate-logo" />
+              <img src="./assets/images/logo3.png" alt="Microsoft Advertising Partner" class="certificate-logo" />
+              <img src="./assets/images/logo4.png" alt="Meta Business Partner" class="certificate-logo" />
+              <img src="./assets/images/logo5.png" alt="IFA Member" class="certificate-logo" />
             </div>
           </div>
       
@@ -156,7 +139,28 @@
             />
           </figure>
         </div>
+      
+        <!-- Modal Form -->
+        <div id="formModal" class="form-modal">
+          <div class="form-modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>Contact Form</h2>
+            <form>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" placeholder="Enter your name" required />
+      
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email" required />
+      
+              <label for="message">Message:</label>
+              <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+      
+              <button type="submit" class="btn modern-submit">Submit</button>
+            </form>
+          </div>
+        </div>
       </section>
+      
       
       
 
@@ -367,10 +371,7 @@
       <section class="portfolio-section" id="portfolio">
         <div class="portfolio-container">
           <p class="section-subtitle text-center">-Portfolio-</p>
-          <h2 class="portfolio-section-title">Take a Glimpse of Our Valuable Clint</h2>
-         <!--  <p class="portfolio-section-description">
-            Check out some of my recent projects. Click on any card to learn more!
-          </p> -->
+          <h2 class="portfolio-section-title">Take a Glimpse of Our Valuable Client</h2>
       
           <div class="portfolio-carousel">
             <div class="portfolio-track">
@@ -378,48 +379,62 @@
                 <img src="/assets/images/Capture2.png" alt="Project 1" class="portfolio-img" />
                 <div class="portfolio-card-content">
                   <h3 class="portfolio-card-title">Project Title 1</h3>
-                  <p class="portfolio-card-description">Brief description of the project.</p>
+                  <a href="#" class="portfolio-learn-more-btn">
+                    Learn More →
+                  </a>
                 </div>
               </div>
               <div class="portfolio-card">
                 <img src="/assets/images/Capture1.png" alt="Project 2" class="portfolio-img" />
                 <div class="portfolio-card-content">
                   <h3 class="portfolio-card-title">Project Title 2</h3>
-                  <p class="portfolio-card-description">Brief description of the project.</p>
+                  <a href="#" class="portfolio-learn-more-btn">
+                    Learn More →
+                  </a>
                 </div>
               </div>
               <div class="portfolio-card">
                 <img src="/assets/images/Capture3.png" alt="Project 3" class="portfolio-img" />
                 <div class="portfolio-card-content">
                   <h3 class="portfolio-card-title">Project Title 3</h3>
-                  <p class="portfolio-card-description">Brief description of the project.</p>
+                  <a href="#" class="portfolio-learn-more-btn">
+                    Learn More →
+                  </a>
                 </div>
               </div>
               <div class="portfolio-card">
                 <img src="/assets/images/Capture4.png" alt="Project 4" class="portfolio-img" />
                 <div class="portfolio-card-content">
                   <h3 class="portfolio-card-title">Project Title 4</h3>
-                  <p class="portfolio-card-description">Brief description of the project.</p>
+                  <a href="#" class="portfolio-learn-more-btn">
+                    Learn More →
+                  </a>
                 </div>
               </div>
               <div class="portfolio-card">
                 <img src="/assets/images/Capture5.png" alt="Project 5" class="portfolio-img" />
                 <div class="portfolio-card-content">
                   <h3 class="portfolio-card-title">Project Title 5</h3>
-                  <p class="portfolio-card-description">Brief description of the project.</p>
+                  <a href="#" class="portfolio-learn-more-btn">
+                    Learn More →
+                  </a>
                 </div>
               </div>
               <div class="portfolio-card">
                 <img src="/assets/images/Capture6.png" alt="Project 6" class="portfolio-img" />
                 <div class="portfolio-card-content">
                   <h3 class="portfolio-card-title">Project Title 6</h3>
-                  <p class="portfolio-card-description">Brief description of the project.</p>
+                  <a href="#" class="portfolio-learn-more-btn">
+                    Learn More →
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+      
+      
       
       
 
@@ -812,11 +827,7 @@
       <div class="marketing-section">
         <div class="content">
           <h1>Ready to speak with a marketing expert?</h1>
-          <p class="call-text">
-            Give us a call! 
-            <a href="tel:+919124736030" class="phone-number">+91 9124736030</a>
-          </p>
-          
+      
           <div class="stats">
             <div class="stat-item">
               <h2 data-target="1865">0</h2>
@@ -832,13 +843,22 @@
             </div>
           </div>
         </div>
-        <div class="profile-images">
-          <img src="profile1.jpg" alt="Profile 1" class="profile-img">
-          <img src="profile2.jpg" alt="Profile 2" class="profile-img">
-          <img src="profile3.jpg" alt="Profile 3" class="profile-img">
-          <img src="profile4.jpg" alt="Profile 4" class="profile-img">
+        <div class="social-media-logos">
+          <a href="#" class="social-logo">
+            <img src="/assets/images/facebook.png" alt="Facebook" class="social-img" />
+          </a>
+          <a href="#" class="social-logo">
+            <img src="/assets/images/twitter1.png" alt="Twitter" class="social-img" />
+          </a>
+          <a href="#" class="social-logo">
+            <img src="/assets/images/linkedin.png" alt="LinkedIn" class="social-img" />
+          </a>
+          <a href="#" class="social-logo">
+            <img src="/assets/images/instagram.png" alt="Instagram" class="social-img" />
+          </a>
         </div>
       </div>
+      
 
     </article>
   </main>
