@@ -65,7 +65,6 @@ window.addEventListener('scroll', () => {
   }
 });
 
-
 document.querySelectorAll('.dropdown > .navbar-link').forEach(link => {
   link.addEventListener('click', function (e) {
     e.preventDefault();
@@ -87,6 +86,11 @@ document.querySelectorAll('.dropdown > .navbar-link').forEach(link => {
   });
 });
 
+
+
+
+
+
 function openModal() {
   const modal = document.getElementById('modal');
   modal.style.display = 'block';
@@ -104,6 +108,7 @@ window.onclick = function(event) {
       modal.style.display = 'none';
   }
 };
+
 
 
 /**

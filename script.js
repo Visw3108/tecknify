@@ -65,6 +65,27 @@ window.addEventListener('scroll', () => {
   }
 });
 
+document.querySelectorAll('.dropdown > .navbar-link').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const dropdownMenu = this.nextElementSibling;
+    if (dropdownMenu) {
+      const isActive = dropdownMenu.classList.contains('active');
+
+      // Close all other dropdowns
+      document.querySelectorAll('.dropdown-menu.active').forEach(menu => {
+        menu.classList.remove('active');
+      });
+
+      // Toggle the current dropdown
+      if (!isActive) {
+        dropdownMenu.classList.add('active');
+      }
+    }
+  });
+});
+
 
 /* HERO */
 
