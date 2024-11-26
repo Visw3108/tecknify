@@ -709,6 +709,7 @@ body {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+
 /* General Modal Styles */
 .modal {
   display: none; /* Hidden by default */
@@ -758,7 +759,6 @@ body {
   color: #222;
   font-family: 'Poppins', sans-serif;
 }
-
 /* Form Styles */
 .proposal-form-without-site {
   display: flex;
@@ -813,7 +813,6 @@ body {
       transform: translateY(0);
   }
 }
-
 /* Responsive Design */
 
 /* Mobile Styles */
@@ -849,7 +848,6 @@ body {
       font-size: 15px;
   }
 }
-
 /* Media Queries */
 
 /* For screens 1200px and above (larger devices like laptops and desktops) */
@@ -869,6 +867,10 @@ body {
   .modern-submit {
     padding: 16px 32px;
   }
+  .modal-content {
+    width: 40%;
+  }
+
 }
 
 /* For screens between 992px and 1199px (medium-sized screens like tablets and small desktops) */
@@ -913,6 +915,9 @@ body {
   .modern-input {
     width: 100%;
   }
+  .modal-content {
+    width: 50%;
+  }
 }
 
 /* For screens between 576px and 767px (small tablets and larger mobile screens) */
@@ -937,6 +942,9 @@ body {
 
   .modern-input {
     width: 100%;
+  }
+  .modal-content {
+    width: 80%;
   }
 }
 
@@ -966,6 +974,9 @@ body {
 
   .simple-text-button {
     font-size: 14px;
+  }
+  .modal-content {
+    width: 90%;
   }
 }
 

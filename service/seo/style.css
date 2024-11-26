@@ -439,7 +439,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  min-width: 300px; /* Increased width */
+  min-width: 200px; /* Increased width */
   list-style: none;
   margin: 10px 0;
   padding: 12px 15px;
