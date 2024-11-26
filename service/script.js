@@ -121,34 +121,6 @@ addEventOnElem(accordionAction, "click", toggleAccordion);
  /*----------- PORTFOLIO  -------------*/
 
 
-// JavaScript to automatically scroll the portfolio carousel and allow for continuous looping
-
-const portfolioTrack = document.querySelector('.portfolio-track');
-
-// Function to reset the carousel position to create a seamless loop
-function resetPortfolioCarousel() {
-  portfolioTrack.style.transition = 'none';
-  portfolioTrack.style.transform = 'translateX(0)';
-  setTimeout(() => {
-    portfolioTrack.style.transition = 'transform 0.5s ease';
-  }, 50);
-}
-
-// Function to shift the carousel
-function movePortfolioCarousel() {
-  const totalWidth = portfolioTrack.scrollWidth;
-  const containerWidth = portfolioTrack.parentElement.offsetWidth;
-
-  if (portfolioTrack.scrollLeft + containerWidth >= totalWidth) {
-    resetPortfolioCarousel();
-  } else {
-    portfolioTrack.scrollLeft += 1;
-  }
-}
-
-// Automatically scroll every 5ms (speed can be adjusted)
-setInterval(movePortfolioCarousel, 10);
-
 
 
 

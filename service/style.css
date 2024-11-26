@@ -1069,10 +1069,15 @@ body {
     #ABOUT
   \*-----------------------------------*/
 /* General Section Styling */
+.our-services {
+  padding: 50px 20px;
+}
+
 .our-services .section-text {
   margin-block: 15px 50px;
   color: #333;
   font-size: 2rem;
+  text-align: center;
 }
 
 .grid-list {
@@ -1083,11 +1088,11 @@ body {
   padding: 0;
 }
 
-/* Keyframe Animation for Fade In Up */
+/* Animation for Fade In Up */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(20px); /* Start from 20px below */
+    transform: translateY(20px); /* Start from below */
   }
   100% {
     opacity: 1;
@@ -1099,81 +1104,85 @@ body {
 .our-services-card {
   position: relative;
   background-color: var(--white);
-  padding: 40px 20px 20px; /* Added padding for spacing */
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+  padding: 40px 20px 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 1px 8px rgba(0, 0, 0, 0.06);
   overflow: hidden;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
   opacity: 0; /* Initially hidden */
-  animation: fadeInUp 0.6s ease-in-out forwards; /* Apply fade-in-up animation */
-  animation-delay: 0.2s; /* Slight delay for staggered effect */
+  animation: fadeInUp 0.6s ease-in-out forwards;
+  animation-delay: 0.2s;
 }
 
 .our-services-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-15px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  filter: brightness(1.1);
 }
 
-/* Number Styling */
-.our-services-card .card-number {
-  position: absolute;
-  top: 13px;
-  /*Properalignment*/left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-color-hover));
-  color: var(--rich-black-fogra-29-1);
-  font-size: 1.5rem;
-  font-weight: bold;
-  padding: 20px;
-  border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  transition: color 0.3s ease, background-color 0.3s ease;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
+/* Image Styling */
+.card-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin: 0 auto 20px;
+  display: block;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  
 }
 
-.our-services-card:hover .card-number {
-  background: var(--lavender-gray); /* Only change background color */
-  color: hsl(0, 100%, 50%); /* Change the text color */
+.our-services-card:hover .card-image {
+  transform: scale(1.1); /* Slight zoom effect on hover */
 }
 
 /* Title and Text Styling */
 .our-services-card .card-title {
-  font-size: 1.2rem;
-  margin-top: 40px; /* Adjusted to avoid overlap */
+  font-size: 1.7rem;
+  margin-top: 20px;
   margin-bottom: 10px;
   color: hsl(188, 50%, 24%);
   transition: color 0.3s ease;
 }
 
 .our-services-card .card-text {
-  color: hsl(230, 19%, 81%);
-  font-size: 0.95rem;
+  color: var(--rich-black-fogra-39);
+  font-size: 1.4rem;
   margin-bottom: 15px;
   transition: color 0.3s ease;
 }
 
-/* Learn More Button */
+/* Learn More Button Styling */
 .learn-more-btn {
-  display: inline-block;
-  padding: 10px 20px;
-  color: var(--primary-color);
-  background: var(--white);
-  border: 2px solid var(--primary-color);
-  border-radius: 6px;
+  display: inline-flex; /* Use inline-flex for alignment with icon */
+  align-items: center; /* Center content vertically */
+  padding: 12px 25px;
+  color: var(--rich-black-fogra-39);
+  border: 2px solid transparent;
+  border-radius: 6px; /* Rounded corners */
   font-weight: bold;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease, border 0.3s ease; /* Smooth transitions */
 }
 
+/* Hover Effect */
 .learn-more-btn:hover {
-  color: var(--white);
-  background: var(--primary-color);
+  color: var(--rich-black-fogra-29-1);
+  transform: translateX(5px); /* Move slightly to the right */
+  border-color: var(--primery); /* Keep consistent border color on hover */
 }
+
+/* Icon Styling */
+.learn-more-btn ion-icon {
+  margin-left: 5px; /* Space between text and icon */
+  transition: transform 0.3s ease; /* Smooth transition for icon */
+}
+
+.learn-more-btn:hover ion-icon {
+  transform: translateX(5px); /* Move icon to the right on hover */
+}
+
 
 /* Responsive Styling */
 
@@ -1214,24 +1223,21 @@ body {
     font-size: 0.95rem;
   }
 
-  /* Card Number Styling for Small Screens */
-  .our-services-card .card-number {
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 1.2rem; /* Adjust font size */
-    padding: 15px;
+  /* Card image adjustments */
+  .card-image {
+    width: 60px; /* Smaller images for mobile */
+    height: 60px;
   }
 
   /* Adjust card text size */
   .our-services-card .card-text {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 
   /* Adjust button size */
   .learn-more-btn {
-    padding: 8px 16px;
-    font-size: 0.95rem;
+    padding: 10px 20px;
+    font-size: 1rem;
   }
 }
 
@@ -1254,36 +1260,36 @@ body {
     font-size: 0.9rem;
   }
 
-  /* Card number adjustments for smaller screens */
-  .our-services-card .card-number {
-    font-size: 1.1rem; /* Slightly smaller */
-    padding: 12px;
+  /* Card image adjustments */
+  .card-image {
+    width: 50px; /* Smaller images */
+    height: 50px;
   }
 
-  /* Title and text adjustments */
+  /* Adjust title and text */
   .our-services-card .card-title {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .our-services-card .card-text {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
 
   /* Learn More Button adjustments */
   .learn-more-btn {
-    padding: 6px 14px;
-    font-size: 0.9rem;
+    padding: 8px 16px;
+    font-size: 0.95rem;
   }
 }
 
 /* Larger Screens (Desktop) */
 @media (min-width: 1200px) {
   .grid-list {
-    grid-template-columns: repeat(3, 1fr); /* 3 columns for large screens */
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .section-title {
-    font-size: 2rem; /* Larger font for desktops */
+    font-size: 2rem;
   }
 
   .section-subtitle {
@@ -1298,12 +1304,12 @@ body {
 /* Extra Large Screens (Wide Desktops or Large Tablets) */
 @media (min-width: 1400px) {
   .grid-list {
-    grid-template-columns: repeat(3, 1fr); /* Keep 3 columns */
-    gap: 30px; /* Larger gap for extra large screens */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
   }
 
   .section-title {
-    font-size: 2.5rem; /* Even larger title */
+    font-size: 2.5rem;
   }
 
   .section-subtitle {
@@ -1314,18 +1320,22 @@ body {
     font-size: 1.4rem;
   }
 
+  .card-image {
+    width: 100px;
+    height: 100px;
+  }
+
   .our-services-card .card-title {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 
   .our-services-card .card-text {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
-  /* Large Button */
   .learn-more-btn {
-    padding: 12px 24px;
-    font-size: 1.1rem;
+    padding: 15px 30px;
+    font-size: 1.2rem;
   }
 }
 
@@ -1552,8 +1562,8 @@ body {
 .industries-label {
   display: block;
   padding: 10px;
-  background-color: #f4511e;
-  color: #fff;
+  background-color: var(--mint-cream);
+  color: var(--rich-black-fogra-29-1);
   font-weight: bold;
   border-radius: 0 0 10px 10px;
   text-transform: uppercase;
@@ -1733,86 +1743,6 @@ body {
     #FAQ
   \*-----------------------------------*/
 
-.faq .container {
-  display: grid;
-  gap: 20px;
-}
-
-.faq .title-wrapper {
-  background-color: var(--white);
-  padding: 30px 25px;
-  box-shadow: var(--shadow-1);
-}
-
-.faq .section-title {
-  font-size: var(--fs-4);
-  margin-block-end: 30px;
-}
-
-.faq-card {
-  background-color: var(--primery_5);
-  border-radius: var(--radius-5);
-  overflow: hidden;
-}
-
-.faq-card .card-action {
-  --action-bg: var(--primery_8);
-  --color: var(--granite-gray);
-
-  background-color: var(--action-bg);
-  text-align: left;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 25px;
-  gap: 20px;
-  transition: var(--transition-1);
-}
-
-.faq-card .card-action:is(:hover, :focus, .active) {
-  --action-bg: var(--primery);
-  --color: var(--white);
-}
-
-.faq-card .card-title {
-  color: var(--color);
-  font-size: var(--fs-8);
-  transition: var(--transition-1);
-}
-
-.faq-card ion-icon {
-  color: var(--color);
-  font-size: 15px;
-  transition: var(--transition-1);
-  --ionicon-stroke-width: 60px;
-}
-
-.faq-card .card-action.active .open,
-.faq-card .card-action .close {
-  display: none;
-}
-
-.faq-card .card-action .open,
-.faq-card .card-action.active .close {
-  display: block;
-}
-
-.faq-card .card-content {
-  font-size: var(--fs-10);
-  padding-inline: 25px;
-  max-height: 0;
-  overflow: hidden;
-  transition: var(--transition-2);
-}
-
-.faq-card .card-content p {
-  margin-block: 15px;
-}
-
-.faq-card .card-action.active + .card-content {
-  max-height: 500px;
-}
 
 /*-----------------------------------*\
     #FOOTER
