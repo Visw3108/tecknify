@@ -841,130 +841,102 @@
     </article>
   </main>
 
-  <!-- 
+ 
+
+        <!-- 
     - #FOOTER
   -->
+        <div id="footer-placeholder"></div>
 
-
-  <!-- 
-    - #FOOTER
-  -->
-  <div id="footer-placeholder"></div>
-
-
-  <!-- 
+        <!-- 
     - custom js link
   -->
-  <script src="script.js"></script>
+        <script src="script.js"></script>
 
-  <!-- 
+        <!-- 
     - ionicon link
   -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script type="module"
+          src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule
+          src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-  <script>
-    // Function to handle Website Address form submission
-    function submitWebsiteAddress() {
-      const websiteAddress = document.getElementById('website_address').value;
-
-      if (websiteAddress) {
-        fetch('submit_form.php', {
-          method: 'POST',
-          body: new URLSearchParams({
-            website_address: websiteAddress
+        <script>
+        // Utility function for form submissions
+        function submitForm(url, formData, successCallback, errorCallback) {
+          fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData)
           })
-        })
-          .then(response => response.json())
-          .then(data => {
-            alert(data.message);
-          })
-          .catch(error => console.error('Error:', error));
-      } else {
-        alert("Please enter a website address.");
-      }
-    }
-
-    // Function to handle Contact Form submission
-    function submitContactForm(event) {
-      event.preventDefault(); // Prevent default form submission
-
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const message = document.getElementById('message').value;
-
-      if (name && email && message) {
-        fetch('submit_form.php', {
-          method: 'POST',
-          body: new URLSearchParams({
-            name: name,
-            email: email,
-            message: message
-          })
-        })
-          .then(response => response.json())
-          .then(data => {
-            alert(data.message);
-            closeModal(); // Close modal after submission
-          })
-          .catch(error => console.error('Error:', error));
-      } else {
-        alert("Please fill out all fields.");
-      }
-    }
-
-    // Function to open the modal
-    function openModal() {
-      document.getElementById('formModal').style.display = 'block';
-    }
-
-    // Function to close the modal
-    function closeModal() {
-      document.getElementById('formModal').style.display = 'none';
-    }
-  </script>
-
-  <script>
-    document.getElementById("proposalForm").addEventListener("submit", function (event) {
-      event.preventDefault();  // Prevent the default form submission
-
-      // Create a FormData object to gather the form data
-      var formData = new FormData(this);
-
-      // Create an XMLHttpRequest object for AJAX
-      var xhr = new XMLHttpRequest();
-
-      // Open a POST request to the PHP script that will handle the database insertion
-      xhr.open("POST", "submit_form.php", true);
-
-      // Set up a callback function to handle the response from PHP
-      xhr.onload = function () {
-        if (xhr.status === 200) {
-          // If the request is successful, show the response message
-          document.getElementById("responseMessage").innerHTML = xhr.responseText;
-
-          // Apply the blinking effect (if needed, as CSS handles it)
-          document.getElementById("responseMessage").style.display = "block"; // Make sure it's visible
-
-          // Reset the form fields
-          document.getElementById("proposalForm").reset();
-
-          // Close the modal after 5 seconds (5000 milliseconds)
-          setTimeout(function () {
-            // Hide the modal
-            document.getElementById("modal").style.display = "none";
-          }, 5000); // 5000ms = 5 seconds
-        } else {
-          // If an error occurs, show the error message
-          document.getElementById("responseMessage").innerHTML = "Error: Unable to submit your request.";
+            .then(response => response.json())
+            .then(data => {
+              if (data.success) {
+                alert(data.message);
+                if (successCallback) successCallback();
+              } else {
+                alert("Error: " + data.message);
+              }
+            })
+            .catch(error => {
+              console.error('Error:', error);
+              if (errorCallback) errorCallback(error);
+            });
         }
-      };
+      
+        // Handle Website Address form submission
+        function submitWebsiteAddress() {
+          const websiteAddress = document.getElementById('website_address').value;
+      
+          if (websiteAddress) {
+            submitForm('submit_form.php', { website_address: websiteAddress }, null, null);
+          } else {
+            alert("Please enter a website address.");
+          }
+        }
+        </script>
 
-      // Send the form data to the PHP script
-      xhr.send(formData);
-    });
-  </script>
+        <script>
+          document.getElementById("proposalForm").addEventListener("submit", function(event) {
+            event.preventDefault();  // Prevent the default form submission
 
-</body>
+            // Create a FormData object to gather the form data
+            var formData = new FormData(this);
 
-</html>
+            // Create an XMLHttpRequest object for AJAX
+            var xhr = new XMLHttpRequest();
+
+            // Open a POST request to the PHP script that will handle the database insertion
+            xhr.open("POST", "submit_form.php", true);
+
+            // Set up a callback function to handle the response from PHP
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    // If the request is successful, show the response message
+                    document.getElementById("responseMessage").innerHTML = xhr.responseText;
+
+                    // Apply the blinking effect (if needed, as CSS handles it)
+                    document.getElementById("responseMessage").style.display = "block"; // Make sure it's visible
+
+                    // Reset the form fields
+                    document.getElementById("proposalForm").reset();
+
+                    // Close the modal after 5 seconds (5000 milliseconds)
+                    setTimeout(function() {
+                        // Hide the modal
+                        document.getElementById("modal").style.display = "none";
+                    }, 5000); // 5000ms = 5 seconds
+                } else {
+                    // If an error occurs, show the error message
+                    document.getElementById("responseMessage").innerHTML = "Error: Unable to submit your request.";
+                }
+            };
+
+            // Send the form data to the PHP script
+            xhr.send(formData);
+        });
+        </script>
+
+      </body>
+
+    </html>

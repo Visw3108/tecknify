@@ -2090,6 +2090,25 @@ h3 {
   color: var(--primery);
 }
 
+/* CSS for blinking effect */
+@keyframes blink {
+  0% {
+      color: #FF0000; /* Deep red color at the start */
+  }
+  50% {
+      color: #B22222; /* Darker red for the mid point */
+  }
+  100% {
+      color: #FF0000; /* Deep red color at the end */
+  }
+}
+
+/* Apply the blinking effect to the response message */
+#responseMessage {
+  font-weight: bold;
+  animation: blink 1s infinite; /* 1 second interval, infinite loop */
+}
+
 /*-----------------------------------*\
   #MEDIA QUERIES 
 \*-----------------------------------*/
