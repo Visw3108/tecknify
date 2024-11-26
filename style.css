@@ -709,71 +709,145 @@ body {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Modal Styles */
-.form-modal {
-  display: none; /* Initially hidden */
+/* General Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
   position: fixed;
   z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Dim background */
-  justify-content: center;
-  align-items: center;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6); /* Black with opacity */
+  backdrop-filter: blur(5px); /* Blur effect for the background */
 }
 
-.form-modal-content {
-  background: #fff;
-  padding: 20px;
-  width: 90%;
-  max-width: 500px;
-  border-radius: var(--radius-5);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.modal-content {
   position: relative;
-  text-align: left;
+  margin: 10% auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 40%;
+  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: fadeIn 0.3s ease; /* Fade-in effect */
 }
 
-.form-modal-content h2 {
-  margin-bottom: 15px;
-  font-size: 22px;
-  color: var(--rich-black-fogra-29-1);
-}
-
-.form-modal-content label {
-  display: block;
-  font-size: 14px;
-  margin-bottom: 8px;
-  color: #333;
-}
-
-.form-modal-content input,
-.form-modal-content textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-  border-radius: var(--radius-5);
-  font-size: 14px;
-}
-
-.form-modal-content textarea {
-  height: 100px;
-  resize: none;
-}
-
-.form-modal-content .close-btn {
+/* Close Button Styles */
+.close {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 24px;
+  top: 15px;
+  right: 15px;
+  font-size: 1.5rem;
   color: #333;
   cursor: pointer;
+  transition: color 0.3s ease;
 }
 
-/* Modal Form Display */
-.form-modal.show {
-  display: flex; /* Show modal */
+.close:hover {
+  color: #e74c3c;
+}
+
+/* Heading Styles */
+.modal h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #222;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Form Styles */
+.proposal-form-without-site {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.proposal-form-without-site input,
+.proposal-form-without-site textarea {
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.proposal-form-without-site input:focus,
+.proposal-form-without-site textarea:focus {
+  border-color: #3498db;
+  box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+/* Submit Button Styles */
+.proposal-form-without-site button {
+  padding: 12px 18px;
+  background: linear-gradient(135deg, #3498db, #9b59b6);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proposal-form-without-site button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+
+/* Mobile Styles */
+@media (max-width: 480px) {
+  .modal-content {
+      width: 90%;
+      padding: 20px;
+  }
+
+  .proposal-form-without-site input,
+  .proposal-form-without-site textarea {
+      font-size: 14px;
+  }
+
+  .proposal-form-without-site button {
+      font-size: 14px;
+      padding: 10px 16px;
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 481px) and (max-width: 768px) {
+  .modal-content {
+      width: 80%;
+  }
+
+  .proposal-form-without-site input,
+  .proposal-form-without-site textarea {
+      font-size: 15px;
+  }
+
+  .proposal-form-without-site button {
+      font-size: 15px;
+  }
 }
 
 /* Media Queries */
@@ -1746,8 +1820,9 @@ h3 {
   gap: 40px;
 }
 
-.footer .logo {
-  color: var(--white);
+.footer .logo-img {
+  max-width: 150px;  /* Adjust the width as needed */
+  height: auto;
 }
 
 .footer-text {

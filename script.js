@@ -85,26 +85,21 @@ submitButton.addEventListener('click', () => {
   }
 });
 
-// Optional: Add Enter key functionality
-inputField.addEventListener('keypress', (event) => {
-  if (event.key === 'Enter') {
-    submitButton.click(); // Trigger the button click event
-  }
-});
-
 function openModal() {
-  document.getElementById('formModal').style.display = 'flex';
+  const modal = document.getElementById('modal');
+  modal.style.display = 'block';
 }
 
 function closeModal() {
-  document.getElementById('formModal').style.display = 'none';
+  const modal = document.getElementById('modal');
+  modal.style.display = 'none';
 }
 
-// Optional: Close modal when clicking outside the content
-window.onclick = function (event) {
-  const modal = document.getElementById('formModal');
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+  const modal = document.getElementById('modal');
   if (event.target === modal) {
-    closeModal();
+      modal.style.display = 'none';
   }
 };
 
@@ -219,5 +214,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+// footer.js
+document.addEventListener("DOMContentLoaded", () => {
+  // Select the placeholder element where the footer will be loaded
+  const footerPlaceholder = document.getElementById("footer-placeholder");
+
+  // Fetch the footer.html file and insert its content
+  fetch("footer.html")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Failed to load footer.");
+      }
+      return response.text();
+    })
+    .then(html => {
+      footerPlaceholder.innerHTML = html;
+    })
+    .catch(error => {
+      console.error("Error loading the footer:", error);
+    });
+});
 
 
