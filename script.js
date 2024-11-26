@@ -69,39 +69,46 @@ window.addEventListener('scroll', () => {
 /* HERO */
 
 // Select elements from the DOM
-const inputField = document.querySelector('.modern-input');
-const submitButton = document.querySelector('.modern-submit');
+// Selectors for modal elements
+const openModalButton = document.getElementById('openModalButton');
+const closeModalButton = document.getElementById('closeModalButton');
+const modal = document.getElementById('modal');
+const proposalForm = document.getElementById('proposalForm');
 
-// Event listener for the submit button
-submitButton.addEventListener('click', () => {
-  const websiteAddress = inputField.value.trim(); // Get and trim the input value
+// Open modal on button click
+openModalButton.addEventListener('click', () => {
+  modal.style.display = 'block';
+});
 
-  if (websiteAddress) {
-    // If input is not empty, display the entered value
-    alert(`Thank you! We will analyze: ${websiteAddress}`);
-  } else {
-    // If input is empty, show an error message
-    alert('Please enter a valid website address!');
+// Close modal on clicking the close button
+closeModalButton.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+// Close modal when clicking outside of modal content
+window.addEventListener('click', (event) => {
+  if (event.target === modal) {
+    modal.style.display = 'none';
   }
 });
 
-function openModal() {
-  const modal = document.getElementById('modal');
-  modal.style.display = 'block';
-}
+// Handle form submission
+proposalForm.addEventListener('submit', (event) => {
+  event.preventDefault(); // Prevent form from reloading the page
 
-function closeModal() {
-  const modal = document.getElementById('modal');
-  modal.style.display = 'none';
-}
+  const name = document.getElementById('nameField').value.trim();
+  const email = document.getElementById('emailField').value.trim();
+  const description = document.getElementById('businessDescription').value.trim();
 
-// Close modal when clicking outside of it
-window.onclick = function(event) {
-  const modal = document.getElementById('modal');
-  if (event.target === modal) {
-      modal.style.display = 'none';
+  if (name && email && description) {
+    alert(`Thank you for your request, ${name}! We'll contact you soon.`);
+    modal.style.display = 'none'; // Close the modal
+    proposalForm.reset(); // Clear form fields
+  } else {
+    alert('Please fill out all fields before submitting!');
   }
-};
+});
+
 
 
 

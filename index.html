@@ -114,10 +114,10 @@
               <!-- Contact Form -->
               <div class="input-group-link">
                 <p class="no-site-text">
-                    Don't have a site? 
-                    <button class="simple-text-button" onclick="openModal()">Click Here</button>
+                  Don't have a site? 
+                  <button class="simple-text-button" id="openModalButton">Click Here</button>
                 </p>
-            </div>
+              </div>
 
               <div class="partner-logos">
                 <img src="./assets/images/logo1.png" alt="Inc 5000"
@@ -154,12 +154,12 @@
        <!-- Modal Form for Contact -->
        <div id="modal" class="modal">
         <div class="modal-content">
-          <span class="close" onclick="closeModal()">&times;</span>
+          <span class="close" id="closeModalButton">&times;</span>
           <h2>Request a Proposal Without a Website</h2>
-          <form class="proposal-form-without-site">
-            <input type="text" placeholder="Your Name" required />
-            <input type="email" placeholder="Your Email" required />
-            <textarea placeholder="Describe Your Business" required></textarea>
+          <form class="proposal-form-without-site" id="proposalForm">
+            <input type="text" placeholder="Your Name" id="nameField" required />
+            <input type="email" placeholder="Your Email" id="emailField" required />
+            <textarea placeholder="Describe Your Business" id="businessDescription" required></textarea>
             <button type="submit">Request Proposal</button>
           </form>
         </div>
