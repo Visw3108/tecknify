@@ -325,11 +325,17 @@ body {
   z-index: 4;
   background-color: var(--white);
   box-shadow: var(--shadow-2);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease,
+    transform 0.3s ease;
 }
 
 .header.scrolled {
-  background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent for desktop */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.95
+  ); /* Slightly transparent for desktop */
   box-shadow: var(--shadow-3);
   transform: translateY(-5px); /* Slight upward motion */
 }
@@ -337,7 +343,12 @@ body {
 /* Ensure header background remains non-black on smaller screens */
 @media (max-width: 768px) {
   .header.scrolled {
-    background-color: rgba(255, 255, 255, 0.95); /* Non-black for small screens */
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.95
+    ); /* Non-black for small screens */
     transform: none; /* Disable upward motion for simplicity */
   }
 }
@@ -460,7 +471,7 @@ body {
 /* General Dropdown Styles */
 .dropdown {
   position: relative;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .dropdown-menu {
@@ -471,7 +482,11 @@ body {
   list-style: none;
   margin: 10px 0;
   padding: 12px 15px;
-  background: linear-gradient(145deg, #ffffff, #f3f3f3); /* Light modern gradient */
+  background: linear-gradient(
+    145deg,
+    #ffffff,
+    #f3f3f3
+  ); /* Light modern gradient */
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
   border-radius: 12px;
   opacity: 0;
@@ -517,7 +532,9 @@ body {
   }
 
   .navbar.active {
-    background-color: var(--rich-black-fogra-39); /* Solid black for smaller screens */
+    background-color: var(
+      --rich-black-fogra-39
+    ); /* Solid black for smaller screens */
   }
 
   .navbar .logo img {
@@ -551,7 +568,9 @@ body {
   }
 
   .navbar.active {
-    background-color: var(--rich-black-fogra-39); /* Maintain solid black background */
+    background-color: var(
+      --rich-black-fogra-39
+    ); /* Maintain solid black background */
   }
 
   .dropdown-menu {
@@ -561,7 +580,11 @@ body {
     padding: 10px 0;
     border-radius: 0; /* Remove rounded edges */
     box-shadow: none; /* Simplify for mobile */
-    background: linear-gradient(135deg, #333, #222); /* Dark gradient for improved contrast */
+    background: linear-gradient(
+      135deg,
+      #333,
+      #222
+    ); /* Dark gradient for improved contrast */
     display: flex; /* Use flex for column layout */
     flex-direction: column;
     gap: 10px; /* Space between links */
@@ -574,7 +597,8 @@ body {
     text-align: left; /* Ensure alignment */
     background-color: transparent; /* Default background */
     color: var(--white);
-    transition: background-color 0.3s ease, padding-left 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, padding-left 0.3s ease,
+      transform 0.2s ease;
   }
 
   .dropdown-menu .dropdown-link:is(:hover, :focus) {
@@ -590,7 +614,7 @@ body {
 
   /* Add icon or indicator for dropdown links with nested menus */
   .dropdown-link.has-children::after {
-    content: '▸'; /* Arrow symbol for nested dropdowns */
+    content: "▸"; /* Arrow symbol for nested dropdowns */
     font-size: 14px;
     margin-left: auto; /* Push to the end */
     color: var(--white);
@@ -603,10 +627,7 @@ body {
     background: none; /* Transparent nested background */
     box-shadow: none; /* Remove shadow */
   }
-
 }
-
-
 
 @media (max-width: 480px) {
   .logo img {
@@ -618,7 +639,9 @@ body {
   }
 
   .navbar.active {
-    background-color: var(--rich-black-fogra-39); /* Ensure black background stays */
+    background-color: var(
+      --rich-black-fogra-39
+    ); /* Ensure black background stays */
   }
 
   .navbar .logo img {
@@ -805,7 +828,6 @@ body {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-
 /* General Modal Styles */
 .modal {
   display: none; /* Hidden by default */
@@ -853,7 +875,7 @@ body {
   font-size: 1.8rem;
   margin-bottom: 20px;
   color: #222;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 /* Form Styles */
 .proposal-form-without-site {
@@ -869,7 +891,7 @@ body {
   border: 1px solid #ddd;
   border-radius: 6px;
   outline: none;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
@@ -901,12 +923,12 @@ body {
 /* Fade-in Animation */
 @keyframes fadeIn {
   from {
-      opacity: 0;
-      transform: translateY(-20px);
+    opacity: 0;
+    transform: translateY(-20px);
   }
   to {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 /* Responsive Design */
@@ -914,34 +936,34 @@ body {
 /* Mobile Styles */
 @media (max-width: 480px) {
   .modal-content {
-      width: 90%;
-      padding: 20px;
+    width: 90%;
+    padding: 20px;
   }
 
   .proposal-form-without-site input,
   .proposal-form-without-site textarea {
-      font-size: 14px;
+    font-size: 14px;
   }
 
   .proposal-form-without-site button {
-      font-size: 14px;
-      padding: 10px 16px;
+    font-size: 14px;
+    padding: 10px 16px;
   }
 }
 
 /* Tablet Styles */
 @media (min-width: 481px) and (max-width: 768px) {
   .modal-content {
-      width: 80%;
+    width: 80%;
   }
 
   .proposal-form-without-site input,
   .proposal-form-without-site textarea {
-      font-size: 15px;
+    font-size: 15px;
   }
 
   .proposal-form-without-site button {
-      font-size: 15px;
+    font-size: 15px;
   }
 }
 /* Media Queries */
@@ -966,7 +988,6 @@ body {
   .modal-content {
     width: 40%;
   }
-
 }
 
 /* For screens between 992px and 1199px (medium-sized screens like tablets and small desktops) */
@@ -1074,6 +1095,23 @@ body {
   .modal-content {
     width: 90%;
   }
+}
+
+@keyframes blink {
+  0% {
+    color: #ff0000;
+  }
+  50% {
+    color: #b22222;
+  }
+  100% {
+    color: #ff0000;
+  }
+}
+
+#responseMessage {
+  font-weight: bold;
+  animation: blink 1s infinite;
 }
 
 /*-----------------------------------*\
@@ -1490,7 +1528,9 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* Makes the background fixed when scrolling */
-  color: var(--rich-black-fogra-29-1); /* Ensures the text stands out on the background */
+  color: var(
+    --rich-black-fogra-29-1
+  ); /* Ensures the text stands out on the background */
   z-index: 0; /* Ensures the text is above the pseudo-element */
 }
 
@@ -1595,7 +1635,7 @@ h2 {
   font-weight: bold;
   margin-bottom: 30px;
   color: #1e293b;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .testimonial-title .highlight {
@@ -1647,7 +1687,7 @@ h3 {
   font-weight: 600;
   color: #e4efff;
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .testimonial-role {
@@ -1657,7 +1697,7 @@ h3 {
 
 .testimonial-text {
   color: var(--white);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   line-height: 1.6;
   font-size: 1.4rem;
 }
@@ -1705,8 +1745,6 @@ h3 {
     font-size: 0.9rem;
   }
 }
-
-
 
 /*-----------------------------------*\
   #FAQ
@@ -1911,8 +1949,6 @@ h3 {
   }
 }
 
-
-
 /*-----------------------------------*\
   #FOOTER
 \*-----------------------------------*/
@@ -1928,7 +1964,7 @@ h3 {
 }
 
 .footer .logo-img {
-  max-width: 150px;  /* Adjust the width as needed */
+  max-width: 150px; /* Adjust the width as needed */
   height: auto;
 }
 
