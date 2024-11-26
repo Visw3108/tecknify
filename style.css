@@ -1270,6 +1270,35 @@ body {
   margin-inline: auto;
 }
 
+/* Hover effect for Read More button */
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--rich-black-fogra-39);
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease, border 0.3s ease;
+  border: 2px solid transparent;
+  padding: 5px 10px;
+  border-radius: var(--radius-5);
+}
+
+.btn-link:hover {
+  color: var(--rich-black-fogra-29-1);
+  transform: translateX(5px);
+  border-color: var(--primery);
+}
+
+.btn-link ion-icon {
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.btn-link:hover ion-icon {
+  transform: translateX(5px);
+}
+
+
 /* Responsive Design */
 @media (min-width: 768px) {
   .service .grid-list {
