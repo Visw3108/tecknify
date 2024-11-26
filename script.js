@@ -242,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// footer.js
+/* // footer.js
 document.addEventListener("DOMContentLoaded", () => {
   // Select the placeholder element where the footer will be loaded
   const footerPlaceholder = document.getElementById("footer-placeholder");
@@ -261,6 +261,6 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch(error => {
       console.error("Error loading the footer:", error);
     });
-});
+}); */
 
 
