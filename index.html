@@ -39,50 +39,60 @@
     - #HEADER
   -->
 
-  <header class="header" data-header>
-    <div class="container">
-      <a href="#" class="logo">
-        <img src="/assets/images/Tecknify-Logo.png" alt="Hoolix Logo">
-      </a>
-  
-      <nav class="navbar" data-navbar>
-        <div class="wrapper">
-          <a href="#" class="logo">
-            <img src="/assets/images/Tecknify-Logo.png" alt="Hoolix Logo">
-          </a>
-          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
-            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
-          </button>
-        </div>
-  
-        <ul class="navbar-list">
-          <li><a href="/" class="navbar-link" data-nav-link>Home</a></li>
-          <li><a href="#about" class="navbar-link" data-nav-link>About</a></li>
-          <li class="dropdown">
-            <a href="/service/" class="navbar-link" data-nav-link>Services</a>
-            <ul class="dropdown-menu">
-              <li><a href="/service/seo/" class="dropdown-link">Social Medial Optimization</a></li>
-              <li><a href="/service/smo/" class="dropdown-link">Social Medial Marketing</a></li>
-              <li><a href="/service/ppc/" class="dropdown-link">PPC Advertising</a></li>
-              <li><a href="/service/web-development/" class="dropdown-link">Web Development</a></li>
-              <li><a href="/service/app-development/" class="dropdown-link">App Development</a></li>
-              <li><a href="/service/content-marketing/" class="dropdown-link">Content Marketing</a></li>
-            </ul>
-          </li>
-          <li><a href="#features" class="navbar-link" data-nav-link>Features</a></li>
-          <li><a href="#" class="navbar-link" data-nav-link>Blog</a></li>
-          <li><a href="/contact.html" class="navbar-link" data-nav-link>Contact Us</a></li>
-        </ul>
-      </nav>
-  
-      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
-        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
-      </button>
-  
-      <a href="#" class="btn-outline">Let's talk</a>
-      <div class="overlay" data-nav-toggler data-overlay></div>
-    </div>
-  </header>
+    <header class="header" data-header>
+      <div class="container">
+        <a href="./" class="logo">
+          <img src="./assets/images/Tecknify-Logo.png" alt="Hoolix Logo">
+        </a>
+
+        <nav class="navbar" data-navbar>
+          <div class="wrapper">
+            <a href="./" class="logo">
+              <img src="./assets/images/Tecknify-Logo.png" alt="Hoolix Logo">
+            </a>
+            <button class="nav-close-btn" aria-label="close menu"
+              data-nav-toggler>
+              <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+            </button>
+          </div>
+
+          <ul class="navbar-list">
+            <li><a href="/" class="navbar-link" data-nav-link>Home</a></li>
+            <li><a href="#about" class="navbar-link"
+                data-nav-link>About</a></li>
+            <li class="dropdown">
+              <a href="/service/" class="navbar-link" data-nav-link>Services</a>
+              <ul class="dropdown-menu">
+                <li><a href="/service/seo/" class="dropdown-link">Social Medial
+                    Optimization</a></li>
+                <li><a href="/service/smo/" class="dropdown-link">Social Medial
+                    Marketing</a></li>
+                <li><a href="/service/ppc/" class="dropdown-link">PPC
+                    Advertising</a></li>
+                <li><a href="/service/web-development/"
+                    class="dropdown-link">Web Development</a></li>
+                <li><a href="/service/app-development/"
+                    class="dropdown-link">App Development</a></li>
+                <li><a href="/service/content-marketing/"
+                    class="dropdown-link">Content Marketing</a></li>
+              </ul>
+            </li>
+            <li><a href="#features" class="navbar-link"
+                data-nav-link>Features</a></li>
+            <li><a href="#" class="navbar-link" data-nav-link>Blog</a></li>
+            <li><a href="/contact.html" class="navbar-link"
+                data-nav-link>Contact Us</a></li>
+          </ul>
+        </nav>
+
+        <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+          <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+        <a href="#" class="btn-outline">Let's talk</a>
+        <div class="overlay" data-nav-toggler data-overlay></div>
+      </div>
+    </header>
 
     <main>
       <article>
@@ -115,8 +125,9 @@
               <!-- Contact Form -->
               <div class="input-group-link">
                 <p class="no-site-text">
-                  Don't have a site? 
-                  <button class="simple-text-button" id="openModalButton">Click Here</button>
+                  Don't have a site?
+                  <button class="simple-text-button" id="openModalButton">Click
+                    Here</button>
                 </p>
               </div>
 
@@ -142,981 +153,989 @@
             </figure>
           </div>
 
-         
-      
-         
         </div>
-      
-        <!-- Modal Form -->
-       
-      </section>
-      
 
-       <!-- Modal Form for Contact -->
-       <div id="modal" class="modal">
+        <!-- Modal Form -->
+      </section>
+
+      <!-- Modal Form for Contact -->
+      <div id="modal" class="modal">
         <div class="modal-content">
           <span class="close" id="closeModalButton">&times;</span>
           <h2>Request a Proposal Without a Website</h2>
           <form class="proposal-form-without-site" id="proposalForm">
-            <input type="text" placeholder="Your Name" id="nameField" required />
-            <input type="email" placeholder="Your Email" id="emailField" required />
-            <textarea placeholder="Describe Your Business" id="businessDescription" required></textarea>
+            <input type="text" placeholder="Your Name" name="name"
+              id="nameField" required />
+            <input type="email" placeholder="Your Email" name="email"
+              id="emailField" required />
+            <textarea placeholder="Describe Your Business" name="message"
+              id="messageField" required></textarea>
             <button type="submit">Request Proposal</button>
           </form>
+          <div id="responseMessage"></div>
+          <!-- For displaying success or error messages -->
         </div>
       </div>
-      
-      
 
-        <!-- 
+      <!-- 
         - #ABOUT
       -->
 
-        <section class="section about" id="about" aria-label="about">
-          <div class="container">
+      <section class="section about" id="about" aria-label="about">
+        <div class="container">
 
-            <figure class="about-banner">
-              <img src="./assets/images/about-banner.png" width="802"
-                height="654" loading="lazy" alt="about banner"
-                class="w-100">
-            </figure>
+          <figure class="about-banner">
+            <img src="./assets/images/about-banner.png" width="802"
+              height="654" loading="lazy" alt="about banner"
+              class="w-100">
+          </figure>
 
-            <div class="about-content">
+          <div class="about-content">
 
-              <h2 class="h2-sm section-title">We create some things, Design for
-                your success future.</h2>
+            <h2 class="h2-sm section-title">We create some things, Design for
+              your success future.</h2>
 
-              <p class="section-text">
-                Lorem Ipsum is simply dumm of free available in market the way
-                printing and typesetting industry has been
-                the industrys
-                standard dummy text ever.
-              </p>
+            <p class="section-text">
+              Lorem Ipsum is simply dumm of free available in market the way
+              printing and typesetting industry has been
+              the industrys
+              standard dummy text ever.
+            </p>
 
-              <ul class="about-list">
+            <ul class="about-list">
 
-                <li class="has-before">
-                  Price of additional materials or parts (if needed)
-                </li>
+              <li class="has-before">
+                Price of additional materials or parts (if needed)
+              </li>
 
-                <li class="has-before">
-                  Transportation cost for carrying new materials/parts
-                </li>
+              <li class="has-before">
+                Transportation cost for carrying new materials/parts
+              </li>
 
-                <li class="has-before">
-                  You will get 100% money back offer.
-                </li>
+              <li class="has-before">
+                You will get 100% money back offer.
+              </li>
 
-              </ul>
+            </ul>
 
-              <div class="btn-group">
-                <a href="#" class="btn btn-primary">Know More</a>
+            <div class="btn-group">
+              <a href="#" class="btn btn-primary">Know More</a>
 
-                <!-- <button class="flex-btn">
+              <!-- <button class="flex-btn">
                 <div class="btn-icon">
                   <ion-icon name="medal-outline" aria-hidden="true"></ion-icon>
                 </div>
 
                 <span class="span">10+ Years Experience</span>
               </button> -->
-              </div>
-
             </div>
 
           </div>
-        </section>
 
-        <!-- 
+        </div>
+      </section>
+
+      <!-- 
         - #SERVICE
       -->
 
-        <section class="section service" id="services" aria-label="service">
-          <div class="container">
+      <section class="section service" id="services" aria-label="service">
+        <div class="container">
 
-            <p class="section-subtitle text-center">-What We Offer-</p>
+          <p class="section-subtitle text-center">-What We Offer-</p>
 
-            <h2 class="h2 section-title text-center">Our Creative Services</h2>
+          <h2 class="h2 section-title text-center">Our Creative Services</h2>
 
-            <p class="section-text text-center">
-              Get the most of reduction in your team’s operating costs for the
-              whole product which creates amazing UI/UX
-              experiences.
-            </p>
+          <p class="section-text text-center">
+            Get the most of reduction in your team’s operating costs for the
+            whole product which creates amazing UI/UX
+            experiences.
+          </p>
 
-            <ul class="grid-list">
+          <ul class="grid-list">
 
-              <li>
-                <div class="service-card has-after">
+            <li>
+              <div class="service-card has-after">
 
-                  <figure class="card-icon">
-                    <img src="./assets/images/service-1.png" width="140"
-                      height="140" loading="lazy"
-                      alt="UI/UX Creative Design" class="img">
-                  </figure>
+                <figure class="card-icon">
+                  <img src="./assets/images/service-1.png" width="140"
+                    height="140" loading="lazy"
+                    alt="UI/UX Creative Design" class="img">
+                </figure>
 
-                  <div class="card-content">
+                <div class="card-content">
 
-                    <h3 class="h3 card-title">Search Engine Optimization</h3>
+                  <h3 class="h3 card-title">Search Engine Optimization</h3>
 
-                    <p class="card-text">
-                      Lorem ipsum dolor sit amet, consectetur adi piscing semper
-                      turpis. Nullam eget luctlie gula and
-                      adipiscing elit.
-                    </p>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adi piscing semper
+                    turpis. Nullam eget luctlie gula and
+                    adipiscing elit.
+                  </p>
 
-                    <a href="/service/seo/" class="btn-link">
-                      <span class="span">Read More</span>
+                  <a href="/service/seo/" class="btn-link">
+                    <span class="span">Read More</span>
 
-                      <ion-icon name="arrow-forward-outline"
-                        aria-hidden="true"></ion-icon>
-                    </a>
-
-                  </div>
+                    <ion-icon name="arrow-forward-outline"
+                      aria-hidden="true"></ion-icon>
+                  </a>
 
                 </div>
-              </li>
 
-              <li>
-                <div class="service-card has-after">
+              </div>
+            </li>
 
-                  <figure class="card-icon">
-                    <img src="./assets/images/service-2.png" width="140"
-                      height="140" loading="lazy" alt="App Development"
-                      class="img">
-                  </figure>
+            <li>
+              <div class="service-card has-after">
 
-                  <div class="card-content">
+                <figure class="card-icon">
+                  <img src="./assets/images/service-2.png" width="140"
+                    height="140" loading="lazy" alt="App Development"
+                    class="img">
+                </figure>
 
-                    <h3 class="h3 card-title">App Development</h3>
+                <div class="card-content">
 
-                    <p class="card-text">
-                      Lorem ipsum dolor sit amet, consectetur adi piscing semper
-                      turpis. Nullam eget luctlie gula and
-                      adipiscing elit.
-                    </p>
+                  <h3 class="h3 card-title">App Development</h3>
 
-                    <a href="/service/app-development/" class="btn-link">
-                      <span class="span">Read More</span>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adi piscing semper
+                    turpis. Nullam eget luctlie gula and
+                    adipiscing elit.
+                  </p>
 
-                      <ion-icon name="arrow-forward-outline"
-                        aria-hidden="true"></ion-icon>
-                    </a>
+                  <a href="/service/app-development/" class="btn-link">
+                    <span class="span">Read More</span>
 
-                  </div>
-
-                </div>
-              </li>
-
-              <li>
-                <div class="service-card has-after">
-
-                  <figure class="card-icon">
-                    <img src="./assets/images/service-3.png" width="140"
-                      height="140" loading="lazy"
-                      alt="Professional Content Writer" class="img">
-                  </figure>
-
-                  <div class="card-content">
-
-                    <h3 class="h3 card-title">Content Marketing</h3>
-
-                    <p class="card-text">
-                      Lorem ipsum dolor sit amet, consectetur adi piscing semper
-                      turpis. Nullam eget luctlie gula and
-                      adipiscing elit.
-                    </p>
-
-                    <a href="/service/content-marketing/" class="btn-link">
-                      <span class="span">Read More</span>
-
-                      <ion-icon name="arrow-forward-outline"
-                        aria-hidden="true"></ion-icon>
-                    </a>
-
-                  </div>
+                    <ion-icon name="arrow-forward-outline"
+                      aria-hidden="true"></ion-icon>
+                  </a>
 
                 </div>
-              </li>
 
-              <li>
-                <div class="service-card has-after">
+              </div>
+            </li>
 
-                  <figure class="card-icon">
-                    <img src="./assets/images/service-4.png" width="140"
-                      height="140" loading="lazy" alt="Graphic Design"
-                      class="img">
-                  </figure>
+            <li>
+              <div class="service-card has-after">
 
-                  <div class="card-content">
+                <figure class="card-icon">
+                  <img src="./assets/images/service-3.png" width="140"
+                    height="140" loading="lazy"
+                    alt="Professional Content Writer" class="img">
+                </figure>
 
-                    <h3 class="h3 card-title">Web Development</h3>
+                <div class="card-content">
 
-                    <p class="card-text">
-                      Lorem ipsum dolor sit amet, consectetur adi piscing semper
-                      turpis. Nullam eget luctlie gula and
-                      adipiscing elit.
-                    </p>
+                  <h3 class="h3 card-title">Content Marketing</h3>
 
-                    <a href="/service/web-development/" class="btn-link">
-                      <span class="span">Read More</span>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adi piscing semper
+                    turpis. Nullam eget luctlie gula and
+                    adipiscing elit.
+                  </p>
 
-                      <ion-icon name="arrow-forward-outline"
-                        aria-hidden="true"></ion-icon>
-                    </a>
+                  <a href="/service/content-marketing/" class="btn-link">
+                    <span class="span">Read More</span>
 
-                  </div>
+                    <ion-icon name="arrow-forward-outline"
+                      aria-hidden="true"></ion-icon>
+                  </a>
 
                 </div>
-              </li>
 
-            </ul>
+              </div>
+            </li>
 
-            <a href="#" class="btn btn-primary">Get Started</a>
+            <li>
+              <div class="service-card has-after">
 
-          </div>
-        </section>
+                <figure class="card-icon">
+                  <img src="./assets/images/service-4.png" width="140"
+                    height="140" loading="lazy" alt="Graphic Design"
+                    class="img">
+                </figure>
 
-        <!-------------- PORTFOLIO ------------>
+                <div class="card-content">
 
-        <section class="portfolio-section" id="portfolio">
-          <div class="portfolio-container">
-            <p class="section-subtitle text-center">-Portfolio-</p>
-            <h2 class="portfolio-section-title">Take a Glimpse of Our Valuable
-              Client</h2>
+                  <h3 class="h3 card-title">Web Development</h3>
 
-            <div class="portfolio-carousel">
-              <div class="portfolio-track">
-                <div class="portfolio-card">
-                  <img src="./assets/images/Capture2.png" alt="Project 1"
-                    class="portfolio-img" />
-                  <div class="portfolio-card-content">
-                    <h3 class="portfolio-card-title">Project Title 1</h3>
-                    <a href="#" class="portfolio-learn-more-btn">Learn More
-                      →</a>
-                  </div>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adi piscing semper
+                    turpis. Nullam eget luctlie gula and
+                    adipiscing elit.
+                  </p>
+
+                  <a href="/service/web-development/" class="btn-link">
+                    <span class="span">Read More</span>
+
+                    <ion-icon name="arrow-forward-outline"
+                      aria-hidden="true"></ion-icon>
+                  </a>
+
                 </div>
-                <div class="portfolio-card">
-                  <img src="./assets/images/Capture1.png" alt="Project 2"
-                    class="portfolio-img" />
-                  <div class="portfolio-card-content">
-                    <h3 class="portfolio-card-title">Project Title 2</h3>
-                    <a href="#" class="portfolio-learn-more-btn">Learn More
-                      →</a>
-                  </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+          <a href="#" class="btn btn-primary">Get Started</a>
+
+        </div>
+      </section>
+
+      <!-------------- PORTFOLIO ------------>
+
+      <section class="portfolio-section" id="portfolio">
+        <div class="portfolio-container">
+          <p class="section-subtitle text-center">-Portfolio-</p>
+          <h2 class="portfolio-section-title">Take a Glimpse of Our Valuable
+            Client</h2>
+
+          <div class="portfolio-carousel">
+            <div class="portfolio-track">
+              <div class="portfolio-card">
+                <img src="./assets/images/Capture2.png" alt="Project 1"
+                  class="portfolio-img" />
+                <div class="portfolio-card-content">
+                  <h3 class="portfolio-card-title">Project Title 1</h3>
+                  <a href="#" class="portfolio-learn-more-btn">Learn More
+                    →</a>
                 </div>
-                <div class="portfolio-card">
-                  <img src="./assets/images/Capture3.png" alt="Project 3"
-                    class="portfolio-img" />
-                  <div class="portfolio-card-content">
-                    <h3 class="portfolio-card-title">Project Title 3</h3>
-                    <a href="#" class="portfolio-learn-more-btn">Learn More
-                      →</a>
-                  </div>
+              </div>
+              <div class="portfolio-card">
+                <img src="./assets/images/Capture1.png" alt="Project 2"
+                  class="portfolio-img" />
+                <div class="portfolio-card-content">
+                  <h3 class="portfolio-card-title">Project Title 2</h3>
+                  <a href="#" class="portfolio-learn-more-btn">Learn More
+                    →</a>
                 </div>
-                <div class="portfolio-card">
-                  <img src="./assets/images/Capture4.png" alt="Project 4"
-                    class="portfolio-img" />
-                  <div class="portfolio-card-content">
-                    <h3 class="portfolio-card-title">Project Title 4</h3>
-                    <a href="#" class="portfolio-learn-more-btn">Learn More
-                      →</a>
-                  </div>
+              </div>
+              <div class="portfolio-card">
+                <img src="./assets/images/Capture3.png" alt="Project 3"
+                  class="portfolio-img" />
+                <div class="portfolio-card-content">
+                  <h3 class="portfolio-card-title">Project Title 3</h3>
+                  <a href="#" class="portfolio-learn-more-btn">Learn More
+                    →</a>
                 </div>
-                <div class="portfolio-card">
-                  <img src="./assets/images/Capture5.png" alt="Project 5"
-                    class="portfolio-img" />
-                  <div class="portfolio-card-content">
-                    <h3 class="portfolio-card-title">Project Title 5</h3>
-                    <a href="#" class="portfolio-learn-more-btn">Learn More
-                      →</a>
-                  </div>
+              </div>
+              <div class="portfolio-card">
+                <img src="./assets/images/Capture4.png" alt="Project 4"
+                  class="portfolio-img" />
+                <div class="portfolio-card-content">
+                  <h3 class="portfolio-card-title">Project Title 4</h3>
+                  <a href="#" class="portfolio-learn-more-btn">Learn More
+                    →</a>
                 </div>
-                <div class="portfolio-card">
-                  <img src="./assets/images/Capture6.png" alt="Project 6"
-                    class="portfolio-img" />
-                  <div class="portfolio-card-content">
-                    <h3 class="portfolio-card-title">Project Title 6</h3>
-                    <a href="#" class="portfolio-learn-more-btn">Learn More
-                      →</a>
-                  </div>
+              </div>
+              <div class="portfolio-card">
+                <img src="./assets/images/Capture5.png" alt="Project 5"
+                  class="portfolio-img" />
+                <div class="portfolio-card-content">
+                  <h3 class="portfolio-card-title">Project Title 5</h3>
+                  <a href="#" class="portfolio-learn-more-btn">Learn More
+                    →</a>
+                </div>
+              </div>
+              <div class="portfolio-card">
+                <img src="./assets/images/Capture6.png" alt="Project 6"
+                  class="portfolio-img" />
+                <div class="portfolio-card-content">
+                  <h3 class="portfolio-card-title">Project Title 6</h3>
+                  <a href="#" class="portfolio-learn-more-btn">Learn More
+                    →</a>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- 
+      <!-- 
         - #FEATURES
       -->
 
-        <section class="section features" id="features" aria-label="features">
-          <div class="container">
+      <section class="section features" id="features" aria-label="features">
+        <div class="container">
 
-            <p class="section-subtitle text-center">-Why Choose Us-</p>
+          <p class="section-subtitle text-center">-Why Choose Us-</p>
 
-            <h2 class="h2 section-title text-center">Reasons to Choose Us</h2>
+          <h2 class="h2 section-title text-center">Reasons to Choose Us</h2>
 
-            <p class="section-text text-center">
-              Get the most of reduction in your team’s operating costs for the
-              whole product which creates amazing UI/UX
-              experiences.
-            </p>
+          <p class="section-text text-center">
+            Get the most of reduction in your team’s operating costs for the
+            whole product which creates amazing UI/UX
+            experiences.
+          </p>
 
-            <ul class="grid-list">
+          <ul class="grid-list">
 
-              <li>
-                <div class="features-card">
+            <li>
+              <div class="features-card">
 
-                  <data class="card-number" value="01">01</data>
+                <data class="card-number" value="01">01</data>
 
-                  <h3 class="h3 card-title">Free Icon Plugin</h3>
+                <h3 class="h3 card-title">Free Icon Plugin</h3>
 
-                  <p class="card-text">
-                    Nullam ullamcorper condimentum urna eu accumsan.
-                  </p>
+                <p class="card-text">
+                  Nullam ullamcorper condimentum urna eu accumsan.
+                </p>
 
-                </div>
-              </li>
+              </div>
+            </li>
 
-              <li>
-                <div class="features-card">
+            <li>
+              <div class="features-card">
 
-                  <data class="card-number" value="02">02</data>
+                <data class="card-number" value="02">02</data>
 
-                  <h3 class="h3 card-title">Free 6 Month Support</h3>
+                <h3 class="h3 card-title">Free 6 Month Support</h3>
 
-                  <p class="card-text">
-                    Nullam ullamcorper condimentum urna eu accumsan.
-                  </p>
+                <p class="card-text">
+                  Nullam ullamcorper condimentum urna eu accumsan.
+                </p>
 
-                </div>
-              </li>
+              </div>
+            </li>
 
-              <li>
-                <div class="features-card">
+            <li>
+              <div class="features-card">
 
-                  <data class="card-number" value="03">03</data>
+                <data class="card-number" value="03">03</data>
 
-                  <h3 class="h3 card-title">Customer Strategy</h3>
+                <h3 class="h3 card-title">Customer Strategy</h3>
 
-                  <p class="card-text">
-                    Nullam ullamcorper condimentum urna eu accumsan.
-                  </p>
+                <p class="card-text">
+                  Nullam ullamcorper condimentum urna eu accumsan.
+                </p>
 
-                </div>
-              </li>
+              </div>
+            </li>
 
-              <li>
-                <div class="features-card">
+            <li>
+              <div class="features-card">
 
-                  <data class="card-number" value="04">04</data>
+                <data class="card-number" value="04">04</data>
 
-                  <h3 class="h3 card-title">Best Premimum Image</h3>
+                <h3 class="h3 card-title">Best Premimum Image</h3>
 
-                  <p class="card-text">
-                    Nullam ullamcorper condimentum urna eu accumsan.
-                  </p>
+                <p class="card-text">
+                  Nullam ullamcorper condimentum urna eu accumsan.
+                </p>
 
-                </div>
-              </li>
+              </div>
+            </li>
 
-              <li>
-                <div class="features-card">
+            <li>
+              <div class="features-card">
 
-                  <data class="card-number" value="05">05</data>
+                <data class="card-number" value="05">05</data>
 
-                  <h3 class="h3 card-title">Most Advanced Features</h3>
+                <h3 class="h3 card-title">Most Advanced Features</h3>
 
-                  <p class="card-text">
-                    Nullam ullamcorper condimentum urna eu accumsan.
-                  </p>
+                <p class="card-text">
+                  Nullam ullamcorper condimentum urna eu accumsan.
+                </p>
 
-                </div>
-              </li>
+              </div>
+            </li>
 
-              <li>
-                <div class="features-card">
+            <li>
+              <div class="features-card">
 
-                  <data class="card-number" value="06">06</data>
+                <data class="card-number" value="06">06</data>
 
-                  <h3 class="h3 card-title">Very Reasonable Price</h3>
+                <h3 class="h3 card-title">Very Reasonable Price</h3>
 
-                  <p class="card-text">
-                    Nullam ullamcorper condimentum urna eu accumsan.
-                  </p>
+                <p class="card-text">
+                  Nullam ullamcorper condimentum urna eu accumsan.
+                </p>
 
-                </div>
-              </li>
+              </div>
+            </li>
 
-            </ul>
+          </ul>
 
-          </div>
-        </section>
+        </div>
+      </section>
 
-        <section class="technology-stack-section">
-          <p class="section-subtitle text-center">-Technology-</p>
-          <h2>Which Technology Stack We Used</h2>
-          <div class="technology-stack-marquee">
-            <div class="technology-stack-track">
-              <img src="./assets/images/react.webp" alt="React">
-              <img src="./assets/images/nodejs.png" alt="Node.js">
-              <img src="./assets/images/javascript.png" alt="JavaScript">
-              <img src="./assets/images/mysql.png" alt="MySQL">
-              <img src="./assets/images/html.png" alt="HTML">
-              <img src="./assets/images/css.png" alt="CSS">
-              <!-- Duplicate images for seamless looping -->
-              <!-- <img src="/assets/images/php.png" alt="php">
+      <section class="technology-stack-section">
+        <p class="section-subtitle text-center">-Technology-</p>
+        <h2>Which Technology Stack We Used</h2>
+        <div class="technology-stack-marquee">
+          <div class="technology-stack-track">
+            <img src="./assets/images/react.webp" alt="React">
+            <img src="./assets/images/nodejs.png" alt="Node.js">
+            <img src="./assets/images/javascript.png" alt="JavaScript">
+            <img src="./assets/images/mysql.png" alt="MySQL">
+            <img src="./assets/images/html.png" alt="HTML">
+            <img src="./assets/images/css.png" alt="CSS">
+            <!-- Duplicate images for seamless looping -->
+            <!-- <img src="/assets/images/php.png" alt="php">
             <img src="https://via.placeholder.com/100x100?text=Node.js" alt="Node.js">
             <img src="https://via.placeholder.com/100x100?text=JavaScript" alt="JavaScript">
             <img src="https://via.placeholder.com/100x100?text=MySQL" alt="MySQL">
             <img src="https://via.placeholder.com/100x100?text=HTML" alt="HTML">
             <img src="https://via.placeholder.com/100x100?text=CSS" alt="CSS"> -->
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!----------------------- TESTIMONIAL ------------------------>
+      <!----------------------- TESTIMONIAL ------------------------>
 
-        <section class="testimonial-section">
-          <p class="section-subtitle text-center">-Testimonial-</p>
-          <h1 class="testimonial-title">World-class businesses choose <span
-              class="highlight">eSEOspace Innovation</span> at its finest.</h1>
-          <div class="testimonial-carousel">
-            <div class="testimonial-container">
-              <!-- Testimonial Cards -->
-              <div class="testimonial-card">
-                <div class="testimonial-header">
-                  <img src="logo1.png" alt="Logo" class="testimonial-logo">
-                  <div>
-                    <h3>Matthew B.</h3>
-                    <p class="testimonial-role">CEO, Joyful Voice, LLC</p>
-                  </div>
+      <section class="testimonial-section">
+        <p class="section-subtitle text-center">-Testimonial-</p>
+        <h1 class="testimonial-title">World-class businesses choose <span
+            class="highlight">eSEOspace Innovation</span> at its finest.</h1>
+        <div class="testimonial-carousel">
+          <div class="testimonial-container">
+            <!-- Testimonial Cards -->
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <img src="logo1.png" alt="Logo" class="testimonial-logo">
+                <div>
+                  <h3>Matthew B.</h3>
+                  <p class="testimonial-role">CEO, Joyful Voice, LLC</p>
                 </div>
-                <p class="testimonial-text">
-                  “ Within six months, the client’s e-commerce site achieved
-                  over 800 interactions and 6,000 views, and it appeared in
-                  search results over 1,700 times. eSEOspace worked quickly and
-                  taught the client how to provide maintenance to their site. ”
-                </p>
               </div>
-              <div class="testimonial-card">
-                <div class="testimonial-header">
-                  <img src="logo2.png" alt="Logo" class="testimonial-logo">
-                  <div>
-                    <h3>Jessica R.</h3>
-                    <p class="testimonial-role">Broker & Owner, Real Estate
-                      Firm</p>
-                  </div>
-                </div>
-                <p class="testimonial-text">
-                  “ eSEOspace delivered exactly what they promised within the
-                  agreed-upon deadline. Their team was friendly, helpful,
-                  responsive, patient, and efficient. ”
-                </p>
-              </div>
-              <div class="testimonial-card">
-                <div class="testimonial-header">
-                  <img src="logo3.png" alt="Logo" class="testimonial-logo">
-                  <div>
-                    <h3>Erica G.</h3>
-                    <p class="testimonial-role">Founder, Erica Galles
-                      Interiors</p>
-                  </div>
-                </div>
-                <p class="testimonial-text">
-                  “ eSEOspace successfully delivered the client’s website, logo,
-                  and business cards. The team was truly helpful and managed the
-                  engagement well. ”
-                </p>
-              </div>
-              <!-- Add more cards -->
+              <p class="testimonial-text">
+                “ Within six months, the client’s e-commerce site achieved
+                over 800 interactions and 6,000 views, and it appeared in
+                search results over 1,700 times. eSEOspace worked quickly and
+                taught the client how to provide maintenance to their site. ”
+              </p>
             </div>
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <img src="logo2.png" alt="Logo" class="testimonial-logo">
+                <div>
+                  <h3>Jessica R.</h3>
+                  <p class="testimonial-role">Broker & Owner, Real Estate
+                    Firm</p>
+                </div>
+              </div>
+              <p class="testimonial-text">
+                “ eSEOspace delivered exactly what they promised within the
+                agreed-upon deadline. Their team was friendly, helpful,
+                responsive, patient, and efficient. ”
+              </p>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <img src="logo3.png" alt="Logo" class="testimonial-logo">
+                <div>
+                  <h3>Erica G.</h3>
+                  <p class="testimonial-role">Founder, Erica Galles
+                    Interiors</p>
+                </div>
+              </div>
+              <p class="testimonial-text">
+                “ eSEOspace successfully delivered the client’s website, logo,
+                and business cards. The team was truly helpful and managed the
+                engagement well. ”
+              </p>
+            </div>
+            <!-- Add more cards -->
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- 
+      <!-- 
         - #FAQ
       -->
 
-        <section class="section faq" aria-label="frequently asked questions">
-          <div class="container">
+      <section class="section faq" aria-label="frequently asked questions">
+        <div class="container">
 
-            <div class="title-wrapper">
-              <h2 class="h2 section-title">Discover Frequently Asked
-                Questions?</h2>
+          <div class="title-wrapper">
+            <h2 class="h2 section-title">Discover Frequently Asked
+              Questions?</h2>
 
-              <a href="#" class="btn btn-primary">Work Together</a>
-            </div>
-
-            <ul class="grid-list">
-
-              <li>
-                <div class="faq-card">
-
-                  <button class="card-action" data-accordion-action>
-                    <h3 class="h3 card-title">
-                      01. Curious about how to build your own UX strategy? Here
-                      are five simple steps.
-                    </h3>
-
-                    <div class="action-icon">
-                      <ion-icon name="add-outline" aria-hidden="true"
-                        class="open"></ion-icon>
-                      <ion-icon name="remove-outline" aria-hidden="true"
-                        class="close"></ion-icon>
-                    </div>
-                  </button>
-
-                  <div class="card-content">
-                    <p>
-                      Morbi aliquam quis quam in luctus. Nullam tincidunt
-                      pulvinar imperdiet. Sed varius, diam vitae
-                      posuere semper, libero ex
-                      hendrerit nunc, ac sagittis eros metus ut diam. Donec a
-                      nibh in libero maximus vehicula. Etiam sit
-                      amet condimentum
-                      erat. Pellentesque ultrices sagittis turpis, quis tempus
-                      ante viverra et.Morbi aliquam quis quam in
-                      luctus. Nullam
-                      tincidunt pulvinar imperdiet. Sed varius, diam vitae
-                      posuere semper, tincidunt pulvinar imperdiet.
-                      Sed varius, diam
-                      vitae posuere semper.
-                    </p>
-                  </div>
-
-                </div>
-              </li>
-
-              <li>
-                <div class="faq-card">
-
-                  <button class="card-action" data-accordion-action>
-                    <h3 class="h3 card-title">
-                      02. Where Could a Career in UX Take You? Agency vs.
-                      In-House vs. Freelance?
-                    </h3>
-
-                    <div class="action-icon">
-                      <ion-icon name="add-outline" aria-hidden="true"
-                        class="open"></ion-icon>
-                      <ion-icon name="remove-outline" aria-hidden="true"
-                        class="close"></ion-icon>
-                    </div>
-                  </button>
-
-                  <div class="card-content">
-                    <p>
-                      Morbi aliquam quis quam in luctus. Nullam tincidunt
-                      pulvinar imperdiet. Sed varius, diam vitae
-                      posuere semper, libero ex
-                      hendrerit nunc, ac sagittis eros metus ut diam. Donec a
-                      nibh in libero maximus vehicula. Etiam sit
-                      amet condimentum
-                      erat. Pellentesque ultrices sagittis turpis, quis tempus
-                      ante viverra et.Morbi aliquam quis quam in
-                      luctus. Nullam
-                      tincidunt pulvinar imperdiet. Sed varius, diam vitae
-                      posuere semper, tincidunt pulvinar imperdiet.
-                      Sed varius, diam
-                      vitae posuere semper.
-                    </p>
-                  </div>
-
-                </div>
-              </li>
-
-              <li>
-                <div class="faq-card">
-
-                  <button class="card-action" data-accordion-action>
-                    <h3 class="h3 card-title">
-                      03. What Is a Problem Statement in UX? (And How To Write
-                      One?)
-                    </h3>
-
-                    <div class="action-icon">
-                      <ion-icon name="add-outline" aria-hidden="true"
-                        class="open"></ion-icon>
-                      <ion-icon name="remove-outline" aria-hidden="true"
-                        class="close"></ion-icon>
-                    </div>
-                  </button>
-
-                  <div class="card-content">
-                    <p>
-                      Morbi aliquam quis quam in luctus. Nullam tincidunt
-                      pulvinar imperdiet. Sed varius, diam vitae
-                      posuere semper, libero ex
-                      hendrerit nunc, ac sagittis eros metus ut diam. Donec a
-                      nibh in libero maximus vehicula. Etiam sit
-                      amet condimentum
-                      erat. Pellentesque ultrices sagittis turpis, quis tempus
-                      ante viverra et.Morbi aliquam quis quam in
-                      luctus. Nullam
-                      tincidunt pulvinar imperdiet. Sed varius, diam vitae
-                      posuere semper, tincidunt pulvinar imperdiet.
-                      Sed varius, diam
-                      vitae posuere semper.
-                    </p>
-                  </div>
-
-                </div>
-              </li>
-
-              <li>
-                <div class="faq-card">
-
-                  <button class="card-action" data-accordion-action>
-                    <h3 class="h3 card-title">
-                      04. There are several techniques UX designers employ to
-                      arrive at a succinct?
-                    </h3>
-
-                    <div class="action-icon">
-                      <ion-icon name="add-outline" aria-hidden="true"
-                        class="open"></ion-icon>
-                      <ion-icon name="remove-outline" aria-hidden="true"
-                        class="close"></ion-icon>
-                    </div>
-                  </button>
-
-                  <div class="card-content">
-                    <p>
-                      Morbi aliquam quis quam in luctus. Nullam tincidunt
-                      pulvinar imperdiet. Sed varius, diam vitae
-                      posuere semper, libero ex
-                      hendrerit nunc, ac sagittis eros metus ut diam. Donec a
-                      nibh in libero maximus vehicula. Etiam sit
-                      amet condimentum
-                      erat. Pellentesque ultrices sagittis turpis, quis tempus
-                      ante viverra et.Morbi aliquam quis quam in
-                      luctus. Nullam
-                      tincidunt pulvinar imperdiet. Sed varius, diam vitae
-                      posuere semper, tincidunt pulvinar imperdiet.
-                      Sed varius, diam
-                      vitae posuere semper.
-                    </p>
-                  </div>
-
-                </div>
-              </li>
-
-              <li>
-                <div class="faq-card">
-
-                  <button class="card-action" data-accordion-action>
-                    <h3 class="h3 card-title">
-                      05. What are the obstacles users are facing? What are they
-                      trying to do?
-                    </h3>
-
-                    <div class="action-icon">
-                      <ion-icon name="add-outline" aria-hidden="true"
-                        class="open"></ion-icon>
-                      <ion-icon name="remove-outline" aria-hidden="true"
-                        class="close"></ion-icon>
-                    </div>
-                  </button>
-
-                  <div class="card-content">
-                    <p>
-                      Morbi aliquam quis quam in luctus. Nullam tincidunt
-                      pulvinar imperdiet. Sed varius, diam vitae
-                      posuere semper, libero ex
-                      hendrerit nunc, ac sagittis eros metus ut diam. Donec a
-                      nibh in libero maximus vehicula. Etiam sit
-                      amet condimentum
-                      erat. Pellentesque ultrices sagittis turpis, quis tempus
-                      ante viverra et.Morbi aliquam quis quam in
-                      luctus. Nullam
-                      tincidunt pulvinar imperdiet. Sed varius, diam vitae
-                      posuere semper, tincidunt pulvinar imperdiet.
-                      Sed varius, diam
-                      vitae posuere semper.
-                    </p>
-                  </div>
-
-                </div>
-              </li>
-
-            </ul>
-
-          </div>
-        </section>
-
-        <div class="marketing-section">
-          <div class="content">
-            <h1>Ready to speak with a marketing expert?</h1>
-
-            <div class="stats">
-              <div class="stat-item">
-                <h2 data-target="1865">0</h2>
-                <p>Websites Launched</p>
-              </div>
-              <div class="stat-item">
-                <h2 data-target="29">0</h2>
-                <p>Marketing Experts</p>
-              </div>
-              <div class="stat-item">
-                <h2 data-target="204533">0</h2>
-                <p>Hours of Dedicated Work</p>
-              </div>
-            </div>
+            <a href="#" class="btn btn-primary">Work Together</a>
           </div>
 
-          <div class="action-buttons">
-            <a href="#contact-us" class="btn-contact">Contact Us</a>
-            <a href="#lets-talk" class="btn-talk">Let's Talk</a>
+          <ul class="grid-list">
+
+            <li>
+              <div class="faq-card">
+
+                <button class="card-action" data-accordion-action>
+                  <h3 class="h3 card-title">
+                    01. Curious about how to build your own UX strategy? Here
+                    are five simple steps.
+                  </h3>
+
+                  <div class="action-icon">
+                    <ion-icon name="add-outline" aria-hidden="true"
+                      class="open"></ion-icon>
+                    <ion-icon name="remove-outline" aria-hidden="true"
+                      class="close"></ion-icon>
+                  </div>
+                </button>
+
+                <div class="card-content">
+                  <p>
+                    Morbi aliquam quis quam in luctus. Nullam tincidunt
+                    pulvinar imperdiet. Sed varius, diam vitae
+                    posuere semper, libero ex
+                    hendrerit nunc, ac sagittis eros metus ut diam. Donec a
+                    nibh in libero maximus vehicula. Etiam sit
+                    amet condimentum
+                    erat. Pellentesque ultrices sagittis turpis, quis tempus
+                    ante viverra et.Morbi aliquam quis quam in
+                    luctus. Nullam
+                    tincidunt pulvinar imperdiet. Sed varius, diam vitae
+                    posuere semper, tincidunt pulvinar imperdiet.
+                    Sed varius, diam
+                    vitae posuere semper.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="faq-card">
+
+                <button class="card-action" data-accordion-action>
+                  <h3 class="h3 card-title">
+                    02. Where Could a Career in UX Take You? Agency vs.
+                    In-House vs. Freelance?
+                  </h3>
+
+                  <div class="action-icon">
+                    <ion-icon name="add-outline" aria-hidden="true"
+                      class="open"></ion-icon>
+                    <ion-icon name="remove-outline" aria-hidden="true"
+                      class="close"></ion-icon>
+                  </div>
+                </button>
+
+                <div class="card-content">
+                  <p>
+                    Morbi aliquam quis quam in luctus. Nullam tincidunt
+                    pulvinar imperdiet. Sed varius, diam vitae
+                    posuere semper, libero ex
+                    hendrerit nunc, ac sagittis eros metus ut diam. Donec a
+                    nibh in libero maximus vehicula. Etiam sit
+                    amet condimentum
+                    erat. Pellentesque ultrices sagittis turpis, quis tempus
+                    ante viverra et.Morbi aliquam quis quam in
+                    luctus. Nullam
+                    tincidunt pulvinar imperdiet. Sed varius, diam vitae
+                    posuere semper, tincidunt pulvinar imperdiet.
+                    Sed varius, diam
+                    vitae posuere semper.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="faq-card">
+
+                <button class="card-action" data-accordion-action>
+                  <h3 class="h3 card-title">
+                    03. What Is a Problem Statement in UX? (And How To Write
+                    One?)
+                  </h3>
+
+                  <div class="action-icon">
+                    <ion-icon name="add-outline" aria-hidden="true"
+                      class="open"></ion-icon>
+                    <ion-icon name="remove-outline" aria-hidden="true"
+                      class="close"></ion-icon>
+                  </div>
+                </button>
+
+                <div class="card-content">
+                  <p>
+                    Morbi aliquam quis quam in luctus. Nullam tincidunt
+                    pulvinar imperdiet. Sed varius, diam vitae
+                    posuere semper, libero ex
+                    hendrerit nunc, ac sagittis eros metus ut diam. Donec a
+                    nibh in libero maximus vehicula. Etiam sit
+                    amet condimentum
+                    erat. Pellentesque ultrices sagittis turpis, quis tempus
+                    ante viverra et.Morbi aliquam quis quam in
+                    luctus. Nullam
+                    tincidunt pulvinar imperdiet. Sed varius, diam vitae
+                    posuere semper, tincidunt pulvinar imperdiet.
+                    Sed varius, diam
+                    vitae posuere semper.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="faq-card">
+
+                <button class="card-action" data-accordion-action>
+                  <h3 class="h3 card-title">
+                    04. There are several techniques UX designers employ to
+                    arrive at a succinct?
+                  </h3>
+
+                  <div class="action-icon">
+                    <ion-icon name="add-outline" aria-hidden="true"
+                      class="open"></ion-icon>
+                    <ion-icon name="remove-outline" aria-hidden="true"
+                      class="close"></ion-icon>
+                  </div>
+                </button>
+
+                <div class="card-content">
+                  <p>
+                    Morbi aliquam quis quam in luctus. Nullam tincidunt
+                    pulvinar imperdiet. Sed varius, diam vitae
+                    posuere semper, libero ex
+                    hendrerit nunc, ac sagittis eros metus ut diam. Donec a
+                    nibh in libero maximus vehicula. Etiam sit
+                    amet condimentum
+                    erat. Pellentesque ultrices sagittis turpis, quis tempus
+                    ante viverra et.Morbi aliquam quis quam in
+                    luctus. Nullam
+                    tincidunt pulvinar imperdiet. Sed varius, diam vitae
+                    posuere semper, tincidunt pulvinar imperdiet.
+                    Sed varius, diam
+                    vitae posuere semper.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="faq-card">
+
+                <button class="card-action" data-accordion-action>
+                  <h3 class="h3 card-title">
+                    05. What are the obstacles users are facing? What are they
+                    trying to do?
+                  </h3>
+
+                  <div class="action-icon">
+                    <ion-icon name="add-outline" aria-hidden="true"
+                      class="open"></ion-icon>
+                    <ion-icon name="remove-outline" aria-hidden="true"
+                      class="close"></ion-icon>
+                  </div>
+                </button>
+
+                <div class="card-content">
+                  <p>
+                    Morbi aliquam quis quam in luctus. Nullam tincidunt
+                    pulvinar imperdiet. Sed varius, diam vitae
+                    posuere semper, libero ex
+                    hendrerit nunc, ac sagittis eros metus ut diam. Donec a
+                    nibh in libero maximus vehicula. Etiam sit
+                    amet condimentum
+                    erat. Pellentesque ultrices sagittis turpis, quis tempus
+                    ante viverra et.Morbi aliquam quis quam in
+                    luctus. Nullam
+                    tincidunt pulvinar imperdiet. Sed varius, diam vitae
+                    posuere semper, tincidunt pulvinar imperdiet.
+                    Sed varius, diam
+                    vitae posuere semper.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+      <div class="marketing-section">
+        <div class="content">
+          <h1>Ready to speak with a marketing expert?</h1>
+
+          <div class="stats">
+            <div class="stat-item">
+              <h2 data-target="1865">0</h2>
+              <p>Websites Launched</p>
+            </div>
+            <div class="stat-item">
+              <h2 data-target="29">0</h2>
+              <p>Marketing Experts</p>
+            </div>
+            <div class="stat-item">
+              <h2 data-target="204533">0</h2>
+              <p>Hours of Dedicated Work</p>
+            </div>
           </div>
         </div>
 
-      </article>
-    </main>
-
-    <!-- 
-    - #FOOTER
-  -->
-
-    <footer class="footer">
-
-      <div class="footer-top section">
-        <div class="container">
-
-          <div class="footer-brand">
-
-            <a href="#" class="logo">Hoolix</a>
-
-            <p class="footer-text">
-              Lorem ipsum dolor sit amet consecte tur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore.
-            </p>
-
-            <form action class="newsletter-form">
-              <input type="email" name="email_address"
-                placeholder="Enter your email" required class="email-field">
-
-              <button type="submit" class="form-btn">
-                <ion-icon name="paper-plane" aria-hidden="true"></ion-icon>
-              </button>
-            </form>
-
-          </div>
-
-          <ul class="footer-list">
-
-            <li>
-              <p class="footer-list-title">Our Services</p>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Strategy & Research</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Web Development</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Web Solution</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Digital Merketing</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">App Design</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">App Development</a>
-            </li>
-
-          </ul>
-
-          <ul class="footer-list">
-
-            <li>
-              <p class="footer-list-title">Company</p>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">About Company</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Our Services</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Our Portfolio</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Our Blog</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Latest News</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Contact Us</a>
-            </li>
-
-          </ul>
-
-          <ul class="footer-list">
-
-            <li>
-              <p class="footer-list-title">Contact Us</p>
-            </li>
-
-            <li class="footer-item">
-              <ion-icon name="location" aria-hidden="true"></ion-icon>
-
-              <address class="contact-link address">
-                4517 Washington Ave. Manchester, Kentucky 39495
-              </address>
-            </li>
-
-            <li class="footer-item">
-              <ion-icon name="call" aria-hidden="true"></ion-icon>
-
-              <a href="tel:+7894631546876"
-                class="contact-link">+7894631546876</a>
-            </li>
-
-            <li class="footer-item">
-              <ion-icon name="mail" aria-hidden="true"></ion-icon>
-
-              <a href="mailto:info@hoolix.com"
-                class="contact-link">info@hoolix.com</a>
-            </li>
-
-            <li class="footer-item">
-              <ul class="social-list">
-
-                <li>
-                  <a href="#" class="social-link">
-                    <ion-icon name="logo-facebook"></ion-icon>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#" class="social-link">
-                    <ion-icon name="logo-twitter"></ion-icon>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#" class="social-link">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#" class="social-link">
-                    <ion-icon name="logo-pinterest"></ion-icon>
-                  </a>
-                </li>
-
-              </ul>
-            </li>
-
-          </ul>
-
+        <div class="action-buttons">
+          <a href="#contact-us" class="btn-contact">Contact Us</a>
+          <a href="#lets-talk" class="btn-talk">Let's Talk</a>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <div class="container">
-
-
-
-
+    </article>
+  </main>
 
   <!-- 
     - #FOOTER
   -->
-  <div id="footer-placeholder"></div>
- 
 
-  <!-- 
+  <footer class="footer">
+
+    <div class="footer-top section">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">Hoolix</a>
+
+          <p class="footer-text">
+            Lorem ipsum dolor sit amet consecte tur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore.
+          </p>
+
+          <form action class="newsletter-form">
+            <input type="email" name="email_address"
+              placeholder="Enter your email" required class="email-field">
+
+            <button type="submit" class="form-btn">
+              <ion-icon name="paper-plane" aria-hidden="true"></ion-icon>
+            </button>
+          </form>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Our Services</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Strategy & Research</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Web Development</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Web Solution</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Digital Merketing</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">App Design</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">App Development</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Company</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">About Company</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Our Services</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Our Portfolio</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Our Blog</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Latest News</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Contact Us</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Contact Us</p>
+          </li>
+
+          <li class="footer-item">
+            <ion-icon name="location" aria-hidden="true"></ion-icon>
+
+            <address class="contact-link address">
+              4517 Washington Ave. Manchester, Kentucky 39495
+            </address>
+          </li>
+
+          <li class="footer-item">
+            <ion-icon name="call" aria-hidden="true"></ion-icon>
+
+            <a href="tel:+7894631546876"
+              class="contact-link">+7894631546876</a>
+          </li>
+
+          <li class="footer-item">
+            <ion-icon name="mail" aria-hidden="true"></ion-icon>
+
+            <a href="mailto:info@hoolix.com"
+              class="contact-link">info@hoolix.com</a>
+          </li>
+
+          <li class="footer-item">
+            <ul class="social-list">
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-pinterest"></ion-icon>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <!-- 
+    - #FOOTER
+  -->
+        <div id="footer-placeholder"></div>
+
+        <!-- 
     - custom js link
   -->
-    <script src="script.js"></script>
+        <script src="script.js"></script>
 
-    <!-- 
+        <!-- 
     - ionicon link
   -->
-    <script type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script type="module"
+          src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule
+          src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+        <script>
+        // Utility function for form submissions
+        function submitForm(url, formData, successCallback, errorCallback) {
+          fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData)
+          })
+            .then(response => response.json())
+            .then(data => {
+              if (data.success) {
+                alert(data.message);
+                if (successCallback) successCallback();
+              } else {
+                alert("Error: " + data.message);
+              }
+            })
+            .catch(error => {
+              console.error('Error:', error);
+              if (errorCallback) errorCallback(error);
+            });
+        }
       
-      <script>
-        // Function to handle Website Address form submission
+        // Handle Website Address form submission
         function submitWebsiteAddress() {
-            const websiteAddress = document.getElementById('website_address').value;
-        
-            if (websiteAddress) {
-                fetch('submit_form.php', {
-                    method: 'POST',
-                    body: new URLSearchParams({
-                        website_address: websiteAddress
-                    })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    alert(data.message);
-                })
-                .catch(error => console.error('Error:', error));
-            } else {
-                alert("Please enter a website address.");
-            }
+          const websiteAddress = document.getElementById('website_address').value;
+      
+          if (websiteAddress) {
+            submitForm('submit_form.php', { website_address: websiteAddress }, null, null);
+          } else {
+            alert("Please enter a website address.");
+          }
         }
-        
-        // Function to handle Contact Form submission
-        function submitContactForm(event) {
-            event.preventDefault(); // Prevent default form submission
-        
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-        
-            if (name && email && message) {
-                fetch('submit_form.php', {
-                    method: 'POST',
-                    body: new URLSearchParams({
-                        name: name,
-                        email: email,
-                        message: message
-                    })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    alert(data.message);
-                    closeModal(); // Close modal after submission
-                })
-                .catch(error => console.error('Error:', error));
-            } else {
-                alert("Please fill out all fields.");
-            }
-        }
-        
-        // Function to open the modal
-        function openModal() {
-            document.getElementById('formModal').style.display = 'block';
-        }
-        
-        // Function to close the modal
-        function closeModal() {
-            document.getElementById('formModal').style.display = 'none';
-        }
-      </script>
+        </script>
 
-  </body>
+        <script>
+          document.getElementById("proposalForm").addEventListener("submit", function(event) {
+            event.preventDefault();  // Prevent the default form submission
 
-</html>
+            // Create a FormData object to gather the form data
+            var formData = new FormData(this);
+
+            // Create an XMLHttpRequest object for AJAX
+            var xhr = new XMLHttpRequest();
+
+            // Open a POST request to the PHP script that will handle the database insertion
+            xhr.open("POST", "submit_form.php", true);
+
+            // Set up a callback function to handle the response from PHP
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    // If the request is successful, show the response message
+                    document.getElementById("responseMessage").innerHTML = xhr.responseText;
+
+                    // Apply the blinking effect (if needed, as CSS handles it)
+                    document.getElementById("responseMessage").style.display = "block"; // Make sure it's visible
+
+                    // Reset the form fields
+                    document.getElementById("proposalForm").reset();
+
+                    // Close the modal after 5 seconds (5000 milliseconds)
+                    setTimeout(function() {
+                        // Hide the modal
+                        document.getElementById("modal").style.display = "none";
+                    }, 5000); // 5000ms = 5 seconds
+                } else {
+                    // If an error occurs, show the error message
+                    document.getElementById("responseMessage").innerHTML = "Error: Unable to submit your request.";
+                }
+            };
+
+            // Send the form data to the PHP script
+            xhr.send(formData);
+        });
+        </script>
+
+      </body>
+
+    </html>
