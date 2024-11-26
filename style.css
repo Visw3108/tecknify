@@ -1622,7 +1622,7 @@ h3 {
 }
 
 .faq-card {
-  background-color: var(--primery_5);
+  background-color: var(--primery);
   border-radius: var(--radius-5);
   overflow: hidden;
 }

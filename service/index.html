@@ -94,14 +94,36 @@
 
       <section class="digital-marketing">
         <div class="container">
-            <h1>SERVICES</h1>
-            <p>Deeply customized software solutions and IT services to make your business disruption-proof.</p>
-            <!-- <form class="proposal-form">
+            <h1>Digital Marketing Services</h1>
+            <p>Grow Your Client Base With Data-Driven and Targeted Strategies</p>
+            <form class="proposal-form">
                 <input type="text" placeholder="Enter Website Address" required>
                 <button type="submit">GET MY FREE PROPOSAL</button>
-            </form> -->
+            </form>
+    
+            <!-- Input group link for users without a site -->
+            <div class="input-group-link">
+                <p class="no-site-text">
+                    Don't have a site? 
+                    <button class="simple-text-button" onclick="openModal()">Click Here</button>
+                </p>
+            </div>
         </div>
     </section>
+    
+    <!-- Modal for additional form -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h2>Request a Proposal Without a Website</h2>
+          <form class="proposal-form-without-site">
+              <input type="text" placeholder="Your Name" required>
+              <input type="email" placeholder="Your Email" required>
+              <textarea placeholder="Describe Your Business" required></textarea>
+              <button type="submit">Request Proposal</button>
+          </form>
+      </div>
+  </div>
 
 
 
