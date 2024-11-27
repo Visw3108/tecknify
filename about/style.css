@@ -1433,7 +1433,7 @@
     }
     
     .logos-container img {
-        max-height: 120px; /* Increased max height */
+        max-height: 120px;
         width: auto;
         margin: 0 30px;
         transition: transform 0.4s ease-in-out, filter 0.3s ease;
@@ -1469,18 +1469,18 @@
         }
     
         .logos-container {
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            flex-direction: row; /* Keep logos in a single row */
+            justify-content: flex-start; /* Start from the left */
+            animation: marquee 20s linear infinite; /* Retain marquee effect */
         }
     
         .logos-container img {
-            margin: 15px 0;
-            max-height: 100px; /* Increased max height for mobile devices */
+            margin: 0 15px;
+            max-height: 100px;
         }
     }
     
-    /* Small screens (max-width 480px) */
+    /* Mobile screens (max-width 480px) */
     @media (max-width: 480px) {
         .client-logos {
             padding: 30px 15px;
@@ -1491,15 +1491,21 @@
             margin-bottom: 15px;
         }
     
+        .marquee-container {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
+    
         .logos-container {
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            flex-direction: row; /* Ensure logos move in a row */
+            justify-content: flex-start; /* Start from the left */
+            animation: marquee 18s linear infinite; /* Smooth scrolling effect */
         }
     
         .logos-container img {
-            margin: 10px 0;
-            max-height: 80px; /* Increased max height for mobile devices */
+            margin: 0 10px;
+            max-height: 70px; /* Adjust size for smaller screens */
         }
     }
     
@@ -1520,9 +1526,10 @@
     
         .logos-container img {
             margin: 0 40px;
-            max-height: 140px; /* Increased max height for large screens */
+            max-height: 140px;
         }
     }
+    
     
     
 
@@ -1716,24 +1723,35 @@
     max-width: 800px; /* Increased max width for larger images */
 }
 
-@media (min-width: 768px) {
+@media (max-width: 767px) {
     .office-map {
-        flex-wrap: nowrap;
-        padding: 50px;
+        flex-direction: column;
+        padding: 10px;
+        min-height: auto;
+    }
+
+    .office-map-content,
+    .office-map-image {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin: 10px 0;
+        text-align: center;
     }
 
     .office-map-content h1 {
-        font-size: 2.5em;
+        font-size: 1.5rem;
     }
 
     .office-map-content p {
-        font-size: 1.2em;
+        font-size: 1rem;
+        line-height: 1.4;
     }
 
     .office-map-image img {
-        max-width: 1000px; /* Further increase image size for medium screens */
+        max-width: 90%; /* Limit image width to fit within mobile screens */
     }
 }
+
 
 @media (min-width: 1200px) {
     .office-map-content h1 {
