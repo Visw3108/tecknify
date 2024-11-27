@@ -65,26 +65,42 @@ window.addEventListener('scroll', () => {
   }
 });
 
-document.querySelectorAll('.dropdown > .navbar-link').forEach(link => {
+document.querySelectorAll('.dropdown > .navbar-link').forEach((link) => {
+  let clickTimeout;
+
   link.addEventListener('click', function (e) {
-    e.preventDefault();
+    e.preventDefault(); // Prevent immediate navigation
 
     const dropdownMenu = this.nextElementSibling;
-    if (dropdownMenu) {
-      const isActive = dropdownMenu.classList.contains('active');
+    const isActive = dropdownMenu.classList.contains('active');
 
-      // Close all other dropdowns
-      document.querySelectorAll('.dropdown-menu.active').forEach(menu => {
-        menu.classList.remove('active');
-      });
+    if (clickTimeout) {
+      // If the link is clicked again quickly, navigate to the services page
+      clearTimeout(clickTimeout);
+      window.location.href = this.href;
+    } else {
+      clickTimeout = setTimeout(() => {
+        clickTimeout = null; // Reset timeout
 
-      // Toggle the current dropdown
-      if (!isActive) {
-        dropdownMenu.classList.add('active');
-      }
+        // Open dropdown if it's not active
+        if (!isActive) {
+          document.querySelectorAll('.dropdown-menu.active').forEach((menu) => {
+            menu.classList.remove('active');
+          });
+          dropdownMenu.classList.add('active');
+        }
+      }, 300); // Timeout to distinguish a single vs. double click
+    }
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', (event) => {
+    if (!link.contains(event.target) && !dropdownMenu.contains(event.target)) {
+      dropdownMenu.classList.remove('active');
     }
   });
 });
+
 
 
 /* HERO */
