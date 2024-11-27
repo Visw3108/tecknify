@@ -5,39 +5,67 @@ include("config.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['website_address'])) {
     $website_address = mysqli_real_escape_string($conn, $_POST['website_address']);
 
+    // Check if website address is provided
     if (!empty($website_address)) {
-        $sql = "INSERT INTO websites (website_address) VALUES ('$website_address')";
+        // Use a prepared statement for security
+        $stmt = $conn->prepare("INSERT INTO websites (website_address) VALUES (?)");
+        $stmt->bind_param("s", $website_address);
 
-        if ($conn->query($sql) === TRUE) {
+        if ($stmt->execute()) {
             echo json_encode(["message" => "Website address submitted successfully!"]);
         } else {
-            echo json_encode(["message" => "Error: " . $sql . "<br>" . $conn->error]);
+            echo json_encode(["message" => "Error: " . $stmt->error]);
         }
+
+        $stmt->close();
     } else {
         echo json_encode(["message" => "Website address is required."]);
     }
 }
 
-// Check if the form data has been received via POST
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get form data
+// Handle Proposal Form Submission
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name'], $_POST['email'], $_POST['message'])) {
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $message = $_POST['message'];  // This is the "message" field
+    $message = $_POST['message'];
 
-    // Prepare and bind
-    $stmt = $conn->prepare("INSERT INTO proposals (name, email, message, created_at) VALUES (?, ?, ?, now())");
-    $stmt->bind_param("sss", $name, $email, $message);
+    // Validate name, email, and message before insertion
+    if (!empty($name) && filter_var($email, FILTER_VALIDATE_EMAIL) && !empty($message)) {
+        // Use prepared statement for insertion
+        $stmt = $conn->prepare("INSERT INTO proposals (name, email, message, created_at) VALUES (?, ?, ?, NOW())");
+        $stmt->bind_param("sss", $name, $email, $message);
 
-    // Execute the query and check for success
-    if ($stmt->execute()) {
-        echo "Proposal request submitted successfully!";
+        if ($stmt->execute()) {
+            echo "Proposal request submitted successfully!";
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+
+        $stmt->close();
     } else {
-        echo "Error: " . $stmt->error;
+        echo "All fields are required and email must be valid.";
     }
+}
 
-    // Close the statement
-    $stmt->close();
+// Handle Newsletter Form Submission
+if (isset($_POST['email_address'])) {
+    $email = $_POST['email_address'];
+
+    // Check for valid email
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $stmt = $conn->prepare("INSERT INTO newsletter (email, createdDt) VALUES (?, NOW())");
+        $stmt->bind_param("s", $email);
+
+        if ($stmt->execute()) {
+            echo "Thank you for subscribing!";
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+
+        $stmt->close();
+    } else {
+        echo "Invalid email address.";
+    }
 }
 
 $conn->close();

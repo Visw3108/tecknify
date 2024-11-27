@@ -863,11 +863,11 @@
 
           <form action="" class="newsletter-form">
             <input type="email" name="email_address" placeholder="Enter your email" required class="email-field">
-
             <button type="submit" class="form-btn">
               <ion-icon name="paper-plane" aria-hidden="true"></ion-icon>
             </button>
           </form>
+          <div id="response-message"></div>
 
         </div>
 
@@ -1116,6 +1116,32 @@
             // Send the form data to the PHP script
             xhr.send(formData);
         });
+        </script>
+        
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+          $(document).ready(function() {
+            $('.newsletter-form').on('submit', function(e) {
+              e.preventDefault(); // Prevent form from submitting normally
+        
+              var email = $('.email-field').val();
+        
+              $.ajax({
+                url: 'submit_form.php', // The PHP file that will handle the form submission
+                type: 'POST',
+                data: {
+                  email_address: email
+                },
+                success: function(response) {
+                  $('#response-message').html(response); // Display response from PHP
+                  $('.email-field').val('');
+                },
+                error: function(xhr, status, error) {
+                  $('#response-message').html('<p>An error occurred: ' + error + '</p>');
+                }
+              });
+            });
+          });
         </script>
 
       </body>
