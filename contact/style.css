@@ -652,7 +652,7 @@
     flex-wrap: wrap;
     width: 90%;
     max-width: 1200px;
-    background-color: #ffffff;
+    background-color: var(--rich-black-fogra-29-1);
     border-radius: 25px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
     padding: 40px;
@@ -673,6 +673,7 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     width: 48%;
     transition: box-shadow 0.3s ease;
+    border: 2px solid var(--primery);
 }
 
 .contact-us-form-box:hover,
@@ -808,33 +809,55 @@
 
 /* Contact Info Styles */
 .contact-us-info-box {
-    background: linear-gradient(to bottom right, #2c3e50, #34495e);
-    color: white;
+    background: #ffffff;
+    /*Whitebackgroundforacleanlook*/color: #333333;
+    /*Darktextforreadability*/padding: 20px;
+    border-radius: 20px;
+    /*Roundedcorners*/box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /*Softshadowfordepth*/display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    border: 2px solid var(--primery);
 }
 
 .contact-us-info-box p {
-    margin-bottom: 18px;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #dcdcdc;
+    margin-bottom: 20px;
+    font-size: 18px; /* Modern font size */
+    line-height: 1.8; /* Better spacing */
+    color: #555555; /* Soft gray text */
+    font-family: var(--ff-poppins);
+    font-weight: 400;
+    max-width: 600px; /* Limit the paragraph width for better alignment */
+}
+
+.contact-us-info-box .contact-us-social-links {
+    display: flex; /* Align social links in one row */
+    gap: 20px; /* Space between icons */
+    margin-top: 10px; /* Add space between paragraph and social links */
 }
 
 .contact-us-info-box .contact-us-social-links a {
-    margin-right: 16px;
+    display: inline-block; /* Keeps the social links inline */
 }
 
 .contact-us-info-box .contact-us-social-links img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    width: 36px; /* Icon size */
+    height: 36px;
+    border-radius: 50%; /* Circular icons */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Light shadow */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Hover effects */
+    object-fit: cover; /* Ensures the icons fit the circle */
 }
 
 .contact-us-info-box .contact-us-social-links a:hover img {
-    opacity: 0.8;
-    transform: scale(1.1);
+    opacity: 0.9;
+    transform: scale(1.1); /* Scale effect on hover */
 }
+
 
 /* Responsive Styles */
 
