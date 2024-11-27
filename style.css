@@ -478,22 +478,26 @@ body {
   position: absolute;
   top: 100%;
   left: 0;
-  min-width: 200px; /* Increased width */
+  min-width: 200px;
+  /*Increasedwidth*/
   list-style: none;
   margin: 10px 0;
   padding: 12px 15px;
-  background: linear-gradient(
-    145deg,
-    #ffffff,
-    #f3f3f3
-  ); /* Light modern gradient */
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+  background: linear-gradient(145deg, #ffffff, #f3f3f3);
+  /*Lightmoderngradient*/
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  /*Softshadowfordepth*/
   border-radius: 12px;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
   z-index: 10;
+  -webkit-transition: opacity 0.3s ease, transform 0.3s ease,
+    visibility 0.3s ease;
+  -moz-transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  -ms-transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  -o-transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
 }
 
 .dropdown-menu .dropdown-link {
@@ -1298,7 +1302,6 @@ body {
   transform: translateX(5px);
 }
 
-
 /* Responsive Design */
 @media (min-width: 768px) {
   .service .grid-list {
@@ -1553,14 +1556,9 @@ body {
   position: relative; /* Required for the pseudo-element positioning */
   text-align: center;
   padding: 50px;
-  background-image: url("/assets/images/technology.jpg"); /* Replace with your image URL */
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; /* Makes the background fixed when scrolling */
-  color: var(
-    --rich-black-fogra-29-1
-  ); /* Ensures the text stands out on the background */
+  color: var(--white); /* Ensures the text stands out */
   z-index: 0; /* Ensures the text is above the pseudo-element */
+  overflow: hidden; /* Prevents any pseudo-element overflow */
 }
 
 .technology-stack-section::before {
@@ -1570,8 +1568,24 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(239, 242, 255, 0.329); /* Semi-transparent black overlay */
-  z-index: -1; /* Places the layer behind the content */
+  background-image: url("/assets/images/technology.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: blur(4px);
+  z-index: -1;
+  -webkit-filter: blur(4px);
+}
+
+.technology-stack-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  z-index: -1; /* Ensures the overlay is above the blurred image */
 }
 
 h2 {
@@ -1868,10 +1882,41 @@ h3 {
   justify-content: center;
   text-align: center;
   padding: 20px;
+  position: relative; /* Required for pseudo-element positioning */
+  min-height: 60vh;
+  overflow: hidden; /* Prevent overflow of pseudo-elements */
+  z-index: 0; /* Ensure content is above pseudo-elements */
+}
+
+.marketing-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: url("/assets/images/achivment1.jpg") no-repeat center center/cover;
   background-attachment: fixed;
-  min-height: 60vh;
-  position: relative;
+  filter: blur(4px);
+  z-index: -2;
+
+  -webkit-filter: blur(4px);
+}
+
+.marketing-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.4
+  ); /* Adds a semi-transparent overlay for better contrast */
+  z-index: -1; /* Ensures it's above the blurred image */
 }
 
 .content h1 {
@@ -2122,13 +2167,13 @@ h3 {
 /* CSS for blinking effect */
 @keyframes blink {
   0% {
-      color: #FF0000; /* Deep red color at the start */
+    color: #ff0000; /* Deep red color at the start */
   }
   50% {
-      color: #B22222; /* Darker red for the mid point */
+    color: #b22222; /* Darker red for the mid point */
   }
   100% {
-      color: #FF0000; /* Deep red color at the end */
+    color: #ff0000; /* Deep red color at the end */
   }
 }
 
