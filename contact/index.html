@@ -30,6 +30,26 @@
     - preload images
   -->
     <link rel="preload" as="image" href="./assets/images/hero-banner.png">
+    <style>
+      .loader {
+        border: 4px solid #f3f3f3; /* Light grey */
+        border-top: 4px solid #3498db; /* Blue */
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+        margin: 10px auto;
+      }
+    
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>    
 
   </head>
 
@@ -105,44 +125,47 @@
         <!-- Contact Form Box -->
         <div class="contact-us-form-box">
             <h2>Get In Touch</h2>
-            <form action="#">
-                <label for="contact-us-name">Name *</label>
-                <input type="text" id="contact-us-name" name="contact-us-name" required>
-    
-                <label for="contact-us-email">Email *</label>
-                <input type="email" id="contact-us-email" name="contact-us-email" required>
-    
-                <label for="contact-us-phone">Phone *</label>
-                <input type="text" id="contact-us-phone" name="contact-us-phone" required>
-    
-                <label for="contact-us-service">Select Your Service *</label>
-                <select id="contact-us-service" name="contact-us-service" required>
-                    <option value="SEO">SEO Optimization</option>
-                    <option value="WebDev">Web Development</option>
-                    <option value="AppDev">App Development</option>
-                </select>
-    
-                <label>Would You Like To Schedule? *</label>
-                <div class="contact-us-radio-group">
-                    <label>
-                        <input type="radio" name="contact-us-schedule" value="phone" required> Yes, By Phone
-                    </label>
-                    <label>
-                        <input type="radio" name="contact-us-schedule" value="zoom" required> Yes, By Zoom!
-                    </label>
-                    <label>
-                        <input type="radio" name="contact-us-schedule" value="skype" required> Yes, By Skype
-                    </label>
-                    <label>
-                        <input type="radio" name="contact-us-schedule" value="not-yet" required> Not Yet, but can't wait to hear back!
-                    </label>
-                </div>
-    
-                <label for="contact-us-comment">Comment</label>
-                <textarea id="contact-us-comment" name="contact-us-comment"></textarea>
-    
-                <button type="submit">Submit</button>
+            <form id="contact-us-form" action="#">
+              <label for="contact-us-name">Name *</label>
+              <input type="text" id="contact-us-name" name="contact-us-name" required>
+      
+              <label for="contact-us-email">Email *</label>
+              <input type="email" id="contact-us-email" name="contact-us-email" required>
+      
+              <label for="contact-us-phone">Phone *</label>
+              <input type="text" id="contact-us-phone" name="contact-us-phone" required>
+      
+              <label for="contact-us-service">Select Your Service *</label>
+              <select id="contact-us-service" name="contact-us-service" required>
+                  <option value="">Select Service</option>
+                  <option value="SEO">SEO Optimization</option>
+                  <option value="Web-Dev">Web Development</option>
+                  <option value="App-Dev">App Development</option>
+              </select>
+      
+              <label>Would You Like To Schedule? *</label>
+              <div class="contact-us-radio-group">
+                  <label>
+                      <input type="radio" name="contact-us-schedule" value="Phone" required> Yes, By Phone
+                  </label>
+                  <label>
+                      <input type="radio" name="contact-us-schedule" value="Zoom" required> Yes, By Zoom!
+                  </label>
+                  <label>
+                      <input type="radio" name="contact-us-schedule" value="Skype" required> Yes, By Skype
+                  </label>
+                  <label>
+                      <input type="radio" name="contact-us-schedule" value="not-yet" required> Not Yet, but can't wait to hear back!
+                  </label>
+              </div>
+      
+              <label for="contact-us-comment">Comment</label>
+              <textarea id="contact-us-comment" name="contact-us-comment"></textarea>
+      
+              <button type="submit">Submit</button>
             </form>
+      
+          <div id="form-response"></div>
         </div>
     
         <!-- Contact Info Box -->
@@ -745,30 +768,32 @@
     <script>
       $(document).ready(function () {
         $("#contact-us-form").on("submit", function (e) {
-            e.preventDefault(); // Prevent default form submission
-
-            // Collect form data
-            var formData = $(this).serialize(); // Serialize form data into URL-encoded string
-
-            // Send data via AJAX
-            $.ajax({
-                type: "POST",
-                url: "submitForm.php", // PHP script to process the form
-                data: formData,
-                success: function (response) {
-                  // console.log(response);
-                    // Display success message
-                    $("#form-response").html(`<p style="color: green;">${response}</p>`);
-                    $("#contact-us-form")[0].reset(); // Reset the form
-                },
-                error: function () {
-                    // Display error message
-                    $("#form-response").html('<p style="color: red;">An error occurred. Please try again.</p>');
-                },
-            });
+          e.preventDefault(); // Prevent default form submission
+    
+          // Collect form data
+          var formData = $(this).serialize(); // Serialize form data into URL-encoded string
+    
+          // Display loader in the form-response div
+          $("#form-response").html('<div class="loader"></div>');
+    
+          // Send data via AJAX
+          $.ajax({
+            type: "POST",
+            url: "submitForm.php", // PHP script to process the form
+            data: formData,
+            success: function (response) {
+              // Display success message and remove loader
+              $("#form-response").html(`<p style="color: green;">${response}</p>`);
+              $("#contact-us-form")[0].reset(); // Reset the form
+            },
+            error: function () {
+              // Display error message and remove loader
+              $("#form-response").html('<p style="color: red;">An error occurred. Please try again.</p>');
+            },
+          });
         });
-    });
-  </script>
+      });
+    </script>    
 
   </body>
 
