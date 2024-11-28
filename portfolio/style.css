@@ -1086,13 +1086,15 @@
       
       .our-portfolio-filter-btn {
         background: #fff;
-        border: 2px solid transparent;
+        border: 1px solid var(--rich-black-fogra-29-1);
         color: #333;
         font-size: 14px;
         padding: 8px 15px;
         border-radius: 25px;
         cursor: pointer;
         transition: all 0.3s ease;
+        font-family: var(--ff-poppins);
+        font-weight: bolder;
       }
       
       .our-portfolio-filter-btn:hover,
@@ -1109,7 +1111,7 @@
       }
       
       .our-portfolio-project {
-        background: #fff;
+        background: var(--mint-cream);
         border-radius: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         overflow: hidden;
@@ -1131,15 +1133,17 @@
       }
       
       .our-portfolio-project h3 {
-        font-size: 18px;
+        font-size: 2rem;
         margin: 15px 0 5px;
-        color: #444;
+        color: var(--rich-black-fogra-29-1);
+        font-family: var(--ff-cuprum);
       }
       
       .our-portfolio-project p {
         font-size: 14px;
         color: #666;
         padding: 0 15px 15px;
+        font-size: var(--ff-poppins);
       }
       
       .our-portfolio-project:hover {

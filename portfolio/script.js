@@ -171,9 +171,8 @@ document.addEventListener('DOMContentLoaded', () => {
   
     // Initialize
     updateProjects();
-  });
-  
-  
+});
+
 
 
 
