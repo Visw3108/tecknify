@@ -101,77 +101,105 @@
         - #HERO
       -->
 
-        <div class="contact-us-container">
-          <!-- Contact Form Box -->
-          <div class="contact-us-form-box">
+      <div class="contact-us-wrapper">
+        <!-- Contact Form Box -->
+        <div class="contact-us-form-box">
             <h2>Get In Touch</h2>
-            <form id="contact-us-form">
-              <label for="contact-us-name">Name *</label>
-              <input type="text" id="contact-us-name" name="name" required>
-
-              <label for="contact-us-email">Email *</label>
-              <input type="email" id="contact-us-email" name="email" required>
-
-              <label for="contact-us-phone">Phone *</label>
-              <input type="text" id="contact-us-phone" name="phone" required>
-
-              <label for="contact-us-service">Select Your Service *</label>
-              <select id="contact-us-service" name="service" required>
-                <option value="">Select Service</option>
-                <option value="SEO">SEO Optimization</option>
-                <option value="WebDev">Web Development</option>
-                <option value="AppDev">App Development</option>
-              </select>
-
-              <label>Would You Like To Schedule? *</label>
-              <div class="contact-us-checkbox-group">
-                <label><input type="radio" name="schedule[]"
-                    value="Yes, By Phone"> Yes, By Phone</label>
-                <label><input type="radio" name="schedule[]"
-                    value="Yes, By Zoom"> Yes, By Zoom</label>
-                <label><input type="radio" name="schedule[]"
-                    value="Yes, By Skype"> Yes, By Skype</label>
-                <label><input type="radio" name="schedule[]" value="Not Yet">
-                  Not Yet</label>
-              </div>
-
-              <label for="contact-us-comment">Comment</label>
-              <textarea id="contact-us-comment" name="comment"></textarea>
-
-              <button type="submit">Submit</button>
+            <form action="#">
+                <label for="contact-us-name">Name *</label>
+                <input type="text" id="contact-us-name" name="contact-us-name" required>
+    
+                <label for="contact-us-email">Email *</label>
+                <input type="email" id="contact-us-email" name="contact-us-email" required>
+    
+                <label for="contact-us-phone">Phone *</label>
+                <input type="text" id="contact-us-phone" name="contact-us-phone" required>
+    
+                <label for="contact-us-service">Select Your Service *</label>
+                <select id="contact-us-service" name="contact-us-service" required>
+                    <option value="SEO">SEO Optimization</option>
+                    <option value="WebDev">Web Development</option>
+                    <option value="AppDev">App Development</option>
+                </select>
+    
+                <label>Would You Like To Schedule? *</label>
+                <div class="contact-us-radio-group">
+                    <label>
+                        <input type="radio" name="contact-us-schedule" value="phone" required> Yes, By Phone
+                    </label>
+                    <label>
+                        <input type="radio" name="contact-us-schedule" value="zoom" required> Yes, By Zoom!
+                    </label>
+                    <label>
+                        <input type="radio" name="contact-us-schedule" value="skype" required> Yes, By Skype
+                    </label>
+                    <label>
+                        <input type="radio" name="contact-us-schedule" value="not-yet" required> Not Yet, but can't wait to hear back!
+                    </label>
+                </div>
+    
+                <label for="contact-us-comment">Comment</label>
+                <textarea id="contact-us-comment" name="contact-us-comment"></textarea>
+    
+                <button type="submit">Submit</button>
             </form>
-            <!-- For displaying success/error messages -->
-            <div id="form-response"></div>
-          </div>
-
-          <!-- Contact Info Box -->
-          <div class="contact-us-info-box">
-            <h2>Contact Info</h2>
-            <p style="display: flex;"><strong>Send E-Mail: &nbsp;</strong> <a
-                href="mailto:info@tecknify.com">info@tecknify.com</a></p>
-            <p><strong>INDIA Location:</strong> Plot No.1002/2430, IRC Village,
-              Ps-Nayapalli, Dist-Khordha, Bhubaneswar, Odisha – 751015.</p>
-            <p style="display: flex;"><strong>Call Anytime India:
-                &nbsp;</strong> <a href="tel:+919124736030">+91 91247
-                36030</a></p>
-            <p><strong>USA Location:</strong> 411 University St, Seattle,
-              USA</p>
-            <p style="display: flex;"><strong>Call Anytime USA: &nbsp;</strong>
-              <a href="tel:+18285384856">+1 828 538 4856</a></p>
-            <div class="contact-us-social-links">
-              <a href="https://www.facebook.com/tecknifyitsolutions"><img
-                  src="../assets/images/facebook.png" alt="Facebook"
-                  target="_blank"></a>
-              <a href="https://www.instagram.com/tecknify_it_solutions/"><img
-                  src="../assets/images/instagram.png" alt="Instagram"
-                  target="_blank"></a>
-              <a href="https://x.com/tecknify2023"><img
-                  src="../assets/images/twitter1.png" alt="twitter"
-                  target="_blank"></a>
-              <a
-                href="https://www.linkedin.com/company/tecknify-it-solutions"><img
-                  src="../assets/images/linkedin.png" alt="linkedin"
-                  target="_blank"></a>
+        </div>
+    
+        <!-- Contact Info Box -->
+        <div class="contact-info-container">
+            <div class="contact-info-header">
+                <h2>Contact Info</h2>
+            </div>
+            <div class="contact-info-items">
+                <div class="contact-info-item">
+                    <div class="icon-box">
+                        <img src="/assets/images/email.png" alt="Mail Icon">
+                    </div>
+                    <div class="info-text">
+                        <h3>Send E-Mail</h3>
+                        <p>info@tecknify.com</p>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="icon-box">
+                        <img src="/assets/images/location.png" alt="Location Icon">
+                    </div>
+                    <div class="info-text">
+                        <h3>INDIA Location</h3>
+                        <p>Plot No.1002/2430, IRC Village, Ps-Nayapalli</p>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="icon-box">
+                        <img src="/assets/images/telephone.png" alt="Phone Icon">
+                    </div>
+                    <div class="info-text">
+                        <h3>Call Anytime India</h3>
+                        <p>+91 91247 36030</p>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="icon-box">
+                        <img src="/assets/images/location.png" alt="Location Icon">
+                    </div>
+                    <div class="info-text">
+                        <h3>USA Location</h3>
+                        <p>411 University St, Seattle, USA</p>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="icon-box">
+                        <img src="/assets/images/telephone.png" alt="Phone Icon">
+                    </div>
+                    <div class="info-text">
+                        <h3>Call Anytime USA</h3>
+                        <p>+1 828 538 4856</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-info-socials">
+                <a href="#"><img src="/assets/images/facebook.png" alt="Facebook Icon"></a>
+                <a href="#"><img src="/assets/images/instagram.png" alt="Instagram Icon"></a>
             </div>
           </div>
         </div>

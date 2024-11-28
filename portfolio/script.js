@@ -111,32 +111,68 @@ window.onclick = function(event) {
  */
 
 
-
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    const stats = document.querySelectorAll(".stat-item h2");
+document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.our-portfolio-filter-btn');
+    const projects = document.querySelectorAll('.our-portfolio-project');
+    const loadMoreButton = document.querySelector('.our-portfolio-load-more');
+    let itemsToShow = 6;
   
-    const animateCount = (el) => {
-      const target = parseInt(el.getAttribute("data-target"));
-      const speed = 200; // Speed of animation in milliseconds
-      const increment = Math.ceil(target / speed);
+    // Filter functionality
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const category = button.getAttribute('data-category');
   
-      const updateCount = () => {
-        const current = parseInt(el.innerText);
-        if (current < target) {
-          el.innerText = current + increment > target ? target : current + increment;
-          requestAnimationFrame(updateCount);
+        // Update active class
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+  
+        // Filter projects
+        projects.forEach(project => {
+          project.classList.add('hidden');
+          if (category === 'all' || project.getAttribute('data-category') === category) {
+            project.classList.remove('hidden');
+          }
+        });
+  
+        // Reset load more
+        itemsToShow = 6;
+        updateProjects();
+      });
+    });
+  
+    // Load more functionality
+    loadMoreButton.addEventListener('click', () => {
+      itemsToShow += 6;
+      updateProjects();
+    });
+  
+    // Update visible projects based on itemsToShow
+    function updateProjects() {
+      let visibleItems = 0;
+      projects.forEach(project => {
+        if (!project.classList.contains('hidden')) {
+          if (visibleItems < itemsToShow) {
+            project.style.display = 'block';
+            visibleItems++;
+          } else {
+            project.style.display = 'none';
+          }
         } else {
-          el.innerText = target;
+          project.style.display = 'none';
         }
-      };
+      });
   
-      updateCount();
-    };
+      // Hide "Load More" button if no more items to show
+      const totalVisible = Array.from(projects).filter(
+        project => !project.classList.contains('hidden')
+      ).length;
+      loadMoreButton.style.display = visibleItems >= totalVisible ? 'none' : 'block';
+    }
   
-    stats.forEach((stat) => animateCount(stat));
+    // Initialize
+    updateProjects();
   });
+  
   
 
 
