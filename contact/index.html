@@ -120,18 +120,18 @@
                 </select>
     
                 <label>Would You Like To Schedule? *</label>
-                <div class="contact-us-checkbox-group">
+                <div class="contact-us-radio-group">
                     <label>
-                        <input type="checkbox" name="contact-us-schedule"> Yes, By Phone
+                        <input type="radio" name="contact-us-schedule" value="phone" required> Yes, By Phone
                     </label>
                     <label>
-                        <input type="checkbox" name="contact-us-schedule"> Yes, By Zoom!
+                        <input type="radio" name="contact-us-schedule" value="zoom" required> Yes, By Zoom!
                     </label>
                     <label>
-                        <input type="checkbox" name="contact-us-schedule"> Yes, By Skype
+                        <input type="radio" name="contact-us-schedule" value="skype" required> Yes, By Skype
                     </label>
                     <label>
-                        <input type="checkbox" name="contact-us-schedule"> Not Yet, but can't wait to hear back!
+                        <input type="radio" name="contact-us-schedule" value="not-yet" required> Not Yet, but can't wait to hear back!
                     </label>
                 </div>
     
@@ -141,23 +141,39 @@
                 <button type="submit">Submit</button>
             </form>
         </div>
-    
-        <!-- Contact Info Box -->
-        <div class="contact-us-info-box">
-            <h2>Contact Info</h2>
-            <p><strong>Send E-Mail:</strong> info@tecknify.com</p>
-            <p><strong>INDIA Location:</strong> Plot No.1002/2430, IRC Village, Ps-Nayapalli, Dist-Khordha, Bhubaneswar, Odisha – 751015.</p>
-            <p><strong>Call Anytime India:</strong> +91 91247 36030</p>
-            <p><strong>USA Location:</strong> 411 University St, Seattle, USA</p>
-            <p><strong>Call Anytime USA:</strong> +1 828 538 4856</p>
-            <div class="contact-us-social-links">
-                <a href="https://www.facebook.com/tecknifyitsolutions"><img src="/assets/images/facebook.png" alt="Facebook" target="_blank"></a>
-                <a href="https://www.instagram.com/tecknify_it_solutions/"><img src="/assets/images/instagram.png" alt="Instagram" target="_blank"></a>
-                <a href="https://x.com/tecknify2023"><img src="/assets/images/twitter1.png" alt="twitter" target="_blank"></a>
-                <a href="https://www.linkedin.com/company/tecknify-it-solutions"><img src="/assets/images/linkedin.png" alt="linkedin" target="_blank"></a>
-            </div>
-        </div>
     </div>
+    
+    <!-- Contact Info Box -->
+    <div class="contact-us-info-section">
+      <div class="contact-info-box">
+          <div class="info-item">
+              <div class="info-icon">
+                  <img src="/assets/images/mail-icon.png" alt="Mail Icon">
+              </div>
+              <h3>SEND E-MAIL</h3>
+              <p>info@tecknify.com</p>
+          </div>
+          <div class="info-item">
+              <div class="info-icon">
+                  <img src="/assets/images/location-icon.png" alt="India Location Icon">
+              </div>
+              <h3>INDIA LOCATION</h3>
+              <p>Plot No.1002/2430, IRC Village, Ps-Nayapalli, Dist-Khordha, Bhubaneswar, Dist-Khordha, Odisha – 751015.</p>
+              <h3>CALL ANYTIME INDIA</h3>
+              <p>+91 91247 36030</p>
+          </div>
+          <div class="info-item">
+              <div class="info-icon">
+                  <img src="/assets/images/location-icon.png" alt="USA Location Icon">
+              </div>
+              <h3>USA LOCATION</h3>
+              <p>411 University St, Seattle, USA</p>
+              <h3>CALL ANYTIME USA</h3>
+              <p>+1 828 538 4856</p>
+          </div>
+      </div>
+  </div>
+    
     
     
       
