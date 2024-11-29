@@ -1,7 +1,3 @@
-<?php
-include("../config/config.php");
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +15,7 @@ include("../config/config.php");
     <!-- 
     - custom css link
   -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/blog/styles.css">
 
     <!-- 
     - google font link
@@ -128,57 +124,133 @@ include("../config/config.php");
                 </div>
             </div>
 
-            <div class="our-portfolio-container">
-                <!-- Categories Section -->
-                <div class="our-portfolio-categories">
-                    <button class="our-portfolio-filter-btn active" data-category="all">All</button>
-                    <button class="our-portfolio-filter-btn" data-category="Social Media Optimization">Social Media
-                        Optimization</button>
-                    <button class="our-portfolio-filter-btn" data-category="Social Media Marketing">Social Media
-                        Marketing</button>
-                    <button class="our-portfolio-filter-btn" data-category="PPC Advertising">PPC Advertising</button>
-                    <button class="our-portfolio-filter-btn" data-category="Web Development">Web Development</button>
-                    <button class="our-portfolio-filter-btn" data-category="App Development">App Development</button>
-                    <!-- <button class="our-portfolio-filter-btn" data-category="Content Marketing">Content Marketing</button> -->
-                </div>
-
-                <!-- Projects Section -->
-                <div class="our-portfolio-projects">
-                    <div class="our-portfolio-project" data-category="Social Media Optimization">
-                        <img src="/assets/images/Capture1.png" alt="Project 1">
-                        <h3>Project 1</h3>
-                        <p>Innovative solutions for social media optimization.</p>
+            <div class="our-blogs-container">
+                <!-- Main Blogs Section -->
+                <section class="our-blogs-main">
+                    <!-- Categories Section -->
+                    <div class="our-blogs-categories">
+                        <button class="our-blogs-filter-btn active" data-category="all">All</button>
+                        <button class="our-blogs-filter-btn" data-category="Social Media Optimization">Social Media Optimization</button>
+                        <button class="our-blogs-filter-btn" data-category="Social Media Marketing">Social Media Marketing</button>
+                        <button class="our-blogs-filter-btn" data-category="PPC Advertising">PPC Advertising</button>
+                        <button class="our-blogs-filter-btn" data-category="Web Development">Web Development</button>
+                        <button class="our-blogs-filter-btn" data-category="App Development">App Development</button>
                     </div>
-                    <div class="our-portfolio-project" data-category="Social Media Marketing">
-                        <img src="/assets/images/Capture2.png" alt="Project 2">
-                        <h3>Project 2</h3>
-                        <p>Boosting your brand through social media marketing.</p>
+            
+                    <!-- Blogs Section -->
+                    <div class="our-blogs-projects">
+                        <div class="our-blogs-project" data-category="Social Media Optimization">
+                            <a href="#"><img src="/assets/images/blog1.jpg" alt="Blog 1">
+                            <div class="our-blogs-info">
+                                <h3>How to Optimize Your Social Media</h3></a>
+                                <p class="our-blogs-meta"><a href="#" class="our-blogs-author-link">By John Doe</a> | Nov 28, 2024</p>
+                                <p class="our-blogs-snippet">
+                                    Discover expert tips to enhance your social media presence and reach your audience effectively.
+                                </p>
+                                <button class="our-blogs-read-more-btn">Read More</button>
+                            </div>
+                        </div>
+                        <div class="our-blogs-project" data-category="Social Media Marketing">
+                            <a href=""><img src="/assets/images/blog1.jpg" alt="Blog 2">
+                            <div class="our-blogs-info">
+                                <h3>Mastering Social Media Marketing</h3></a>
+                                <p class="our-blogs-meta"><a href="#" class="our-blogs-author-link">By Jane Smith</a> | Nov 25, 2024</p>
+                                <p class="our-blogs-snippet">
+                                    Learn the secrets to creating engaging campaigns that boost brand awareness and conversions.
+                                </p>
+                                <button class="our-blogs-read-more-btn">Read More</button>
+                            </div>
+                        </div>
+                        <div class="our-blogs-project" data-category="PPC Advertising">
+                            <a href=""><img src="/assets/images/blog1.jpg" alt="Blog 3">
+                            <div class="our-blogs-info">
+                                <h3>Effective PPC Strategies</h3></a>
+                                <p class="our-blogs-meta"><a href="#" class="our-blogs-author-link">By Mark Wilson</a> | Nov 20, 2024</p>
+                                <p class="our-blogs-snippet">
+                                    Maximize your ROI with these actionable pay-per-click advertising tips.
+                                </p>
+                                <button class="our-blogs-read-more-btn">Read More</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="our-portfolio-project" data-category="PPC Advertising">
-                        <img src="/assets/images/Capture3.png" alt="Project 3">
-                        <h3>Project 3</h3>
-                        <p>Targeted PPC campaigns for measurable results.</p>
+                </section>
+            
+                <!-- Recent Posts Section -->
+                <aside class="our-blogs-recent-posts">
+                    <h3>Recent Posts</h3>
+                    <div class="our-blogs-recent-post">
+                        <img src="/assets/images/blogger.png" alt="Recent Post 1">
+                        <div>
+                            <h4>Tips for PPC Advertising</h4>
+                            <!-- <p>Improve your ad campaigns with these expert tips.</p> -->
+                        </div>
                     </div>
-                    <div class="our-portfolio-project" data-category="Web Development">
-                        <img src="/assets/images/Capture4.png" alt="Project 4">
-                        <h3>Project 4</h3>
-                        <p>Responsive and dynamic web development solutions.</p>
+                    <div class="our-blogs-recent-post">
+                        <img src="/assets/images/blogger.png" alt="Recent Post 2">
+                        <div>
+                            <h4>Web Development Essentials</h4>
+                           <!--  <p>Enhance your website with these quick fixes.</p> -->
+                        </div>
                     </div>
-                    <div class="our-portfolio-project" data-category="App Development">
-                        <img src="/assets/images/Capture5.png" alt="Project 5">
-                        <h3>Project 5</h3>
-                        <p>Custom app development for your business needs.</p>
+                    <div class="our-blogs-recent-post">
+                        <img src="/assets/images/blogger.png" alt="Recent Post 1">
+                        <div>
+                            <h4>Tips for PPC Advertising</h4>
+                            <!-- <p>Improve your ad campaigns with these expert tips.</p> -->
+                        </div>
                     </div>
-                    <div class="our-portfolio-project" data-category="Content Marketing">
-                        <img src="/assets/images/Capture6.png" alt="Project 6">
-                        <h3>Project 6</h3>
-                        <p>Content marketing strategies that drive engagement.</p>
+                    <div class="our-blogs-recent-post">
+                        <img src="/assets/images/blogger.png" alt="Recent Post 2">
+                        <div>
+                            <h4>Web Development Essentials</h4>
+                           <!--  <p>Enhance your website with these quick fixes.</p> -->
+                        </div>
                     </div>
-                </div>
-
-                <button class="our-portfolio-load-more">Load More</button>
+                    <div class="our-blogs-recent-post">
+                        <img src="/assets/images/blogger.png" alt="Recent Post 1">
+                        <div>
+                            <h4>Tips for PPC Advertising</h4>
+                            <!-- <p>Improve your ad campaigns with these expert tips.</p> -->
+                        </div>
+                    </div>
+                    <div class="our-blogs-recent-post">
+                        <img src="/assets/images/blogger.png" alt="Recent Post 2">
+                        <div>
+                            <h4>Web Development Essentials</h4>
+                           <!--  <p>Enhance your website with these quick fixes.</p> -->
+                        </div>
+                    </div>
+                    <div class="our-blogs-recent-post">
+                        <img src="/assets/images/blogger.png" alt="Recent Post 1">
+                        <div>
+                            <h4>Tips for PPC Advertising</h4>
+                            <!-- <p>Improve your ad campaigns with these expert tips.</p> -->
+                        </div>
+                    </div>
+                    <div class="our-blogs-recent-post">
+                        <img src="/assets/images/blogger.png" alt="Recent Post 2">
+                        <div>
+                            <h4>Web Development Essentials</h4>
+                           <!--  <p>Enhance your website with these quick fixes.</p> -->
+                        </div>
+                    </div>
+                    <div class="our-blogs-recent-post">
+                        <img src="/assets/images/blogger.png" alt="Recent Post 1">
+                        <div>
+                            <h4>Tips for PPC Advertising</h4>
+                            <!-- <p>Improve your ad campaigns with these expert tips.</p> -->
+                        </div>
+                    </div>
+                    <div class="our-blogs-recent-post">
+                        <img src="/assets/images/blogger.png" alt="Recent Post 2">
+                        <div>
+                            <h4>Web Development Essentials</h4>
+                           <!--  <p>Enhance your website with these quick fixes.</p> -->
+                        </div>
+                    </div>
+                </aside>
             </div>
-
+            
         </article>
     </main>
 
@@ -371,7 +443,7 @@ include("../config/config.php");
     <!-- 
     - custom js link
   -->
-    <script src="script.js"></script>
+    <script src="/blog/script.js"></script>
 
     <!-- 
     - ionicon link
