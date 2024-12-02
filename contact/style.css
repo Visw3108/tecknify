@@ -2083,7 +2083,172 @@ h2 {
   /*-----------------------------------*\
       #FAQ
     \*-----------------------------------*/
-  
+  /* Modernized Marketing Section Styles */
+.marketing-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 70vh;
+  background: var(--mint-cream);
+  color: var(--white);
+}
+
+.content {
+  flex: 1;
+  text-align: left;
+  margin-right: 20px;
+}
+
+.content h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  font-family: var(--ff-poppins);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--rich-black-fogra-29-1);
+}
+
+.stats {
+  display: flex;
+  justify-content: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 10px 20px;
+  transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-10px);
+}
+
+.stat-item h2 {
+  font-size: 3rem;
+  margin: 0;
+  color: var(--rich-black-fogra-29-2);
+  font-family: "Roboto Mono", monospace;
+}
+
+.stat-item p {
+  margin: 10px 0 0;
+  color: var(--rich-black-fogra-39);
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1rem;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.btn-contact,
+.btn-talk {
+  display: inline-flex;
+  align-items: center;
+  color: var(--rich-black-fogra-29-1);
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 16px 32px;
+  border-radius: 7px;
+  max-width: max-content;
+  background: var(--white);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease, background 0.3s ease;
+  cursor: pointer;
+  border: 2px solid var(--rich-black-fogra-29-1);
+}
+
+.btn-contact:hover,
+.btn-talk:hover {
+  color: var(--rich-black-fogra-29-1);
+  background: var(--white);
+  box-shadow: 0 12px 24px rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+  opacity: 0.9;
+  border: 2px solid var(--primery);
+}
+
+.btn-contact ion-icon,
+.btn-talk ion-icon {
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.btn-contact:hover ion-icon,
+.btn-talk:hover ion-icon {
+  transform: translateX(5px);
+}
+
+.image {
+  flex: 1;
+  text-align: right;
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .marketing-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .content h1 {
+    font-size: 3rem;
+  }
+
+  .stats {
+    gap: 20px;
+  }
+
+  .stat-item h2 {
+    font-size: 2.2rem;
+  }
+
+  .action-buttons {
+    justify-content: center;
+  }
+
+  .btn-contact,
+  .btn-talk {
+    font-size: 0.95rem;
+    padding: 12px 24px;
+  }
+
+  .image {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content h1 {
+    font-size: 2.2rem;
+  }
+
+  .stat-item h2 {
+    font-size: 1.8rem;
+  }
+
+  .btn-contact,
+  .btn-talk {
+    font-size: 0.85rem;
+    padding: 10px 20px;
+  }
+}
+
   
   /*-----------------------------------*\
       #FOOTER

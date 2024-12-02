@@ -115,28 +115,44 @@ window.onclick = function(event) {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    const stats = document.querySelectorAll(".stat-item h2");
-  
-    const animateCount = (el) => {
-      const target = parseInt(el.getAttribute("data-target"));
-      const speed = 200; // Speed of animation in milliseconds
-      const increment = Math.ceil(target / speed);
-  
-      const updateCount = () => {
-        const current = parseInt(el.innerText);
-        if (current < target) {
-          el.innerText = current + increment > target ? target : current + increment;
-          requestAnimationFrame(updateCount);
-        } else {
-          el.innerText = target;
-        }
-      };
-  
-      updateCount();
+  const stats = document.querySelectorAll(".stat-item h2");
+  const marketingSection = document.querySelector(".marketing-section");
+
+  const animateCount = (el) => {
+    const target = parseInt(el.getAttribute("data-target"));
+    const speed = 3000; // Duration of the animation (in milliseconds)
+    const increment = Math.ceil(target / (speed / 60)); // Determines how much to increment on each frame
+
+    const updateCount = () => {
+      const current = parseInt(el.innerText);
+      if (current < target) {
+        el.innerText = current + increment > target ? target : current + increment;
+        requestAnimationFrame(updateCount);
+      } else {
+        el.innerText = target;
+      }
     };
-  
-    stats.forEach((stat) => animateCount(stat));
+
+    el.style.opacity = 1;
+    updateCount();
+  };
+
+  // Set up an IntersectionObserver to detect when the section is in view
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Trigger the animation when the section comes into view
+        stats.forEach(stat => animateCount(stat));
+        observer.unobserve(entry.target); // Stop observing after the animation runs
+      }
+    });
+  }, {
+    threshold: 0.5 // Trigger when 50% of the section is in the viewport
   });
+
+  // Start observing the marketing section
+  observer.observe(marketingSection);
+});
   
 
 

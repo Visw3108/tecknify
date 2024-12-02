@@ -105,81 +105,43 @@ window.onclick = function(event) {
 };
 
 
-/**
- * accordion toggle
- */
 
-const accordionAction = document.querySelectorAll("[data-accordion-action]");
-
-const toggleAccordion = function () { this.classList.toggle("active"); }
-
-addEventOnElem(accordionAction, "click", toggleAccordion);
-
-
-
- /*----------- PORTFOLIO  -------------*/
-
-
-
-
-
-const industriesCarousel = document.querySelector(".industries-carousel");
-let industriesScrollInterval;
-let industriesScrollPosition = 0;
-
-// Auto-scroll functionality
-function startIndustriesAutoScroll() {
-  industriesScrollInterval = setInterval(() => {
-    industriesScrollPosition += industriesCarousel.offsetWidth / 4;
-    if (industriesScrollPosition >= industriesCarousel.scrollWidth - industriesCarousel.offsetWidth) {
-      industriesScrollPosition = 0; // Reset scroll position
-    }
-    industriesCarousel.style.transform = `translateX(-${industriesScrollPosition}px)`;
-  }, 3000);
-}
-
-// Stop auto-scroll on hover
-industriesCarousel.addEventListener("mouseenter", () => clearInterval(industriesScrollInterval));
-industriesCarousel.addEventListener("mouseleave", startIndustriesAutoScroll);
-
-// Start auto-scroll on page load
-startIndustriesAutoScroll();
-
-// Fade-in-Up Effect on Scroll
 document.addEventListener("DOMContentLoaded", () => {
-  const industriesItems = document.querySelectorAll(".industries-fade-in-up");
+  const stats = document.querySelectorAll(".stat-item h2");
+  const marketingSection = document.querySelector(".marketing-section");
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    },
-    { threshold: 0.1 }
-  );
+  const animateCount = (el) => {
+    const target = parseInt(el.getAttribute("data-target"));
+    const speed = 3000; // Duration of the animation (in milliseconds)
+    const increment = Math.ceil(target / (speed / 60)); // Determines how much to increment on each frame
 
-  industriesItems.forEach((item) => {
-    observer.observe(item);
-  });
-});
+    const updateCount = () => {
+      const current = parseInt(el.innerText);
+      if (current < target) {
+        el.innerText = current + increment > target ? target : current + increment;
+        requestAnimationFrame(updateCount);
+      } else {
+        el.innerText = target;
+      }
+    };
 
+    el.style.opacity = 1;
+    updateCount();
+  };
 
-
-
-// Intersection Observer for Fade-in-Up Animation
-document.addEventListener("DOMContentLoaded", () => {
-    const cards = document.querySelectorAll('.fade-in-up');
-  
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
+  // Set up an IntersectionObserver to detect when the section is in view
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Trigger the animation when the section comes into view
+        stats.forEach(stat => animateCount(stat));
+        observer.unobserve(entry.target); // Stop observing after the animation runs
+      }
     });
-  
-    cards.forEach(card => observer.observe(card));
+  }, {
+    threshold: 0.5 // Trigger when 50% of the section is in the viewport
   });
-  
+
+  // Start observing the marketing section
+  observer.observe(marketingSection);
+});
