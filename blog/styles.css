@@ -174,11 +174,6 @@ body {
     #REUSED STYLE
   \*-----------------------------------*/
 
-  .content-container {
-    display: flex;
-    align-items: flex-start;
-  }
-
 .container {
   padding-inline: 15px;
 }
@@ -1078,12 +1073,11 @@ body {
  /* Wrapper for the entire layout */
 .our-blogs-wrapper {
   display: grid;
-  grid-template-columns: 5fr 1fr; /* Main section takes 3 parts, recent posts 1 part */
-  /* gap: 20px; */
-  max-width: auto;
-  margin-left: 30px auto;
+  grid-template-columns: 3fr 1fr; /* Main section takes 3 parts, recent posts 1 part */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
-  flex: 3;
 }
 
 /* Main Blogs Section */
@@ -1123,7 +1117,7 @@ body {
 .our-blogs-projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 90px;
+  gap: 20px;
 }
 
 .our-blogs-project {
@@ -1134,8 +1128,7 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
   width: 350px; /* Fixed width */
-  margin-left: 50px; /* Center the box horizontally */
-  padding-bottom: 15px;
+  margin: 0 auto; /* Center the box horizontally */
 }
 
 .our-blogs-project:hover {
@@ -1169,7 +1162,6 @@ body {
   font-size: 1.2rem;
   color: var(--granite-gray);
   margin-bottom: 15px;
-  margin-left: 20px;
   font-family: var(--ff-poppins);
 }
 
@@ -1203,7 +1195,6 @@ body {
   color: var(--white);
   border: none;
   padding: 10px 15px;
-  margin-left: 20px;
   border-radius: 25px;
   font-size: 1.3rem;
   font-weight: bold;
@@ -1221,20 +1212,13 @@ body {
 /* Recent Posts Section */
 .our-blogs-recent-posts {
   display: flex;
-  flex: 1;
   flex-direction: column;
   gap: 20px;
   padding: 20px;
   background: var(--lavender-gray);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-right: 30px;
-  margin-top: 100px;
-}
-
-.our-blogs-recent-posts h2 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: 300px;
 }
 
 .recent-posts-heading {
@@ -1308,7 +1292,6 @@ body {
 /* Blog Cards */
 .our-blogs-card {
   display: flex;
-  margin-bottom: 15px;
   align-items: center;
   gap: 15px;
   padding: 15px;
@@ -1325,12 +1308,10 @@ body {
 }
 
 .our-blogs-card img {
-  /* border-radius: 50%; */
+  width: 70px;
+  height: 70px;
   object-fit: cover;
-  width: 60px;
-  height: 60px;
-  border-radius: 4px;
-  margin-right: 10px;
+  border-radius: 10px;
 }
 
 .our-blogs-card h4 {
