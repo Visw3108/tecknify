@@ -145,7 +145,7 @@ if ($conn->query($sql) === TRUE) {
                 <div class='email-container'>
                     <h1>Thank You, $name!</h1>
                     <p>We have received your request for <strong>$service</strong>.</p>
-                    <p>Our team will get back to you shortly at <strong>$phone</strong>.</p>
+                    <p>Our team will get back to you shortly.</p>
                     <p>If you have any further questions, feel free to reach out to us.</p>
                     <a href='https://tecknify.com/contact-us/' class='btn'>Contact Us</a>
                 </div>
