@@ -191,3 +191,35 @@ document.addEventListener("DOMContentLoaded", () => {
     cards.forEach(card => observer.observe(card));
   });
   
+
+  const counters = document.querySelectorAll('.counter');
+
+  const animateCounters = () => {
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = target / 200;
+
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, 10);
+        } else {
+          counter.innerText = target;
+        }
+      };
+
+      updateCount();
+    });
+  };
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounters();
+        observer.disconnect();
+      }
+    });
+  });
+
+  observer.observe(document.querySelector('.achievements'));
