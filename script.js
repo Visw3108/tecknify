@@ -191,6 +191,50 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
+document.addEventListener("DOMContentLoaded", function () {
+  const animatedElements = document.querySelectorAll("[data-animate]");
+
+  const handleScroll = () => {
+    animatedElements.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+      if (isVisible) {
+        el.classList.add("in-view");
+      }
+    });
+  };
+
+  // Trigger on scroll and load
+  window.addEventListener("scroll", handleScroll);
+  handleScroll();
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const animatedElements = document.querySelectorAll("[data-animate]");
+
+  const handleScroll = () => {
+    animatedElements.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+      if (isVisible) {
+        el.classList.add("in-view");
+      }
+    });
+  };
+
+  // Trigger on scroll and load
+  window.addEventListener("scroll", handleScroll);
+  handleScroll();
+});
+
+
+
 /**
  * accordion toggle
  */

@@ -1321,6 +1321,35 @@ body {
   margin-inline: auto;
 }
 
+
+/* Base styles for animations */
+[data-animate] {
+  opacity: 0;
+  transform: translateX(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  will-change: opacity, transform;
+}
+
+/* Fade in from left */
+[data-animate="fade-in-left"].in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+[data-animate="fade-in-left"] {
+  transform: translateX(-50px);
+}
+
+/* Fade in from right */
+[data-animate="fade-in-right"].in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+[data-animate="fade-in-right"] {
+  transform: translateX(50px);
+}
+
 /* Hover effect for Read More button */
 .btn-link {
   display: inline-flex;
