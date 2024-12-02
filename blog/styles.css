@@ -1208,57 +1208,118 @@ body {
   transform: scale(1.05);
 }
 
+
 /* Recent Posts Section */
 .our-blogs-recent-posts {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  padding: 15px;
+  gap: 20px;
+  padding: 20px;
   background: var(--lavender-gray);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: 300px;
 }
 
 .recent-posts-heading {
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: bold;
   color: var(--rich-black-fogra-29-1);
   margin-bottom: 20px;
-  font-family: var(--ff-poppins);
-  border-bottom: 3px solid var(--rich-black-fogra-29-1); /* Underline with the primary color */
+  text-align: center;
+  border-bottom: 3px solid var(--rich-black-fogra-29-1); /* Underline for heading */
+}
+/* Recent Posts Section */
+.email-subscription {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(145deg, #2c2c2c, #1a1a1a); /* Gradient background */
+  border: 1px solid #333; /* Subtle border */
+  border-radius: 30px; /* Rounded corners */
+  padding: 5px 15px;
+  width: 100%;
+  margin: 30px auto; /* Center it */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  max-width: 320px; /* Prevent excessive width */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Recent Posts Cards */
+.email-subscription:hover {
+  transform: translateY(-3px); /* Slight lift */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25); /* Stronger shadow */
+}
+
+.email-input {
+  flex: 1;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.3rem;
+  padding: 10px;
+  outline: none;
+  font-family: var(--ff-poppins);
+}
+
+.email-input::placeholder {
+  color: #aaa; /* Placeholder text color */
+}
+
+.email-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #ff6f3d, #ff4500); /* Button gradient */
+  border: none;
+  padding: 10px;
+  border-radius: 50%; /* Circular button */
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow */
+}
+
+.email-button:hover {
+  background: linear-gradient(145deg, #ff4500, #d93b00); /* Darker gradient on hover */
+  transform: scale(1.1); /* Button enlarges slightly */
+}
+
+.email-button svg {
+  fill: white; /* Ensure the arrow icon is visible */
+  width: 18px;
+  height: 18px;
+}
+
+/* Blog Cards */
 .our-blogs-card {
   display: flex;
   align-items: center;
   gap: 15px;
-  padding: 10px;
+  padding: 15px;
   background: var(--white);
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
 }
 
 .our-blogs-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px); /* Subtle lift on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
 }
 
 .our-blogs-card img {
   width: 70px;
   height: 70px;
-  /* border-radius: 50%; */
   object-fit: cover;
+  border-radius: 10px;
 }
 
 .our-blogs-card h4 {
   font-size: 1.2rem;
   font-weight: 600;
   color: var(--rich-black-fogra-29-1);
-  line-height: 1.4;
   margin: 0;
-  font-family: var(--ff-poppins);
+  line-height: 1.4;
 }
 
 /* Responsive Design */
