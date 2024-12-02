@@ -1095,7 +1095,7 @@ body {
   \*-----------------------------------*/
   /* General Styles */
  
- /* Wrapper for the entire layout */
+/* Wrapper for the entire layout */
 .our-blogs-wrapper {
   display: grid;
   grid-template-columns: 3fr 1fr; /* Main section takes 3 parts, recent posts 1 part */
@@ -1233,7 +1233,6 @@ body {
   transform: scale(1.05);
 }
 
-
 /* Recent Posts Section */
 .our-blogs-recent-posts {
   display: flex;
@@ -1254,7 +1253,8 @@ body {
   text-align: center;
   border-bottom: 3px solid var(--rich-black-fogra-29-1); /* Underline for heading */
 }
-/* Recent Posts Section */
+
+/* Email Subscription */
 .email-subscription {
   display: flex;
   align-items: center;
@@ -1348,13 +1348,94 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .our-blogs-wrapper {
-      grid-template-columns: 1fr;
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .our-blogs-wrapper {
+    grid-template-columns: 1fr;
+    padding: 15px;
   }
 
   .our-blogs-recent-posts {
-      margin-top: 20px;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .our-blogs-project {
+    width: 100%;
+  }
+
+  .email-subscription {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .our-blogs-wrapper {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .our-blogs-recent-posts {
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .email-subscription {
+    max-width: 280px;
+  }
+
+  .our-blogs-project img {
+    height: 160px;
+  }
+
+  .our-blogs-info h3 {
+    font-size: 1.8rem;
+  }
+
+  .our-blogs-snippet {
+    font-size: 1.2rem;
+  }
+
+  .our-blogs-read-more-btn {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .our-blogs-project {
+    width: 100%;
+    margin: 0;
+  }
+
+  .our-blogs-info h3 {
+    font-size: 1.6rem;
+  }
+
+  .our-blogs-card h4 {
+    font-size: 1rem;
+  }
+
+  .our-blogs-filter-btn {
+    font-size: 12px;
+    padding: 8px 15px;
+  }
+
+  .our-blogs-snippet {
+    font-size: 1.1rem;
+  }
+
+  .email-subscription {
+    width: 90%;
+  }
+
+  .email-button svg {
+    width: 16px;
+    height: 16px;
   }
 }
 
