@@ -287,333 +287,358 @@
   /*-----------------------------------*\
     #HEADER
   \*-----------------------------------*/
- /* General Header Styles */
-.header {
-  padding-block: 15px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 4;
-  background-color: var(--white);
-  box-shadow: var(--shadow-2);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.header.scrolled {
-  background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent for desktop */
-  box-shadow: var(--shadow-3);
-  transform: translateY(-5px); /* Slight upward motion */
-}
-
-/* Ensure header background remains non-black on smaller screens */
-@media (max-width: 768px) {
+  .header {
+    padding-block: 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 4;
+    background-color: var(--white);
+    box-shadow: var(--shadow-2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease,
+      transform 0.3s ease;
+  }
+  
   .header.scrolled {
-    background-color: rgba(255, 255, 255, 0.95); /* Non-black for small screens */
-    transform: none; /* Disable upward motion for simplicity */
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.95
+    ); /* Slightly transparent for desktop */
+    box-shadow: var(--shadow-3);
+    transform: translateY(-5px); /* Slight upward motion */
   }
-}
-
-/* Container Styles */
-.header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Logo Styles */
-.logo {
-  display: inline-block;
-}
-
-.logo img {
-  display: block;
-  width: 80px; /* Default size */
-  height: auto; /* Maintain aspect ratio */
-  transition: width 0.3s ease; /* Smooth resizing effect */
-}
-
-.header.scrolled .logo img {
-  width: 70px; /* Smaller size when scrolled */
-}
-
-/* Navigation Menu Button */
-.nav-open-btn {
-  color: var(--rich-black-fogra-29-1);
-  font-size: 35px;
-  cursor: pointer;
-  display: none; /* Hide by default */
-}
-
-/* Navbar Styles */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: -280px;
-  max-width: 280px;
-  width: 100%;
-  height: 100%;
-  background-color: var(--rich-black-fogra-39); /* Always solid black */
-  color: var(--white);
-  padding: 30px 20px;
-  visibility: hidden;
-  transition: 0.25s ease;
-  z-index: 4;
-}
-
-.navbar.active {
-  visibility: visible;
-  transform: translateX(280px); /* Slide in */
-  transition-duration: 0.5s;
-  background-color: var(--rich-black-fogra-39); /* Solid black when open */
-}
-
-/* Navbar background fix on smaller screens */
-@media (max-width: 768px) {
-  .header.scrolled + .navbar,
-  .header.scrolled .navbar {
-    background-color: var(--rich-black-fogra-39); /* Ensure navbar is black */
+  
+  /* Ensure header background remains non-black on smaller screens */
+  @media (max-width: 768px) {
+    .header.scrolled {
+      background-color: rgba(
+        255,
+        255,
+        255,
+        0.95
+      ); /* Non-black for small screens */
+      transform: none; /* Disable upward motion for simplicity */
+    }
   }
-}
-
-.navbar .wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 25px;
-}
-
-.navbar .logo img {
-  width: 100px; /* Navbar-specific logo size */
-}
-
-.nav-close-btn {
-  font-size: 30px;
-  color: var(--white);
-  cursor: pointer;
-}
-
-.navbar-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.navbar-link {
-  display: block;
-  color: var(--white);
-  text-decoration: none;
-  padding-block: 10px;
-  font-size: 16px;
-  font-weight: 500;
-  transition: 0.3s ease;
-}
-
-.navbar-link:is(:hover, :focus) {
-  color: var(--primary);
-}
-
-/* Overlay Styles */
-.overlay {
-  position: fixed;
-  inset: 0;
-  background-color: hsla(0, 0%, 0%, 0.6);
-  visibility: hidden;
-  opacity: 0;
-  transition: 0.3s ease;
-  z-index: 3;
-}
-
-.overlay.active {
-  visibility: visible;
-  opacity: 1;
-}
-
-/* General Dropdown Styles */
-.dropdown {
-  position: relative;
-  font-family: 'Poppins', sans-serif;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  min-width: 200px; /* Increased width */
-  list-style: none;
-  margin: 10px 0;
-  padding: 12px 15px;
-  background: linear-gradient(145deg, #ffffff, #f3f3f3); /* Light modern gradient */
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
-  border-radius: 12px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-10px);
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-  z-index: 10;
-}
-
-.dropdown-menu .dropdown-link {
-  display: block;
-  color: var(--rich-black-fogra-29-1);
-  text-decoration: none;
-  padding: 10px 20px;
-  font-size: 16px; /* Modern typography size */
-  font-weight: 500;
-  transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
-  border-radius: 8px;
-  margin: 5px 0;
-}
-
-.dropdown-menu .dropdown-link:is(:hover, :focus) {
-  background: linear-gradient(145deg, var(--primary-light), var(--primary));
-  color: var(--white);
-  transform: translateX(8px); /* Subtle hover movement */
-}
-
-/* Show dropdown with a smooth animation */
-.dropdown:hover .dropdown-menu,
-.dropdown-menu.active {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-/* Responsive Design */
-@media (max-width: 1024px) {
+  
+  /* Container Styles */
+  .header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Logo Styles */
+  .logo {
+    display: inline-block;
+  }
+  
+  .logo img {
+    display: block;
+    width: 80px; /* Default size */
+    height: auto; /* Maintain aspect ratio */
+    transition: width 0.3s ease; /* Smooth resizing effect */
+  }
+  
+  .header.scrolled .logo img {
+    width: 70px; /* Smaller size when scrolled */
+  }
+  
+  /* Navigation Menu Button */
   .nav-open-btn {
-    display: block; /* Show the menu button */
+    color: var(--rich-black-fogra-29-1);
+    font-size: 35px;
+    cursor: pointer;
+    display: none; /* Hide by default */
   }
-
+  
+  /* Navbar Styles */
   .navbar {
-    max-width: 240px; /* Reduce navbar width */
+    position: fixed;
+    top: 0;
+    left: -280px;
+    max-width: 280px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--rich-black-fogra-39); /* Always solid black */
+    color: var(--white);
+    padding: 30px 20px;
+    visibility: hidden;
+    transition: 0.25s ease;
+    z-index: 4;
   }
-
+  
   .navbar.active {
-    background-color: var(--rich-black-fogra-39); /* Solid black for smaller screens */
+    visibility: visible;
+    transform: translateX(280px); /* Slide in */
+    transition-duration: 0.5s;
+    background-color: var(--rich-black-fogra-39); /* Solid black when open */
   }
-
+  
+  /* Navbar background fix on smaller screens */
+  @media (max-width: 768px) {
+    .header.scrolled + .navbar,
+    .header.scrolled .navbar {
+      background-color: var(--rich-black-fogra-39); /* Ensure navbar is black */
+    }
+  }
+  
+  .navbar .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+  
   .navbar .logo img {
-    width: 90px; /* Smaller logo */
+    width: 100px; /* Navbar-specific logo size */
   }
-
+  
+  .nav-close-btn {
+    font-size: 30px;
+    color: var(--white);
+    cursor: pointer;
+  }
+  
+  .navbar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
   .navbar-link {
-    font-size: 15px; /* Adjust font size */
+    display: block;
+    color: var(--white);
+    text-decoration: none;
+    padding-block: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s ease;
   }
-
+  
+  .navbar-link:is(:hover, :focus) {
+    color: var(--primery);
+  }
+  
+  /* Overlay Styles */
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background-color: hsla(0, 0%, 0%, 0.6);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease;
+    z-index: 3;
+  }
+  
+  .overlay.active {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  /* General Dropdown Styles */
+  .dropdown {
+    position: relative;
+    font-family: "Poppins", sans-serif;
+  }
+  
   .dropdown-menu {
-    position: static;
-    transform: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    /*Increasedwidth*/
+    list-style: none;
+    margin: 10px 0;
+    padding: 12px 15px;
+    background: linear-gradient(145deg, #ffffff, #f3f3f3);
+    /*Lightmoderngradient*/
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    /*Softshadowfordepth*/
+    border-radius: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    z-index: 10;
+    -webkit-transition: opacity 0.3s ease, transform 0.3s ease,
+      visibility 0.3s ease;
+    -moz-transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    -ms-transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    -o-transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  }
+  
+  .dropdown-menu .dropdown-link {
+    display: block;
+    color: var(--rich-black-fogra-29-1);
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 16px; /* Modern typography size */
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+    border-radius: 8px;
+    margin: 5px 0;
+  }
+  
+  .dropdown-menu .dropdown-link:is(:hover, :focus) {
+    background: linear-gradient(145deg, var(--primary-light), var(--primery));
+    color: var(--primery);
+    transform: translateX(8px); /* Subtle hover movement */
+  }
+  
+  /* Show dropdown with a smooth animation */
+  .dropdown:hover .dropdown-menu,
+  .dropdown-menu.active {
     opacity: 1;
     visibility: visible;
-    padding-left: 20px;
+    transform: translateY(0);
   }
-}
-
-@media (max-width: 768px) {
-  .logo img {
-    width: 100px; /* Reduce logo size */
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .nav-open-btn {
+      display: block; /* Show the menu button */
+    }
+  
+    .navbar {
+      max-width: 240px; /* Reduce navbar width */
+    }
+  
+    .navbar.active {
+      background-color: var(
+        --rich-black-fogra-39
+      ); /* Solid black for smaller screens */
+    }
+  
+    .navbar .logo img {
+      width: 90px; /* Smaller logo */
+    }
+  
+    .navbar-link {
+      font-size: 15px; /* Adjust font size */
+    }
+  
+    .dropdown-menu {
+      position: static;
+      transform: none;
+      opacity: 1;
+      visibility: visible;
+      padding-left: 20px;
+    }
   }
-
-  .navbar .logo img {
-    width: 80px; /* Further reduce navbar logo size */
+  
+  @media (max-width: 768px) {
+    .logo img {
+      width: 100px; /* Reduce logo size */
+    }
+  
+    .navbar .logo img {
+      width: 80px; /* Further reduce navbar logo size */
+    }
+  
+    .navbar-link {
+      font-size: 14px; /* Adjust font size for smaller screens */
+    }
+  
+    .navbar.active {
+      background-color: var(
+        --rich-black-fogra-39
+      ); /* Maintain solid black background */
+    }
+  
+    .dropdown-menu {
+      position: relative; /* Ensure it's positioned within the parent element */
+      width: 100%; /* Full width */
+      margin: 0;
+      padding: 10px 0;
+      border-radius: 0; /* Remove rounded edges */
+      box-shadow: none; /* Simplify for mobile */
+      background: linear-gradient(
+        135deg,
+        #333,
+        #222
+      ); /* Dark gradient for improved contrast */
+      display: flex; /* Use flex for column layout */
+      flex-direction: column;
+      gap: 10px; /* Space between links */
+    }
+  
+    .dropdown-menu .dropdown-link {
+      font-size: 15px; /* Slightly larger font for readability */
+      padding: 12px 20px; /* Adjust padding for better touch targets */
+      border: none; /* Remove border */
+      text-align: left; /* Ensure alignment */
+      background-color: transparent; /* Default background */
+      color: var(--white);
+      transition: background-color 0.3s ease, padding-left 0.3s ease,
+        transform 0.2s ease;
+    }
+  
+    .dropdown-menu .dropdown-link:is(:hover, :focus) {
+      background: rgba(255, 255, 255, 0.1); /* Subtle hover effect */
+      color: var(--primary-light); /* Highlighted text */
+      transform: scale(1.05); /* Slight enlargement for feedback */
+    }
+  
+    /* Ensure the last item has no bottom margin */
+    .dropdown-menu .dropdown-link:last-child {
+      margin-bottom: 0;
+    }
+  
+    /* Add icon or indicator for dropdown links with nested menus */
+    .dropdown-link.has-children::after {
+      content: "▸"; /* Arrow symbol for nested dropdowns */
+      font-size: 14px;
+      margin-left: auto; /* Push to the end */
+      color: var(--white);
+    }
+  
+    /* Add nested dropdown menu styles */
+    .dropdown-menu .dropdown-menu {
+      position: static; /* Nested dropdowns stay inline */
+      padding-left: 15px; /* Indentation for clarity */
+      background: none; /* Transparent nested background */
+      box-shadow: none; /* Remove shadow */
+    }
   }
-
-  .navbar-link {
-    font-size: 14px; /* Adjust font size for smaller screens */
+  
+  @media (max-width: 480px) {
+    .logo img {
+      width: 80px; /* Reduce logo size for extra small screens */
+    }
+  
+    .navbar {
+      max-width: 220px; /* Further reduce navbar width */
+    }
+  
+    .navbar.active {
+      background-color: var(
+        --rich-black-fogra-39
+      ); /* Ensure black background stays */
+    }
+  
+    .navbar .logo img {
+      width: 70px; /* Reduce navbar logo size further */
+    }
+  
+    .navbar-link {
+      font-size: 13px; /* Adjust link size */
+    }
+  
+    .nav-open-btn {
+      font-size: 30px; /* Slightly smaller menu button */
+    }
+  
+    .nav-close-btn {
+      font-size: 25px; /* Smaller close button */
+    }
+    .dropdown-menu .dropdown-link {
+      font-size: 13px;
+      padding: 10px 15px;
+    }
   }
-
-  .navbar.active {
-    background-color: var(--rich-black-fogra-39); /* Maintain solid black background */
-  }
-
-  .dropdown-menu {
-    position: relative; /* Ensure it's positioned within the parent element */
-    width: 100%; /* Full width */
-    margin: 0;
-    padding: 10px 0;
-    border-radius: 0; /* Remove rounded edges */
-    box-shadow: none; /* Simplify for mobile */
-    background: linear-gradient(135deg, #333, #222); /* Dark gradient for improved contrast */
-    display: flex; /* Use flex for column layout */
-    flex-direction: column;
-    gap: 10px; /* Space between links */
-  }
-
-  .dropdown-menu .dropdown-link {
-    font-size: 15px; /* Slightly larger font for readability */
-    padding: 12px 20px; /* Adjust padding for better touch targets */
-    border: none; /* Remove border */
-    text-align: left; /* Ensure alignment */
-    background-color: transparent; /* Default background */
-    color: var(--white);
-    transition: background-color 0.3s ease, padding-left 0.3s ease, transform 0.2s ease;
-  }
-
-  .dropdown-menu .dropdown-link:is(:hover, :focus) {
-    background: rgba(255, 255, 255, 0.1); /* Subtle hover effect */
-    color: var(--primary-light); /* Highlighted text */
-    transform: scale(1.05); /* Slight enlargement for feedback */
-  }
-
-  /* Ensure the last item has no bottom margin */
-  .dropdown-menu .dropdown-link:last-child {
-    margin-bottom: 0;
-  }
-
-  /* Add icon or indicator for dropdown links with nested menus */
-  .dropdown-link.has-children::after {
-    content: '▸'; /* Arrow symbol for nested dropdowns */
-    font-size: 14px;
-    margin-left: auto; /* Push to the end */
-    color: var(--white);
-  }
-
-  /* Add nested dropdown menu styles */
-  .dropdown-menu .dropdown-menu {
-    position: static; /* Nested dropdowns stay inline */
-    padding-left: 15px; /* Indentation for clarity */
-    background: none; /* Transparent nested background */
-    box-shadow: none; /* Remove shadow */
-  }
-
-}
-
-
-
-@media (max-width: 480px) {
-  .logo img {
-    width: 80px; /* Reduce logo size for extra small screens */
-  }
-
-  .navbar {
-    max-width: 220px; /* Further reduce navbar width */
-  }
-
-  .navbar.active {
-    background-color: var(--rich-black-fogra-39); /* Ensure black background stays */
-  }
-
-  .navbar .logo img {
-    width: 70px; /* Reduce navbar logo size further */
-  }
-
-  .navbar-link {
-    font-size: 13px; /* Adjust link size */
-  }
-
-  .nav-open-btn {
-    font-size: 30px; /* Slightly smaller menu button */
-  }
-
-  .nav-close-btn {
-    font-size: 25px; /* Smaller close button */
-  }
-  .dropdown-menu .dropdown-link {
-    font-size: 13px;
-    padding: 10px 15px;
-  }
-}
-
   
   
   /*-----------------------------------*\
