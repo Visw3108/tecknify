@@ -169,7 +169,7 @@ try {
                     </a>
                     <p class="our-blogs-meta">
                       <a href="#" class="our-blogs-author-link">By <?php echo htmlspecialchars($blog['author']); ?></a> |
-                      <?php echo htmlspecialchars($blog['blog_post_date']); ?>
+                      <?php echo (new DateTime($blog['blog_post_date']))->format('d-m-Y'); ?>
                     </p>
                     <button class="our-blogs-read-more-btn">Read More</button>
                   </div>
@@ -196,7 +196,7 @@ try {
                   $image = htmlspecialchars($imgurl.$blog['featured_image']);
                   $url = htmlspecialchars($blog['url']);
             ?>
-                  <a href="<?= $url ?>" class="our-blogs-card">
+                  <a href="../<?= $url ?>" class="our-blogs-card">
                     <div class="our-blogs-card-image">
                       <img src="<?= $image ?>" alt="<?= $title ?>">
                     </div>

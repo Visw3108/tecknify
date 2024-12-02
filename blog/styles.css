@@ -1098,11 +1098,13 @@ body {
 /* Wrapper for the entire layout */
 .our-blogs-wrapper {
   display: grid;
-  grid-template-columns: 3fr 1fr; /* Main section takes 3 parts, recent posts 1 part */
-  gap: 20px;
+  flex: 6;
+  grid-template-columns: 12fr 1fr; /* Main section takes 3 parts, recent posts 1 part */
+  /* gap: 20px; */
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  margin-left: 50px;
 }
 
 /* Main Blogs Section */
@@ -1152,7 +1154,7 @@ body {
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
-  width: 350px; /* Fixed width */
+  
   margin: 0 auto; /* Center the box horizontally */
 }
 
@@ -1188,6 +1190,7 @@ body {
   color: var(--granite-gray);
   margin-bottom: 15px;
   font-family: var(--ff-poppins);
+  margin-left: 22px;
 }
 
 .our-blogs-meta a.our-blogs-author-link {
@@ -1226,6 +1229,8 @@ body {
   text-transform: uppercase;
   cursor: pointer;
   transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+  margin-left: 20px;
+  margin-bottom: 20px;
 }
 
 .our-blogs-read-more-btn:hover {
@@ -1236,13 +1241,20 @@ body {
 /* Recent Posts Section */
 .our-blogs-recent-posts {
   display: flex;
+  flex: 3;
   flex-direction: column;
   gap: 20px;
   padding: 20px;
   background: var(--lavender-gray);
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  width: 300px;
+  max-width: 350px;
+}
+
+.content-container {
+  display: flex; /* Enable flexbox layout */
+  justify-content: space-between; /* Add space between items */
+  gap: 20px; /* Optional: Add space between the two sections */
 }
 
 .recent-posts-heading {
@@ -1318,13 +1330,25 @@ body {
 .our-blogs-card {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
   padding: 15px;
+  margin-bottom: 15px;
   background: var(--white);
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-decoration: none;
+}
+
+.our-blogs-card-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.our-blogs-card-content h4 {
+  font-size: 16px;
+  margin: 0;
 }
 
 .our-blogs-card:hover {
