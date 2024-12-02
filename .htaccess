@@ -1,0 +1,12 @@
+# Enable mod_rewrite
+RewriteEngine On
+
+# Remove .php extension
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([a-zA-Z0-9_-]+)$ $1.php [L]
+
+# Remove .html extension
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([a-zA-Z0-9_-]+)$ $1.html [L]
