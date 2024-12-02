@@ -174,6 +174,11 @@ body {
     #REUSED STYLE
   \*-----------------------------------*/
 
+  .content-container {
+    display: flex;
+    align-items: flex-start;
+  }
+
 .container {
   padding-inline: 15px;
 }
@@ -1073,11 +1078,12 @@ body {
  /* Wrapper for the entire layout */
 .our-blogs-wrapper {
   display: grid;
-  grid-template-columns: 3fr 1fr; /* Main section takes 3 parts, recent posts 1 part */
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+  grid-template-columns: 5fr 1fr; /* Main section takes 3 parts, recent posts 1 part */
+  /* gap: 20px; */
+  max-width: auto;
+  margin-left: 30px auto;
   padding: 20px;
+  flex: 3;
 }
 
 /* Main Blogs Section */
@@ -1117,7 +1123,7 @@ body {
 .our-blogs-projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  gap: 90px;
 }
 
 .our-blogs-project {
@@ -1128,7 +1134,8 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
   width: 350px; /* Fixed width */
-  margin: 0 auto; /* Center the box horizontally */
+  margin-left: 50px; /* Center the box horizontally */
+  padding-bottom: 15px;
 }
 
 .our-blogs-project:hover {
@@ -1162,6 +1169,7 @@ body {
   font-size: 1.2rem;
   color: var(--granite-gray);
   margin-bottom: 15px;
+  margin-left: 20px;
   font-family: var(--ff-poppins);
 }
 
@@ -1195,6 +1203,7 @@ body {
   color: var(--white);
   border: none;
   padding: 10px 15px;
+  margin-left: 20px;
   border-radius: 25px;
   font-size: 1.3rem;
   font-weight: bold;
@@ -1211,12 +1220,20 @@ body {
 /* Recent Posts Section */
 .our-blogs-recent-posts {
   display: flex;
+  flex: 1;
   flex-direction: column;
   gap: 15px;
   padding: 15px;
   background: var(--lavender-gray);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-right: 30px;
+  margin-top: 100px;
+}
+
+.our-blogs-recent-posts h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
 }
 
 .recent-posts-heading {
@@ -1231,6 +1248,7 @@ body {
 /* Recent Posts Cards */
 .our-blogs-card {
   display: flex;
+  margin-bottom: 15px;
   align-items: center;
   gap: 15px;
   padding: 10px;
@@ -1246,10 +1264,12 @@ body {
 }
 
 .our-blogs-card img {
-  width: 70px;
-  height: 70px;
   /* border-radius: 50%; */
   object-fit: cover;
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
+  margin-right: 10px;
 }
 
 .our-blogs-card h4 {
