@@ -149,6 +149,89 @@ proposalForm.addEventListener('submit', (event) => {
 
 
 
+// Function to check if an element is in the viewport
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return rect.top <= window.innerHeight && rect.bottom >= 0;
+}
+
+// Function to add the animation class when the element is in view
+function onScroll() {
+  const heroSection = document.querySelector('.hero');
+  if (isInViewport(heroSection)) {
+    heroSection.classList.add('animate');
+    window.removeEventListener('scroll', onScroll); // Remove the event listener after the animation is applied
+  }
+}
+
+// Listen for scroll events
+window.addEventListener('scroll', onScroll);
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const animatedElements = document.querySelectorAll("[data-animate]");
+
+  const handleScroll = () => {
+    animatedElements.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+      if (isVisible) {
+        el.classList.add("in-view");
+      }
+    });
+  };
+
+  // Trigger on scroll and load
+  window.addEventListener("scroll", handleScroll);
+  handleScroll();
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const animatedElements = document.querySelectorAll("[data-animate]");
+
+  const handleScroll = () => {
+    animatedElements.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+      if (isVisible) {
+        el.classList.add("in-view");
+      }
+    });
+  };
+
+  // Trigger on scroll and load
+  window.addEventListener("scroll", handleScroll);
+  handleScroll();
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const animatedElements = document.querySelectorAll("[data-animate]");
+
+  const handleScroll = () => {
+    animatedElements.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+      if (isVisible) {
+        el.classList.add("in-view");
+      }
+    });
+  };
+
+  // Trigger on scroll and load
+  window.addEventListener("scroll", handleScroll);
+  handleScroll();
+});
 
 
 
@@ -234,11 +317,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const stats = document.querySelectorAll(".stat-item h2");
+  const marketingSection = document.querySelector(".marketing-section");
 
   const animateCount = (el) => {
     const target = parseInt(el.getAttribute("data-target"));
-    const speed = 200; // Speed of animation in milliseconds
-    const increment = Math.ceil(target / speed);
+    const speed = 3000; // Duration of the animation (in milliseconds)
+    const increment = Math.ceil(target / (speed / 60)); // Determines how much to increment on each frame
 
     const updateCount = () => {
       const current = parseInt(el.innerText);
@@ -250,11 +334,27 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
 
+    el.style.opacity = 1;
     updateCount();
   };
 
-  stats.forEach((stat) => animateCount(stat));
+  // Set up an IntersectionObserver to detect when the section is in view
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Trigger the animation when the section comes into view
+        stats.forEach(stat => animateCount(stat));
+        observer.unobserve(entry.target); // Stop observing after the animation runs
+      }
+    });
+  }, {
+    threshold: 0.5 // Trigger when 50% of the section is in the viewport
+  });
+
+  // Start observing the marketing section
+  observer.observe(marketingSection);
 });
+
 
 
 
