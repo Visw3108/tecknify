@@ -94,13 +94,13 @@ addEventOnElem(navLinks, "click", closeNavbar);
  */
 
 // Add scroll effect to header
-window.addEventListener('scroll', () => {
+/* window.addEventListener('scroll', () => {
   if (window.scrollY > 50) {
     header.classList.add('scrolled');
   } else {
     header.classList.remove('scrolled');
   }
-});
+}); */
 
 
 

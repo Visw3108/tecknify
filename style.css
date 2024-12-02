@@ -639,7 +639,7 @@ body {
   }
 
   .navbar {
-    max-width: 200px; /* Further reduce navbar width */
+    max-width: 220px; /* Further reduce navbar width */
   }
 
   .navbar.active {
