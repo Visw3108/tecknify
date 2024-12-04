@@ -1098,7 +1098,7 @@ body {
 /* Wrapper for the entire layout */
 .our-blogs-wrapper {
   display: grid;
-  flex: 6;
+  flex: 3;
   grid-template-columns: 12fr 1fr; /* Main section takes 3 parts, recent posts 1 part */
   /* gap: 20px; */
   max-width: 1200px;
@@ -1374,7 +1374,8 @@ body {
 /* Responsive Design */
 @media (max-width: 1200px) {
   .our-blogs-wrapper {
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 6fr 1fr;
+    flex: 6;
   }
 }
 
@@ -1382,6 +1383,7 @@ body {
   .our-blogs-wrapper {
     grid-template-columns: 1fr;
     padding: 15px;
+    flex: 6;
   }
 
   .our-blogs-recent-posts {
@@ -1402,6 +1404,7 @@ body {
   .our-blogs-wrapper {
     grid-template-columns: 1fr;
     gap: 15px;
+    flex: 3;
   }
 
   .our-blogs-recent-posts {
