@@ -674,7 +674,7 @@ body {
 .digital-marketing {
   text-align: center;
   padding: 60px 20px;
-  background: url('/assets/images/achivment.jpg'); /* Add background image */
+  background: url('/assets/images/blog_header.jpg'); /* Add background image */
   background-size: cover; /* Ensures the background image covers the entire section */
   background-position: center; /* Centers the background image */
   background-attachment: fixed; /* Keeps the background image fixed while scrolling */
