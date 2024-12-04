@@ -239,11 +239,7 @@ body {
   padding: 14px 28px;
   border-radius: var(--radius-5);
   max-width: max-content;
-  background: linear-gradient(
-    135deg,
-    var(--primary-color),
-    var(--secondary-color)
-  );
+  background: var(--white);
   color: var(--rich-black-fogra-29-1);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
@@ -253,13 +249,10 @@ body {
 
 .btn:hover,
 .btn:focus {
-  background: linear-gradient(
-    135deg,
-    var(--primary-color-hover),
-    var(--lavender-gray)
-  );
+  background: var(--primery);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   transform: scale(1.05);
+  color: var(--white);
 }
 
 .btn-primary {
@@ -761,7 +754,7 @@ body {
     var(--primary-color),
     var(--secondary-color)
   );
-  color: var(--rich-black-fogra-29-1);
+  color: var(--primery);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   cursor: pointer;
@@ -770,13 +763,10 @@ body {
 
 .modern-submit:hover,
 .modern-submit:focus {
-  background: linear-gradient(
-    135deg,
-    var(--primary-color-hover),
-    var(--lavender-gray)
-  );
+  background: var(--primery);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   transform: scale(1.05);
+  color: white;
 }
 
 /* Text with Button Section */
@@ -1358,15 +1348,16 @@ body {
   font-weight: bold;
   text-decoration: none;
   transition: color 0.3s ease, transform 0.3s ease, border 0.3s ease;
-  border: 2px solid transparent;
+  border: 2px solid var(--primery);
   padding: 5px 10px;
   border-radius: var(--radius-5);
 }
 
 .btn-link:hover {
-  color: var(--rich-black-fogra-29-1);
+  color: var(--white);
   transform: translateX(5px);
   border-color: var(--primery);
+  background-color: var(--primery);
 }
 
 .btn-link ion-icon {
@@ -2020,7 +2011,7 @@ h3 {
 .btn-talk {
   display: inline-flex;
   align-items: center;
-  color: var(--rich-black-fogra-29-1);
+  color: var(--primery);
   font-weight: 600;
   text-transform: uppercase;
   text-decoration: none;
@@ -2031,13 +2022,13 @@ h3 {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease, background 0.3s ease;
   cursor: pointer;
-  border: 2px solid var(--rich-black-fogra-29-1);
+  border: 2px solid var(--primery);
 }
 
 .btn-contact:hover,
 .btn-talk:hover {
   color: var(--white);
-  background: var(--rich-black-fogra-29-2);
+  background: var(--primery);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
   transform: scale(1.05);
   opacity: 0.9;
@@ -2113,6 +2104,119 @@ h3 {
   .btn-talk {
     font-size: 0.85rem;
     padding: 10px 20px;
+  }
+}
+
+.social-media-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column; /* Default layout is vertical */
+  gap: 12px;
+  z-index: 9999; /* Ensure it's above other elements */
+  opacity: 0; /* Hidden initially for fade effect */
+  transform: translateX(30px); /* Slight right offset */
+  animation: fadeInRight 1.5s ease-out forwards; /* Fade-in from right animation */
+}
+
+@keyframes fadeInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.social-icon {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 50%;
+  overflow: hidden; /* To ensure circular shape */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0; /* Initially hidden */
+  animation: fadeIn 1s forwards; /* Animation for each icon */
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1; /* Make it visible */
+  }
+}
+
+/* Stagger the appearance of each social icon */
+.social-icon:nth-child(1) {
+  animation-delay: 0.3s; /* 1st icon */
+}
+
+.social-icon:nth-child(2) {
+  animation-delay: 0.6s; /* 2nd icon */
+}
+
+.social-icon:nth-child(3) {
+  animation-delay: 0.9s; /* 3rd icon */
+}
+
+.social-icon:nth-child(4) {
+  animation-delay: 1.2s; /* 4th icon */
+}
+
+/* Hover Effect */
+.social-icon:hover {
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3), 0px 0px 10px rgba(27, 26, 26, 0.6);
+}
+
+.social-icon img {
+  width: 90%;
+  height: 90%;
+  object-fit: cover; /* Ensures the images fit properly */
+}
+
+/* Responsive Design */
+
+/* For Tablets and Larger Mobile Screens */
+@media (max-width: 768px) {
+  .social-media-buttons {
+    bottom: 10px;
+    right: 10px;
+    gap: 10px;
+  }
+  .social-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* For Small Mobile Screens */
+@media (max-width: 480px) {
+  .social-media-buttons {
+    flex-direction: column; /* Ensure vertical layout on mobile screens */
+    bottom: 10px;
+    right: 10px;
+    gap: 8px; /* Reduce gap for better spacing on smaller screens */
+    z-index: 9999; /* Ensure no overlap on mobile */
+  }
+  .social-icon {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Additional mobile styling to improve accessibility */
+@media (max-width: 375px) {
+  .social-media-buttons {
+    right: 5px; /* Slightly reduced from the right edge */
+    bottom: 5px; /* Slightly reduced from the bottom edge */
+    gap: 6px; /* Reduce gap for even more compactness */
+  }
+  .social-icon {
+    width: 30px;
+    height: 30px;
   }
 }
 
@@ -2451,10 +2555,14 @@ h3 {
     border: 1px solid var(--primery);
     padding: 7px 18px;
     transition: var(--transition-1);
+    border-radius: var(--radius-5);
   }
 
   .header .btn-outline:is(:hover, :focus) {
-    background-color: var(--primery);
+    background: var(--primery);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    transform: scale(1.05);
     color: var(--white);
   }
 
