@@ -1374,7 +1374,7 @@ body {
 /* Responsive Design */
 @media (max-width: 1200px) {
   .our-blogs-wrapper {
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 6fr 1fr;
     flex: 6;
   }
 }
