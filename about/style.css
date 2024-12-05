@@ -1144,9 +1144,10 @@
       .who-we-are-tagline p {
         color: var(--granite-gray);
         line-height: 1.6;
-        margin: 10px 0 20px;
+        margin-bottom: 20px; /* Adjust this value for more space */
         font-family: var(--ff-poppins);
       }
+      
       
       .who-we-are-features {
         display: flex;
@@ -1291,13 +1292,15 @@
         color: var(--rich-black-fogra-29-1);
     }
     
-    .content p {
-        font-size: 1.5rem;
-        line-height: 1.7;
-        margin-bottom: 30px;
-        color: var(--rich-black-fogra-39);
-        font-family: var(--ff-poppins);
+    .team-content p {
+      font-size: 1.5rem;
+      line-height: 1.7;
+      margin-bottom: 30px; /* Adjusted to give more space between paragraphs */
+      color: var(--rich-black-fogra-39);
+      font-family: var(--ff-poppins);
+      
     }
+    
     
     .button {
         display: inline-block;
@@ -1433,12 +1436,12 @@
     }
     
     .client-logos h2 {
-        font-size: 3.7rem;
-        margin-bottom: 30px;
+        font-size: 4rem;
+        margin-bottom: 0px;
         color: var(--rich-black-fogra-29-1);
         letter-spacing: 1px;
         font-family: var(--ff-cuprum);
-        font-weight: bold;
+        font-weight: bolder;
     }
     
     /* Marquee container */
