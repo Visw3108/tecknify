@@ -45,6 +45,10 @@ if ($result && $row = $result->fetch(PDO::FETCH_ASSOC)) {
                 text-decoration: underline;
                 /* Add underline on hover */
             }
+            .content {
+                margin-bottom: 50px;
+                text-align: justify;
+            }
         </style>
     </head>
 
@@ -52,7 +56,7 @@ if ($result && $row = $result->fetch(PDO::FETCH_ASSOC)) {
         <div class="container my-5 px-3"> <!-- Added padding to left and right -->
             <h1 class="display-4 text-center mb-4"><?php echo htmlspecialchars($row['title']); ?></h1>
 
-            <div class="row justify-content-center">
+            <div class="row justify-content-center content">
                 <div class="col-md-8">
                     <!-- Blog Featured Image with custom size and rounded corners -->
                     <img src="<?php echo $imgurl . htmlspecialchars($row['featured_image']); ?>" alt="<?php echo htmlspecialchars($row['title']); ?>" class="img-fluid mb-4 rounded" style="max-width: 100%; height: auto; object-fit: cover;">
