@@ -674,7 +674,7 @@
   .digital-marketing {
     text-align: center;
     padding: 60px 20px;
-    background: url('/assets/images/achivment.jpg'); /* Add background image */
+    background: url('/assets/images/portfolio-bg.jpg'); /* Add background image */
     background-size: cover; /* Ensures the background image covers the entire section */
     background-position: center; /* Centers the background image */
     background-attachment: fixed; /* Keeps the background image fixed while scrolling */
@@ -687,7 +687,7 @@
   }
   
   /* Decorative Shapes */
-  .digital-marketing::before,
+ /*  .digital-marketing::before,
   .digital-marketing::after {
     content: '';
     position: absolute;
@@ -696,7 +696,7 @@
     background: rgba(146, 196, 123, 0.2);
     border-radius: 50%;
     z-index: 0;
-  }
+  } */
   
   .digital-marketing::before {
     top: -150px;
@@ -709,23 +709,25 @@
   }
   
   .digital-marketing h1 {
-    color: var(--rich-black-fogra-29-1);
+    color: var(--white);
     font-size: 2.5rem;
     margin-bottom: 15px;
     margin-top: 70px;
     z-index: 1;
     position: relative;
-    font-family: var(--ff-cuprum);
+    font-family: var(--ff-poppins);
+    text-transform: uppercase;
   }
   
   .digital-marketing p {
-    color: #666666;
+    color: var(--primery);
     font-size: 1.3rem;
     margin-bottom: 20px;
     margin-top: 15px;
     z-index: 1;
     position: relative;
     font-family: var(--ff-poppins);
+    font-weight: bolder;
   }
   
   /* Form */
@@ -1224,7 +1226,7 @@
       .achievements h2 {
         font-size: 36px;
         font-weight: 700;
-        color: #1f2937;
+        color: var(--rich-black-fogra-29-1);
         margin-bottom: 50px;
         position: relative;
         display: inline-block;
@@ -1238,7 +1240,7 @@
         transform: translateX(-50%);
         width: 80px;
         height: 4px;
-        background: #3b82f6;
+        background: var(--white);
         border-radius: 2px;
       }
   
@@ -1250,7 +1252,7 @@
       }
   
       .achievement-card {
-        background: linear-gradient(145deg, #e3f2fd, #ffffff);
+        background: var(--white);
         padding: 50px;
         border-radius: 20px;
         box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
@@ -1263,14 +1265,15 @@
       .achievement-card h3 {
         font-size: 56px;
         font-weight: 700;
-        color: #3b82f6;
+        color: var(--primery);
         margin-bottom: 15px;
       }
   
       .achievement-card p {
         font-size: 18px;
-        color: #4b5563;
+        color: #14161a;
         font-weight: 500;
+        font-family: var(--ff-poppins);
       }
   
       .achievement-card:hover {
