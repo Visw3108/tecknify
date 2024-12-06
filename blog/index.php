@@ -48,6 +48,81 @@ try {
     - preload images
   -->
   <link rel="preload" as="image" href="../assets/images/hero-banner.png">
+  <style>
+    .tags-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-start;
+      margin-top: 10px;
+    }
+
+    .tag-button {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #007BFF;
+      color: #fff;
+      text-align: center;
+      border: none;
+      border-radius: 20px;
+      font-size: 14px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .tag-button:hover {
+      background-color: #ff3c00;
+      transform: scale(1.05);
+      font-weight: 500;
+    }
+
+    .tag-button:active {
+      background-color: #003f7f;
+      transform: scale(0.95);
+    }
+
+    .categories-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-start;
+      margin-top: 10px;
+    }
+
+    .category-button {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #28a745;
+      /* Green background for categories */
+      color: #fff;
+      text-align: center;
+      border: none;
+      border-radius: 20px;
+      font-size: 14px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .category-button:hover {
+      background-color: #218838;
+      transform: scale(1.05);
+      font-weight: 500;
+    }
+
+    .category-button:active {
+      background-color: #1e7e34;
+      /* Even darker green when active */
+      transform: scale(0.95);
+    }
+    .blog-categories {
+      margin-top: 30px;
+    }
+    .blog-tags {
+      margin-top: 50px;
+    }
+  </style>
 
 </head>
 
@@ -79,7 +154,7 @@ try {
           <li class="dropdown">
             <a href="../service/" class="navbar-link" data-nav-link>Services</a>
             <ul class="dropdown-menu">
-              <li><a href="../service/seo/" class="dropdown-link">Social Medial Optimization</a></li>
+              <li><a href="../service/seo/" class="dropdown-link">Search Engine Optimization</a></li>
               <li><a href="../service/smo/" class="dropdown-link">Social Medial Marketing</a></li>
               <li><a href="../service/ppc/" class="dropdown-link">PPC Advertising</a></li>
               <li><a href="../service/web-development/" class="dropdown-link">Web Development</a></li>
@@ -161,17 +236,19 @@ try {
               <div class="our-blogs-projects">
                 <?php foreach ($blogs as $blog): ?>
                   <div class="our-blogs-project" data-category="<?php echo htmlspecialchars($blog['category']); ?>">
-                    <a href="#">
+                    <a href="../<?= $blog['url'] ?>">
                       <img src="<?php echo htmlspecialchars($imgurl . $blog['featured_image']); ?>" alt="<?php echo htmlspecialchars($blog['title']); ?>">
                       <div class="our-blogs-info">
                         <h3><?php echo htmlspecialchars($blog['title']); ?></h3>
                       </div>
                     </a>
                     <p class="our-blogs-meta">
-                      <a href="#" class="our-blogs-author-link">By <?php echo htmlspecialchars($blog['author']); ?></a> |
+                      <a href="../<?= $blog['author'] ?>" class="our-blogs-author-link">By <?php echo htmlspecialchars($blog['author']); ?></a> |
                       <?php echo (new DateTime($blog['blog_post_date']))->format('d-m-Y'); ?>
                     </p>
-                    <button class="our-blogs-read-more-btn">Read More</button>
+                    <a href="../<?= $blog['url'] ?>">
+                      <button class="our-blogs-read-more-btn">Read More</button>
+                    </a>
                   </div>
                 <?php endforeach; ?>
               </div>
@@ -182,7 +259,7 @@ try {
           <aside class="our-blogs-recent-posts">
             <h2 class="recent-posts-heading">Recent Posts</h2>
             <?php
-            require_once 'config.php'; // Include your database connection file
+            require_once 'config.php';
 
             try {
               // Fetch the last 10 blogs ordered by most recent date
@@ -193,7 +270,7 @@ try {
               if ($recentBlogs) {
                 foreach ($recentBlogs as $blog) {
                   $title = htmlspecialchars($blog['title']);
-                  $image = htmlspecialchars($imgurl.$blog['featured_image']);
+                  $image = htmlspecialchars($imgurl . $blog['featured_image']);
                   $url = htmlspecialchars($blog['url']);
             ?>
                   <a href="../<?= $url ?>" class="our-blogs-card">
@@ -209,8 +286,54 @@ try {
               } else {
                 echo "<p>No recent posts available.</p>";
               }
+
+              // Fetch all unique categories
+              $categoryStmt = $pdo->prepare("SELECT DISTINCT category FROM blogs");
+              $categoryStmt->execute();
+              $categories = $categoryStmt->fetchAll(PDO::FETCH_COLUMN);
+
+              if ($categories) {
+                echo '<div class="blog-categories">';
+                echo '<h2 class="recent-posts-heading">Blog Categories</h2>';
+                echo '<div class="categories-grid">';
+                foreach ($categories as $category) {
+                  $safeCategory = htmlspecialchars($category);
+                  echo "<a href='category.php?category=" . urlencode($safeCategory) . "' class='category-button'>" . $safeCategory . "</a>";
+                }
+                echo '</div>';
+                echo '</div>';
+              } else {
+                echo "<div class='blog-categories'><p>No categories available.</p></div>";
+              }
+
+              // Fetch and split all tags
+              $tagStmt = $pdo->prepare("SELECT tags FROM blogs");
+              $tagStmt->execute();
+              $allTags = $tagStmt->fetchAll(PDO::FETCH_COLUMN);
+
+              $uniqueTags = [];
+              foreach ($allTags as $tagString) {
+                $tagsArray = array_map('trim', explode(',', $tagString)); // Split and trim each tag
+                $uniqueTags = array_merge($uniqueTags, $tagsArray); // Merge tags into the uniqueTags array
+              }
+
+              $uniqueTags = array_unique($uniqueTags); // Remove duplicate tags
+
+              if ($uniqueTags) {
+                echo '<div class="blog-tags">';
+                echo '<h2 class="recent-posts-heading">Blog Tags</h2>';
+                echo '<div class="tags-grid">';
+                foreach ($uniqueTags as $tag) {
+                  $safeTag = htmlspecialchars($tag);
+                  echo "<a href='tag.php?tags=" . urlencode($safeTag) . "' class='tag-button'>" . $safeTag . "</a>";                  
+                }
+                echo '</div>';
+                echo '</div>';
+              } else {
+                echo "<div class='blog-tags'><p>No tags available.</p></div>";
+              }
             } catch (PDOException $e) {
-              echo "<p>Error fetching recent posts: " . htmlspecialchars($e->getMessage()) . "</p>";
+              echo "<p>Error fetching data: " . htmlspecialchars($e->getMessage()) . "</p>";
             }
             ?>
           </aside>
