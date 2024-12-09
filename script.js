@@ -301,13 +301,45 @@ addEventOnElem(accordionAction, "click", toggleAccordion);
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector('.testimonial-container');
   const cards = [...document.querySelectorAll('.testimonial-card')];
+  const popup = document.getElementById('testimonial-popup');
+  const popupImage = document.getElementById('popup-image');
+  const popupClose = document.querySelector('.popup-close');
 
   // Duplicate the cards to create a seamless loop
   cards.forEach((card) => {
     const clone = card.cloneNode(true);
     container.appendChild(clone);
   });
+
+  // Array of image paths for the testimonials
+  const testimonialImages = [
+    "./assets/images/Capture2.png", // Image for the first card
+    "./assets/images/Capture1.png", // Image for the second card
+    "./assets/images/Capture3.png", // Image for the third card
+    // Add more images as needed
+  ];
+
+  // Add click event to each card
+  cards.forEach((card, index) => {
+    card.addEventListener('click', () => {
+      popupImage.src = testimonialImages[index] || '';
+      popup.style.display = 'flex';
+    });
+  });
+
+  // Close the popup
+  popupClose.addEventListener('click', () => {
+    popup.style.display = 'none';
+  });
+
+  // Close the popup when clicking outside the content
+  popup.addEventListener('click', (event) => {
+    if (event.target === popup) {
+      popup.style.display = 'none';
+    }
+  });
 });
+
 
 
 
