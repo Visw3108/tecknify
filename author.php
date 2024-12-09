@@ -185,7 +185,7 @@ include "config/config.php";
     ?>
   </section>
 
-  <footer class="footer">
+  <!-- <footer class="footer">
 
     <div class="footer-top section">
       <div class="container">
@@ -365,7 +365,8 @@ include "config/config.php";
       </div>
     </div>
 
-  </footer>
+  </footer> -->
+  <?php include "footer.php" ?>
 
   <script src="script.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

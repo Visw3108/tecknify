@@ -1,16 +1,4 @@
 <style>
-  /*-----------------------------------*\
-  #style.css
-\*-----------------------------------*/
-
-  /**
- * copyright 2022 codewithsadee
- */
-
-  /*-----------------------------------*\
-  #CUSTOM PROPERTY
-\*-----------------------------------*/
-
   :root {
     /**
      * colors
@@ -1217,8 +1205,8 @@
 
       <div class="footer-brand">
 
-        <a href="#" class="logo">
-          <img src="./assets/images/tecknify-logo1.png" alt="Hoolix Logo" class="logo-img">
+        <a href="<?php echo $tecknify ?>" class="logo">
+          <img src="<?php echo $tecknify ?>assets/images/tecknify-logo1.png" alt="Hoolix Logo" class="logo-img">
         </a>
 
         <p class="footer-text">

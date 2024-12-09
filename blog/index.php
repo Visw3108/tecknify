@@ -1,4 +1,6 @@
 <?php
+error_reporting(0);
+require_once "../config/config.php";
 include("config.php");
 
 try {
@@ -236,14 +238,14 @@ try {
               <div class="our-blogs-projects">
                 <?php foreach ($blogs as $blog): ?>
                   <div class="our-blogs-project" data-category="<?php echo htmlspecialchars($blog['category']); ?>">
-                    <a href="../<?= $blog['url'] ?>">
+                    <a href="<?php echo $tecknify ?><?= $blog['url'] ?>">
                       <img src="<?php echo htmlspecialchars($imgurl . $blog['featured_image']); ?>" alt="<?php echo htmlspecialchars($blog['title']); ?>">
                       <div class="our-blogs-info">
                         <h3><?php echo htmlspecialchars($blog['title']); ?></h3>
                       </div>
                     </a>
                     <p class="our-blogs-meta">
-                      <a href="../<?= $blog['author'] ?>" class="our-blogs-author-link">By <?php echo htmlspecialchars($blog['author']); ?></a> |
+                      <a href="<?php echo $tecknify.'author.php?author='.$blog['author'] ?>" class="our-blogs-author-link">By <?php echo htmlspecialchars($blog['author']); ?></a> |
                       <?php echo (new DateTime($blog['blog_post_date']))->format('d-m-Y'); ?>
                     </p>
                     <a href="../<?= $blog['url'] ?>">
