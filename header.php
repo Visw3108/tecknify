@@ -1,3 +1,7 @@
+<?php
+include "config/config.php"
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -1232,14 +1236,14 @@
 
   <header class="header" data-header>
     <div class="container">
-      <a href="#" class="logo">
-        <img src="./assets/images/Tecknify-Logo.png" alt="Tecknify Logo">
+      <a href="<?php echo $tecknify; ?>" class="logo">
+        <img src="<?php echo $tecknify; ?>assets/images/Tecknify-Logo.png" alt="Tecknify Logo">
       </a>
 
       <nav class="navbar" data-navbar>
         <div class="wrapper">
-          <a href="#" class="logo">
-            <img src="/assets/images/tecknify-logo1.png" alt="Tecknify Logo">
+          <a href="<?php echo $tecknify; ?>" class="logo">
+            <img src="<?php echo $tecknify; ?>assets/images/tecknify-logo1.png" alt="Tecknify Logo">
           </a>
           <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
             <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
@@ -1247,22 +1251,22 @@
         </div>
 
         <ul class="navbar-list">
-          <li><a href="/" class="navbar-link" data-nav-link>Home</a></li>
-          <li><a href="/about/" class="navbar-link" data-nav-link>About</a></li>
+          <li><a href="<?php echo $tecknify; ?>" class="navbar-link" data-nav-link>Home</a></li>
+          <li><a href="<?php echo $tecknify; ?>about/" class="navbar-link" data-nav-link>About</a></li>
           <li class="dropdown">
-            <a href="/service/" class="navbar-link" data-nav-link>Services</a>
+            <a href="<?php echo $tecknify; ?>service/" class="navbar-link" data-nav-link>Services</a>
             <ul class="dropdown-menu">
-              <li><a href="/service/seo/" class="dropdown-link">Social Medial Optimization</a></li>
-              <li><a href="/service/smo/" class="dropdown-link">Social Medial Marketing</a></li>
-              <li><a href="/service/ppc/" class="dropdown-link">PPC Advertising</a></li>
-              <li><a href="/service/web-development/" class="dropdown-link">Web Development</a></li>
-              <li><a href="/service/app-development/" class="dropdown-link">App Development</a></li>
-              <li><a href="/service/content-marketing/" class="dropdown-link">Content Marketing</a></li>
+              <li><a href="<?php echo $tecknify; ?>service/seo/" class="dropdown-link">Social Medial Optimization</a></li>
+              <li><a href="<?php echo $tecknify; ?>service/smo/" class="dropdown-link">Social Medial Marketing</a></li>
+              <li><a href="<?php echo $tecknify; ?>service/ppc/" class="dropdown-link">PPC Advertising</a></li>
+              <li><a href="<?php echo $tecknify; ?>service/web-development/" class="dropdown-link">Web Development</a></li>
+              <li><a href="<?php echo $tecknify; ?>service/app-development/" class="dropdown-link">App Development</a></li>
+              <li><a href="<?php echo $tecknify; ?>service/content-marketing/" class="dropdown-link">Content Marketing</a></li>
             </ul>
           </li>
-          <li><a href="/portfolio/" class="navbar-link" data-nav-link>Portfolio</a></li>
-          <li><a href="/blog/" class="navbar-link" data-nav-link>Blog</a></li>
-          <li><a href="/contact/" class="navbar-link" data-nav-link>Contact Us</a></li>
+          <li><a href="<?php echo $tecknify; ?>portfolio/" class="navbar-link" data-nav-link>Portfolio</a></li>
+          <li><a href="<?php echo $tecknify; ?>blog/" class="navbar-link" data-nav-link>Blog</a></li>
+          <li><a href="<?php echo $tecknify; ?>contact/" class="navbar-link" data-nav-link>Contact Us</a></li>
         </ul>
       </nav>
 
@@ -1270,7 +1274,7 @@
         <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
       </button>
 
-      <a href="tel: +917682064973" class="btn-outline">Let's talk</a>
+      <a href="tel:+917682064973" class="btn-outline">Let's talk</a>
       <div class="overlay" data-nav-toggler data-overlay></div>
     </div>
   </header>

@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 include('config/config.php');
 include 'header.php';
 $slug = 'why-link-wheel-is-an-effective-off-page-seo-technique';
@@ -57,7 +58,7 @@ if ($result && $row = $result->fetch(PDO::FETCH_ASSOC)) {
                 <img src="<?php echo $imgurl . htmlspecialchars($row['featured_image']); ?>" alt="<?php echo htmlspecialchars($row['title']); ?>" class="img-fluid mb-4 rounded" style="max-width: 100%; height: auto; object-fit: cover;">
 
                 <div class="mb-4 text-muted">
-                    <span class="meta-item"><strong>Author:&nbsp</strong> <a href="author.php?name=<?php echo urlencode($row['author']); ?>"><?php echo htmlspecialchars($row['author']); ?></a></span> |
+                    <span class="meta-item"><strong>Author:&nbsp</strong> <a href="author.php?author=<?php echo urlencode($row['author']); ?>"><?php echo htmlspecialchars($row['author']); ?></a></span> |
                     <span class="meta-item"><strong>Posted on:&nbsp</strong> <?php echo date("d-m-Y", strtotime($row['blog_post_date'])); ?></span> |
                     <span class="meta-item"><strong>Category:&nbsp</strong> <a href="category.php?category=<?php echo urlencode($row['category']); ?>"><?php echo htmlspecialchars($row['category']); ?></a></span>
                 </div>

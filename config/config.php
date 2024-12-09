@@ -20,6 +20,10 @@ try {
 
 $baseurl = "http://localhost/tecknify/admin/";
 $imgurl = "http://localhost/tecknify/blog-img/";
+// Local Url
+$tecknify = "http://localhost/tecknify/";
+// Live Url
+// $tecknify = "https://tecknify.com/";
 
 // Set timezone (optional)
 date_default_timezone_set('Asia/Kolkata');
@@ -28,8 +32,8 @@ date_default_timezone_set('Asia/Kolkata');
 define('DEBUG_MODE', true);
 
 // Example function to check if the config is loaded properly
-function getDbConnection() {
-    global $pdo;
-    return $pdo;
-}
+// function getDbConnection() {
+//     global $pdo;
+//     return $pdo;
+// }
 ?>
