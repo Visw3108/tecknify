@@ -1766,7 +1766,7 @@ h2 {
   background-color: var(--rich-black-fogra-29-1);
   border-radius: 15px;
   padding: 25px;
-  flex: 0 0 300px;
+  flex: 0 0 400px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
 }
@@ -1797,8 +1797,9 @@ h3 {
 }
 
 .testimonial-role {
-  color: #64748b;
+  color: #809ec7;
   font-size: 0.9rem;
+  font-weight: bolder;
 }
 
 .testimonial-text {
@@ -1908,7 +1909,7 @@ h3 {
   }
 
   .testimonial-card {
-    flex: 0 0 40%;
+    flex: 0 0 50%; /* Adjusted width for responsiveness */
   }
 
   h3 {
@@ -1926,7 +1927,7 @@ h3 {
   }
 
   .testimonial-card {
-    flex: 0 0 45%;
+    flex: 0 0 60%; /* Adjusted width for responsiveness */
   }
 
   h3 {
@@ -1944,7 +1945,7 @@ h3 {
   }
 
   .testimonial-card {
-    flex: 0 0 80%;
+    flex: 0 0 85%;
   }
 
   h3 {
@@ -1962,8 +1963,8 @@ h3 {
   }
 
   .testimonial-card {
+    flex: 0 0 100%; /* Full width for very small screens */
     padding: 20px;
-    flex: 0 0 100%;
   }
 
   h3 {

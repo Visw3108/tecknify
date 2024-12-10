@@ -305,12 +305,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const popupImage = document.getElementById('popup-image');
   const popupClose = document.querySelector('.popup-close');
 
-  // Duplicate the cards to create a seamless loop
-  cards.forEach((card) => {
-    const clone = card.cloneNode(true);
-    container.appendChild(clone);
-  });
-
   // Array of image paths for the testimonials
   const testimonialImages = [
     "./assets/images/review-page.jpg", // Image for the first card
@@ -319,10 +313,19 @@ document.addEventListener("DOMContentLoaded", () => {
     // Add more images as needed
   ];
 
-  // Add click event to each card
-  cards.forEach((card, index) => {
+  // Duplicate the cards to create a seamless loop
+  cards.forEach((card) => {
+    const clone = card.cloneNode(true);
+    container.appendChild(clone);
+  });
+
+  // Attach click event to all cards (original and clones)
+  const allCards = [...container.querySelectorAll('.testimonial-card')];
+  allCards.forEach((card, index) => {
     card.addEventListener('click', () => {
-      popupImage.src = testimonialImages[index] || '';
+      // Calculate the actual image index using modulo
+      const imageIndex = index % testimonialImages.length;
+      popupImage.src = testimonialImages[imageIndex] || '';
       popup.style.display = 'flex';
     });
   });
@@ -338,7 +341,42 @@ document.addEventListener("DOMContentLoaded", () => {
       popup.style.display = 'none';
     }
   });
+
+  // Enable continuous scrolling using CSS animation
+  const scrollDuration = 20; // Duration of the scroll in seconds
+  const containerWidth = container.scrollWidth;
+  const cardWidth = cards[0].offsetWidth;
+  const totalCards = container.children.length;
+
+  container.style.width = `${totalCards * cardWidth}px`;
+
+  container.style.animation = `scrollLoop ${scrollDuration}s linear infinite`;
+
+  // Define the keyframes dynamically for the scroll animation
+  const styleSheet = document.styleSheets[0];
+  styleSheet.insertRule(`
+    @keyframes scrollLoop {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-${containerWidth / 2}px);
+      }
+    }
+  `, styleSheet.cssRules.length);
+
+  // Pause scrolling on hover
+  allCards.forEach((card) => {
+    card.addEventListener('mouseenter', () => {
+      container.style.animationPlayState = 'paused';
+    });
+    card.addEventListener('mouseleave', () => {
+      container.style.animationPlayState = 'running';
+    });
+  });
 });
+
+
 
 
 
