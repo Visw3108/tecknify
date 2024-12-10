@@ -1139,6 +1139,7 @@ body {
   opacity: 0; /* Initially hidden */
   animation: fadeInUp 0.6s ease-in-out forwards;
   animation-delay: 0.2s;
+  margin-top: 40px;
 }
 
 .our-services-card:hover {
@@ -1165,10 +1166,10 @@ body {
 
 /* Title and Text Styling */
 .our-services-card .card-title {
-  font-size: 1.7rem;
+  font-size: 1.9rem;
   margin-top: 20px;
   margin-bottom: 10px;
-  color: hsl(188, 50%, 24%);
+  color: var(--rich-black-fogra-29-1);
   transition: color 0.3s ease;
 }
 

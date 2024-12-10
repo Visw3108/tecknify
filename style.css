@@ -839,7 +839,6 @@ body {
   animation: fadeInLeft 1s ease-out;
 }
 
-
 /* General Modal Styles */
 .modal {
   display: none; /* Hidden by default */
@@ -1216,7 +1215,6 @@ body {
   transform: translateX(50px);
 }
 
-
 /*-----------------------------------*\
   #SERVICE
 \*-----------------------------------*/
@@ -1310,7 +1308,6 @@ body {
 .service .btn {
   margin-inline: auto;
 }
-
 
 /* Base styles for animations */
 [data-animate] {
@@ -1849,13 +1846,17 @@ h3 {
   top: 10px;
   right: 10px;
   font-size: 2rem;
-  /*Increasedfontsize*/color: black;
+  /*Increasedfontsize*/
+  color: black;
   cursor: pointer;
   font-weight: bold;
- 
-  /*Lightbackground*/border-radius: 30%;
-  /*Circularbutton*/padding: 10px;
-  /*Increasedpadding*/transition: background-color 0.3s, transform 0.3s;
+
+  /*Lightbackground*/
+  border-radius: 30%;
+  /*Circularbutton*/
+  padding: 10px;
+  /*Increasedpadding*/
+  transition: background-color 0.3s, transform 0.3s;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
@@ -1863,7 +1864,6 @@ h3 {
 }
 
 .popup-close:hover {
- 
   transform: scale(1.1); /* Scale effect on hover */
 }
 
@@ -1992,8 +1992,6 @@ h3 {
   }
 }
 
-
-
 /*-----------------------------------*\
   #FAQ
 \*-----------------------------------*/
@@ -2079,7 +2077,6 @@ h3 {
   max-height: 500px;
 }
 
-
 /* Modernized Marketing Section Styles */
 .marketing-section {
   display: flex;
@@ -2158,7 +2155,8 @@ h3 {
   max-width: max-content;
   background: var(--white);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease, background 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease,
+    border 0.3s ease, background 0.3s ease;
   cursor: pointer;
   border: 2px solid var(--primery);
 }
@@ -2303,10 +2301,19 @@ h3 {
   animation-delay: 1.2s; /* 4th icon */
 }
 
+.social-icon:nth-child(5) {
+  animation-delay: 1.5s; /* 4th icon */
+}
+
+.social-icon:nth-child(6) {
+  animation-delay: 1.8s; /* 4th icon */
+}
+
 /* Hover Effect */
 .social-icon:hover {
   transform: scale(1.15) rotate(5deg);
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3), 0px 0px 10px rgba(27, 26, 26, 0.6);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3),
+    0px 0px 10px rgba(27, 26, 26, 0.6);
 }
 
 .social-icon img {
@@ -2357,7 +2364,6 @@ h3 {
     height: 30px;
   }
 }
-
 
 /*-----------------------------------*\
   #FOOTER
