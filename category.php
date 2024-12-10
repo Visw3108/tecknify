@@ -183,15 +183,15 @@ include "config/config.php";
     ?>
   </section>
 
-  <footer class="footer">
+  <!-- <footer class="footer">
 
     <div class="footer-top section">
       <div class="container">
 
         <div class="footer-brand">
 
-          <a href="#" class="logo">
-            <img src="../assets/images/tecknify-logo1.png" alt="Hoolix Logo" class="logo-img">
+          <a href="<?php echo $tecknify ?>" class="logo">
+            <img src="<?php echo $tecknify ?>assets/images/tecknify-logo1.png" alt="Hoolix Logo" class="logo-img">
           </a>
 
           <p class="footer-text">
@@ -363,7 +363,8 @@ include "config/config.php";
       </div>
     </div>
 
-  </footer>
+  </footer> -->
+  <?php include "footer.php" ?>
 
   <script src="script.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
