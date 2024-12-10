@@ -313,9 +313,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Array of image paths for the testimonials
   const testimonialImages = [
-    "./assets/images/Capture2.png", // Image for the first card
-    "./assets/images/Capture1.png", // Image for the second card
-    "./assets/images/Capture3.png", // Image for the third card
+    "./assets/images/review-page.jpg", // Image for the first card
+    "./assets/images/review-page-2.jpg", // Image for the second card
+    "./assets/images/review-page-3.jpg", // Image for the third card
     // Add more images as needed
   ];
 
