@@ -1945,7 +1945,7 @@ h3 {
   }
 
   .testimonial-card {
-    flex: 0 0 85%;
+    flex: 0 0 15%;
   }
 
   h3 {
@@ -1963,7 +1963,7 @@ h3 {
   }
 
   .testimonial-card {
-    flex: 0 0 100%; /* Full width for very small screens */
+    flex: 0 0 10%; /* Full width for very small screens */
     padding: 20px;
   }
 
