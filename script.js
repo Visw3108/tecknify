@@ -424,20 +424,3 @@ document.addEventListener("DOMContentLoaded", () => {
   // Start observing the marketing section
   observer.observe(marketingSection);
 });
-
-
-
-
-// Disable right-click (context menu)
-document.addEventListener('contextmenu', function(event) {
-  event.preventDefault();
-});
-
-// Disable text selection
-document.addEventListener('selectstart', function(event) {
-  event.preventDefault();
-});
-
-
-
-

@@ -1781,6 +1781,7 @@ body {
 
 .footer-text {
   margin-block: 25px;
+  text-align: justify;
 }
 
 .newsletter-form {

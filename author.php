@@ -139,26 +139,25 @@ include "config/config.php";
 
   <section class="category-sec">
     <?php
-    // Get the category value from the URL
+    // Get the author value from the URL
     $author = isset($_GET['author']) ? urldecode($_GET['author']) : '';
     // print_r($_GET['author']);exit;
 
-    // Handle cases where category is empty
+    // Handle cases where author is empty
     if (empty($author)) {
-      echo "No category specified.";
+      echo "No AUthor found.";
     } else {
-      echo "<h2>Posts in Category: " . htmlspecialchars($author) . "</h2>";
+      echo "<h2>Author name: " . htmlspecialchars($author) . "</h2>";
     }
 
     try {
-      // Fetch posts for the selected category
+      // Fetch posts for the selected author
       $stmt = $pdo->prepare("SELECT * FROM blogs WHERE author = :author ORDER BY blog_post_date DESC");
       $stmt->bindParam(':author', $author);
       $stmt->execute();
       $posts = $stmt->fetchAll();
 
       if ($posts) {
-        // echo "<h2>Posts in Category: " . htmlspecialchars($author) . "</h2>";
         echo "<div class='card-container'>";
 
         foreach ($posts as $post) {
@@ -175,7 +174,7 @@ include "config/config.php";
           echo "</div>";
         }
 
-        echo "</div>"; // Close card container
+        echo "</div>";
       } else {
         echo "<p>No posts available in this category.</p>";
       }

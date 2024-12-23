@@ -704,11 +704,12 @@ body {
 }
 
 .hero-text {
-  font-size: 16px;
+  font-size: 14px;
   color: hsl(0, 0%, 30%);
   line-height: 1.5;
   margin: 0 auto;
   max-width: 600px;
+  text-align: justify;
 }
 
 /* Modern Input Section */
@@ -982,11 +983,11 @@ body {
 /* For screens 1200px and above (larger devices like laptops and desktops) */
 @media (min-width: 1200px) {
   .hero-title {
-    font-size: 48px;
+    font-size: 42px;
   }
 
   .hero-text {
-    font-size: 18px;
+    font-size: 1.6rem;
   }
 
   .input-group.modern {
@@ -1009,6 +1010,7 @@ body {
 
   .hero-text {
     font-size: 16px;
+    text-align: justify;
   }
 
   .input-group.modern {
@@ -1123,6 +1125,7 @@ body {
 #responseMessage {
   font-weight: bold;
   animation: blink 1s infinite;
+  color: #048004 !important;
 }
 
 /*-----------------------------------*\
@@ -1140,6 +1143,9 @@ body {
 
 .about .section-text {
   margin-block: 20px 13px;
+}
+.section-text {
+  text-align: justify;
 }
 
 .about-list {
@@ -1292,6 +1298,10 @@ body {
 .service-card:focus-within .img {
   transform: scale(1.15);
   filter: brightness(1.2);
+}
+
+.card-text {
+  text-align: justify;
 }
 
 .service-card .card-text {
@@ -2524,6 +2534,7 @@ h3 {
 #responseMessage {
   font-weight: bold;
   animation: blink 1s infinite; /* 1 second interval, infinite loop */
+  color: #048004 !important;
 }
 
 /*-----------------------------------*\
