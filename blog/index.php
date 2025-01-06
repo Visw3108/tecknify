@@ -157,7 +157,7 @@ try {
             <a href="../service/" class="navbar-link" data-nav-link>Services</a>
             <ul class="dropdown-menu">
               <li><a href="../service/seo/" class="dropdown-link">Search Engine Optimization</a></li>
-              <li><a href="../service/smo/" class="dropdown-link">Social Medial Marketing</a></li>
+              <li><a href="../service/smm/" class="dropdown-link">Social Medial Marketing</a></li>
               <li><a href="../service/ppc/" class="dropdown-link">PPC Advertising</a></li>
               <li><a href="../service/web-development/" class="dropdown-link">Web Development</a></li>
               <li><a href="../service/app-development/" class="dropdown-link">App Development</a></li>
@@ -355,8 +355,8 @@ try {
 
         <div class="footer-brand">
 
-          <a href="#" class="logo">
-            <img src="../assets/images/tecknify-logo1.png" alt="Hoolix Logo" class="logo-img">
+          <a href="<?php echo $tecknify ?>" class="logo">
+            <img src="<?php echo $tecknify ?>assets/images/tecknify-logo1.png" alt="Hoolix Logo" class="logo-img">
           </a>
 
           <p class="footer-text">
@@ -382,27 +382,27 @@ try {
           </li>
 
           <li>
-            <a href="#" class="footer-link">Strategy & Research</a>
+            <a href="<?php echo $tecknify ?>service/seo/" class="footer-link">Search Engine Optimization</a>
           </li>
 
           <li>
-            <a href="#" class="footer-link">Web Development</a>
+            <a href="<?php echo $tecknify ?>service/smm/" class="footer-link">Social Media Optimization</a>
           </li>
 
           <li>
-            <a href="#" class="footer-link">Web Solution</a>
+            <a href="<?php echo $tecknify ?>service/web-development/" class="footer-link">Web Development</a>
           </li>
 
           <li>
-            <a href="#" class="footer-link">Digital Merketing</a>
+            <a href="<?php echo $tecknify ?>service/app-development/" class="footer-link">App Development</a>
           </li>
 
           <li>
-            <a href="#" class="footer-link">App Design</a>
+            <a href="<?php echo $tecknify ?>service/ppc/" class="footer-link">Pay Per Click</a>
           </li>
 
           <li>
-            <a href="#" class="footer-link">App Development</a>
+            <a href="<?php echo $tecknify ?>service/content-marketing/" class="footer-link">Content Marketing</a>
           </li>
 
         </ul>
@@ -512,7 +512,7 @@ try {
         <ul class="footer-bottom-list">
 
           <li>
-            <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          <a href="<?php echo $tecknify ?>privacy-policy" class="footer-bottom-link" target="_blank">Privacy Policy</a>
           </li>
 
           <li>

@@ -19,7 +19,10 @@ try {
 }
 
 $baseurl = "http://localhost/tecknify/admin/";
+// $baseurl = "https://tecknify.com/admin/";
 $imgurl = "http://localhost/tecknify/blog-img/";
+// $imgurl = "https://tecknify.com/blog-img/";
+
 // Local Url
 $tecknify = "http://localhost/tecknify/";
 // Live Url

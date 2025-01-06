@@ -35,13 +35,14 @@ if ($conn->query($sql) === TRUE) {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'rajat.web71@gmail.com'; // Your email
+        $mail->Username = 'rajat.web71@gmail.com'; // Your email 
         $mail->Password = 'budh jzvs qsod oskg';   // Your email password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
         // Admin Email Notification
         $mail->setFrom('rajat.web71@gmail.com', 'Tecknify Admin');
+        // $mail->setFrom('infotecknify@gmail.com', 'Tecknify Admin');
         $mail->addAddress('rajattecknify0110@gmail.com'); // Admin email
 
         $mail->isHTML(true);
@@ -49,30 +50,54 @@ if ($conn->query($sql) === TRUE) {
         $mail->Body = "
         <html>
             <head>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
                 <style>
                     body {
                         font-family: Arial, sans-serif;
                         background-color: #f4f4f4;
+                        margin: 0;
                         padding: 20px;
                     }
                     .email-container {
                         background-color: #ffffff;
                         padding: 30px;
                         border-radius: 8px;
-                        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
                         max-width: 600px;
-                        margin: 0 auto;
-                    }
-                    h1 {
-                        color: #333333;
-                        font-size: 24px;
-                        margin-bottom: 20px;
-                    }
-                    p {
-                        font-size: 16px;
-                        color: #333333;
+                        margin: 20px auto;
+                        font-size: 14px;
                         line-height: 1.6;
-                        margin: 10px 0;
+                        color: #333333;
+                        border: 1px solid #ddd;
+                    }
+                    .email-container h1 {
+                        font-size: 16px;
+                        color: #ff3c00;
+                        margin-bottom: 20px;
+                        font-weight: bold;
+                    }
+                    .email-container p {
+                        margin: 0;
+                        padding: 8px 0;
+                        border-bottom: 1px solid #ddd;
+                        color: #333333;
+                    }
+                    .email-container p:last-child {
+                        border-bottom: none;
+                    }
+                    .email-container p strong {
+                        font-weight: bold;
+                        color: #ff3c00;
+                    }
+                    .footer {
+                        text-align: center;
+                        margin-top: 20px;
+                        font-size: 12px;
+                        color: #999999;
+                    }
+                    .footer a {
+                        color: #ff3c00;
+                        text-decoration: none;
+                        font-weight: bold;
                     }
                 </style>
             </head>
@@ -85,6 +110,9 @@ if ($conn->query($sql) === TRUE) {
                     <p><strong>Service:</strong> $service</p>
                     <p><strong>Schedule:</strong> $schedule</p>
                     <p><strong>Comment:</strong> $comment</p>
+                </div>
+                <div class='footer'>
+                    Sent from <a href='https://tecknify.com/'>tecknify</a>
                 </div>
             </body>
         </html>";

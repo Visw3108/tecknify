@@ -1154,7 +1154,7 @@ body {
   }
 
   .aboutus-content p {
-    font-size: 1rem;
+    font-size: 14px;
   }
 
   .aboutus-image {
@@ -1781,6 +1781,7 @@ body {
 
 .footer-text {
   margin-block: 25px;
+  text-align: justify;
 }
 
 .newsletter-form {

@@ -331,6 +331,11 @@
       box-shadow: var(--shadow-3);
       transform: translateY(-5px); /* Slight upward motion */
     }
+
+    .para-text {
+      text-align: justify;
+      margin-bottom: 15px;
+    }
     
     /* Ensure header background remains non-black on smaller screens */
     @media (max-width: 768px) {
@@ -1111,9 +1116,8 @@
       }
       
       .who-we-are-image-section img {
-        width: 100%;
-        max-width: 500px;
-        height: auto;
+        width: 600px;
+        height: 400px;
         border-radius: 8px;
       }
       
@@ -1802,7 +1806,7 @@
     }
   
     .office-map-content p {
-      font-size: 1.1em;
+      font-size: 15px;
       font-family: var(--ff-poppins);
     }
   

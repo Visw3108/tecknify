@@ -126,7 +126,7 @@
             <a href="../service/" class="navbar-link" data-nav-link>Services</a>
             <ul class="dropdown-menu">
               <li><a href="../service/seo/" class="dropdown-link">Search Engine Optimization</a></li>
-              <li><a href="../service/smo/" class="dropdown-link">Social Medial Marketing</a></li>
+              <li><a href="../service/smm/" class="dropdown-link">Social Medial Marketing</a></li>
               <li><a href="../service/ppc/" class="dropdown-link">PPC Advertising</a></li>
               <li><a href="../service/web-development/" class="dropdown-link">Web Development</a></li>
               <li><a href="../service/app-development/" class="dropdown-link">App Development</a></li>
