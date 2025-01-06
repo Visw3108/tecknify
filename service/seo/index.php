@@ -197,7 +197,7 @@ try {
               Frequently used keywords that are also very popular are expensive and may require time before showing positive ROI.
             </p>
           </div>
-          <div class="our-service-card">
+          <!-- <div class="our-service-card">
             <div class="our-service-icon">
               <img src="<?php echo $tecknify; ?>assets/images/icons8-seo-setting.png" alt="Competitive Analysis Icon" />
             </div>
@@ -205,7 +205,7 @@ try {
             <p style="text-align: justify;">
               Technical SEO covers optimizing factors relating to your website. These include, the site speed, the crawlability of your pages, URL format, quality of code, and site security.
             </p>
-          </div>
+          </div> -->
           <div class="our-service-card">
             <div class="our-service-icon">
               <img src="<?php echo $tecknify; ?>assets/images/icons8-website-optimization.png" alt="Technical SEO Icon" />

@@ -174,6 +174,9 @@ try {
             <h2>Planning</h2>
             <p style="text-align: justify;">
               Our planning stage involves establishing the purpose and nature of your website as well as your main reasons for the creation of the website. Based on thorough research, after the goals of the site have been established, we also draw up a detailed layout plan of the site. It also helps us prevent going in circles while on the process of trying to create the website that will best fit what your business needs along with the expectation of the many users it will encounter.
+              During the planning phase basic concepts of what the website is to look like, the sitemap and structure as
+              well as technologies to be involved are decided on. Starting with detailed research where I pay especial
+              attention to website goals and objectives, and key audience to make proper decisions for further work.
             </p>
           </div>
           <div class="our-service-card">
@@ -183,6 +186,9 @@ try {
             <h2>Design</h2>
             <p style="text-align: justify;">
               The design phase is all about shaping the user experience. We create layouts to define appearance, and adhere to the navigation and layout standards. It is our desire that your users are able to find what they want easily on your website without getting bored of your content.
+              The main aim of this stage is to create wireframe models and define the style guide and the usability of
+              interface design. We must provide users with an easily understandable interface so they wouldn’t have any
+              difficulties while interacting with the site and remain interested and happy.
             </p>
           </div>
           <div class="our-service-card">
@@ -192,6 +198,10 @@ try {
             <h2>Development</h2>
             <p style="text-align: justify;">
               Here we make your website come alive. By utilizing HTML, CSS, and incorporating modern and cutting-edge technologies, we design a rich, vibrant and a fluid design that is fully responsive to your needs. We also incorporate database and essential technology so that the performance and functionality and as well as the online experience are unique to your business.
+              Here we increase fluidity and functionality of layout using HTML and CSS, setting up the basis for an
+              interactive website. We also incorporate the databases and the other essential technologies when required
+              in order to optimize the performance which will create a unique natural impetus based on your
+              requirements.
             </p>
           </div>
           <div class="our-service-card">
@@ -235,6 +245,9 @@ try {
           <h2>Industries We Cater To</h2>
           <p style="text-align: justify;">
             Our team does web design and development for every business type, especially health care, online businesses, education, financial, real estate, hotel and many more. We know that each sector may have its specific requirements and therefore create truly engaging and conversion focused websites for your business.
+            We provide web design solutions based on various industry segments such as healthcare, e-commerce,
+            education, finance, real estate, hospitality and more to achieve maximum engagement and business impact from
+            a user-friendly and responsive website design.
           </p>
           <button class="industries-view-all">View All</button>
         </div>

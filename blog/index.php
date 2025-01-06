@@ -386,7 +386,11 @@ try {
           </li>
 
           <li>
+<<<<<<< HEAD
             <a href="<?php echo $tecknify ?>service/smm/" class="footer-link">Social Media Optimization</a>
+=======
+            <a href="<?php echo $tecknify ?>service/smo/" class="footer-link">Social Media Optimization</a>
+>>>>>>> 3249e6c1b81c75e2ebb519fffc4227c77b9453da
           </li>
 
           <li>

@@ -173,6 +173,11 @@ try {
             <h2>Business Marketing </h2>
             <p style="text-align: justify;">
               One of the biggest benefits that come with working with Tecknify IT Solutions is that this comes with a lot of know-how involved in handling the brand’s reputation on the social media platforms. We are experts in the creation and management of the brand image across each of the social networks, ensuring that the messages are aimed at the largest audience possible in the shortest amount of time in order to create buzz.
+              One of the biggest benefits that come with working with Tecknify IT Solutions is that this comes with a
+              lot of know-how involved in handling the brand’s reputation on the social media platforms. We are experts
+              in the creation and management of the brand image across each of the social networks, ensuring that the
+              messages are aimed at the largest audience possible in the shortest amount of time in order to create
+              buzz.
             </p>
           </div>
           <div class="our-service-card">
@@ -182,6 +187,10 @@ try {
             <h2>Building Brand Recognition </h2>
             <p style="text-align: justify;">
               Tecknify never sleeps when it comes to making your brand famous across the different social media platforms. We make sure it is not only seen, but it is also spoken about by the audience. We take advantage of the expertise in combination with equipment to ensure that your brand finds a befitting place in front of the most significant audience base thus creating awareness.
+              Tecknify never sleep when it comes to making your brand famous across the different social media
+              platforms. We make sure it is not only seen, but it is also spoken about by the audience. We take
+              advantage of the expertise in combination with equipment to ensure that your brand finds a befitting place
+              in front of the most significant audience base thus creating awareness.
             </p>
           </div>
           <div class="our-service-card">
@@ -191,6 +200,9 @@ try {
             <h2>Projecting Brand Values</h2>
             <p style="text-align: justify;">
               We are also good at storytelling, the kind of story that you want to tell the world about your brand. Concern appeal, self-interest, and product appeal, all contribute to defining and branding your business in a way to the needs and wants of the consumer.
+              We are also good at storytelling, the kind of story that you want to tell the world about your brand.
+              Concern appeal, self-interest, and product appeal, all contribute to defining and branding your business
+              in a way to the needs and wants of the consumer.
             </p>
           </div>
           <div class="our-service-card">
