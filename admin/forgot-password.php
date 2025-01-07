@@ -45,13 +45,13 @@ if (isset($_POST['submit'])) {
                         $mail->isSMTP();
                         $mail->Host = 'smtp.gmail.com'; // Replace with your SMTP host
                         $mail->SMTPAuth = true;
-                        $mail->Username = 'rajat.web71@gmail.com'; // Replace with your email
-                        $mail->Password = 'fnej rzyo smxn gdru';   // Replace with your password
+                        $mail->Username = 'infotecknify@gmail.com'; // Replace with your email
+                        $mail->Password = 'obst ondn ivez nreb';   // Replace with your password
                         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                         $mail->Port = 587;
 
                         // Email settings
-                        $mail->setFrom('rajat.web71@gmail.com', 'Tecknify Admin');
+                        $mail->setFrom('infotecknify@gmail.com', 'Tecknify Admin');
                         $mail->addAddress($email);
                         $mail->isHTML(true);
                         $mail->Subject = 'Reset Your Password';

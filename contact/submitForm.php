@@ -35,15 +35,14 @@ if ($conn->query($sql) === TRUE) {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'rajat.web71@gmail.com'; // Your email 
-        $mail->Password = 'budh jzvs qsod oskg';   // Your email password
+        $mail->Username = 'infotecknify@gmail.com'; // Your email 
+        $mail->Password = 'obst ondn ivez nreb';   // Your email app password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
         // Admin Email Notification
-        $mail->setFrom('rajat.web71@gmail.com', 'Tecknify Admin');
-        // $mail->setFrom('infotecknify@gmail.com', 'Tecknify Admin');
-        $mail->addAddress('rajattecknify0110@gmail.com'); // Admin email
+        $mail->setFrom('infotecknify@gmail.com', 'Tecknify Admin');
+        $mail->addAddress('support@tecknify.com'); // Admin email
 
         $mail->isHTML(true);
         $mail->Subject = 'New Contact Form Submission by ' . $name;
