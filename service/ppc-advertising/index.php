@@ -33,7 +33,7 @@ try {
   <title><?php echo $data['meta_title'] ?></title>
   <meta name="description" content="<?php echo $data['meta_desc'] ?>" />
   <link rel="shortcut icon" href="<?php echo $tecknify ?>favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="<?php echo $tecknify ?>service/ppc/style.css">
+  <link rel="stylesheet" href="<?php echo $tecknify ?>service/ppc-advertising/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cuprum:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
@@ -70,9 +70,9 @@ try {
           <li class="dropdown">
             <a href="<?php echo $tecknify ?>service/" class="navbar-link" data-nav-link>Services</a>
             <ul class="dropdown-menu">
-              <li><a href="<?php echo $tecknify ?>service/seo/" class="dropdown-link">Search Engine Optimization</a></li>
-              <li><a href="<?php echo $tecknify ?>service/smm/" class="dropdown-link">Social Medial Marketing</a></li>
-              <li><a href="<?php echo $tecknify ?>service/ppc/" class="dropdown-link">PPC Advertising</a></li>
+              <li><a href="<?php echo $tecknify ?>service/seo-optimization/" class="dropdown-link">Search Engine Optimization</a></li>
+              <li><a href="<?php echo $tecknify ?>service/social-media-marketing/" class="dropdown-link">Social Medial Marketing</a></li>
+              <li><a href="<?php echo $tecknify ?>service/ppc-advertising/" class="dropdown-link">PPC Advertising</a></li>
               <li><a href="<?php echo $tecknify ?>service/web-development/" class="dropdown-link">Web Development</a></li>
               <li><a href="<?php echo $tecknify ?>service/app-development/" class="dropdown-link">App Development</a></li>
               <li><a href="<?php echo $tecknify ?>service/content-marketing/" class="dropdown-link">Content Marketing</a></li>
@@ -161,11 +161,7 @@ try {
       <section class="our-service-section">
         <div class="our-service-header">
           <h1>Explore The Range Of PPC Services We Offer</h1>
-          <!-- <p>
-            As a leading SEO company in India, we bring a complete range of digital marketing services to your business.
-            We ensure that your business site makes it to the first page of Google by using the tried and tested SEO
-            strategies.
-          </p> -->
+
         </div>
         <div class="our-service-grid">
           <div class="our-service-card">
@@ -204,31 +200,7 @@ try {
               PPC ads focused on targeted customers. Your leads will make the sales as well as the revenue will boost as long as the company provides quality products or services to the customers.
             </p>
           </div>
-          <!-- <div class="our-service-card">
-            <div class="our-service-icon">
-              <img src="<?php echo $tecknify ?>assets/images/icons8-technical.png" alt="Technical SEO Icon" />
-            </div>
-            <h2>Technical SEO</h2>
-            <p>
-              Technical SEO improves crawling, indexing, and fixes issues like duplicate content and page speed for
-              better performance.
-            </p>
-          </div>
-          <div class="our-service-card">
-            <div class="our-service-icon">
-              <img src="<?php echo $tecknify ?>assets/images/icons8-recovery.png" alt="Search Engine Recovery Icon" />
-            </div>
-            <h2>Search Engine Recovery</h2>
-            <p>
-              High-quality content powers top search rankings, and we provide end-to-end SEO services to meet your
-              business goals.
-            </p>
-          </div>
-        </div>
       </section>
-
-
-      <!-------------- PORTFOLIO ------------>
 
 
       <section class="industries-section">
@@ -516,11 +488,11 @@ try {
           </li>
 
           <li>
-            <a href="<?php echo $tecknify ?>service/seo/" class="footer-link">Search Engine Optimization</a>
+            <a href="<?php echo $tecknify ?>service/seo-optimization/" class="footer-link">Search Engine Optimization</a>
           </li>
 
           <li>
-            <a href="<?php echo $tecknify ?>service/smm/" class="footer-link">Social Media Optimization</a>
+            <a href="<?php echo $tecknify ?>service/social-media-marketing/" class="footer-link">Social Media Marketing</a>
           </li>
 
           <li>
@@ -532,7 +504,7 @@ try {
           </li>
 
           <li>
-            <a href="<?php echo $tecknify ?>service/ppc/" class="footer-link">Pay Per Click</a>
+            <a href="<?php echo $tecknify ?>service/ppc-advertising/" class="footer-link">Pay Per Click</a>
           </li>
 
           <li>
@@ -668,7 +640,7 @@ try {
   <!-- 
     - custom js link
   -->
-  <script src="<?php echo $tecknify ?>service/ppc/script.js"></script>
+  <script src="<?php echo $tecknify ?>service/ppc-advertising/script.js"></script>
 
   <!-- 
     - ionicon link

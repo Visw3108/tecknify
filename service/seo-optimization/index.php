@@ -6,7 +6,7 @@ $data = null;
 $error = null;
 
 try {
-  $id = 4;
+  $id = 3;
   $stmt = $pdo->prepare("SELECT * FROM services WHERE id = :id");
   $stmt->bindParam(':id', $id, PDO::PARAM_INT);
   $stmt->execute();
@@ -32,13 +32,16 @@ try {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo $data['meta_title'] ?></title>
   <meta name="description" content="<?php echo $data['meta_desc'] ?>" />
-  <link rel="shortcut icon" href="<?php echo $tecknify ?>favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="<?php echo $tecknify ?>service/smm/style.css">
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="<?php echo $tecknify; ?>service/seo-optimization/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cuprum:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="<?php echo $tecknify ?>assets/images/hero-banner.png">
-
+  <link rel="preload" as="image" href="<?php echo $tecknify; ?>assets/images/hero-banner.png">
+  <!-- <script>
+    <?php echo htmlspecialchars_decode(strip_tags($data['seo_head'])); ?>
+    </script> -->
+  <?php echo htmlspecialchars_decode(strip_tags($data['seo_head'])); ?>
 </head>
 
 <body>
@@ -48,14 +51,14 @@ try {
 
   <header class="header" data-header>
     <div class="container">
-      <a href="<?php echo $tecknify ?>" class="logo">
-        <img src="<?php echo $tecknify ?>assets/images/Tecknify-Logo.png" alt="Tecknify Logo">
+      <a href="<?php echo $tecknify; ?>" class="logo">
+        <img src="<?php echo $tecknify; ?>assets/images/Tecknify-Logo.png" alt="Tecknify Logo 1">
       </a>
 
       <nav class="navbar" data-navbar>
         <div class="wrapper">
-          <a href="<?php echo $tecknify ?>" class="logo">
-            <img src="<?php echo $tecknify ?>assets/images/tecknify-logo1.png" alt="Tecknify Logo">
+          <a href="<?php echo $tecknify; ?>" class="logo">
+            <img src="<?php echo $tecknify; ?>assets/images/tecknify-logo1.png" alt="Tecknify Logo 2">
           </a>
           <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
             <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
@@ -63,22 +66,22 @@ try {
         </div>
 
         <ul class="navbar-list">
-          <li><a href="<?php echo $tecknify ?>" class="navbar-link" data-nav-link>Home</a></li>
-          <li><a href="<?php echo $tecknify ?>about/" class="navbar-link" data-nav-link>About</a></li>
+          <li><a href="<?php echo $tecknify; ?>" class="navbar-link" data-nav-link>Home</a></li>
+          <li><a href="<?php echo $tecknify; ?>about/" class="navbar-link" data-nav-link>About</a></li>
           <li class="dropdown">
-            <a href="<?php echo $tecknify ?>service/" class="navbar-link" data-nav-link>Services</a>
+            <a href="<?php echo $tecknify; ?>service/" class="navbar-link" data-nav-link>Services</a>
             <ul class="dropdown-menu">
-              <li><a href="<?php echo $tecknify ?>service/seo/" class="dropdown-link">Search Engine Optimization</a></li>
-              <li><a href="<?php echo $tecknify ?>service/smm/" class="dropdown-link">Social Medial Marketing</a></li>
-              <li><a href="<?php echo $tecknify ?>service/ppc/" class="dropdown-link">PPC Advertising</a></li>
-              <li><a href="<?php echo $tecknify ?>service/web-development/" class="dropdown-link">Web Development</a></li>
-              <li><a href="<?php echo $tecknify ?>service/app-development/" class="dropdown-link">App Development</a></li>
-              <li><a href="<?php echo $tecknify ?>service/content-marketing/" class="dropdown-link">Content Marketing</a></li>
+              <li><a href="<?php echo $tecknify; ?>service/seo-optimization/" class="dropdown-link">Search Engine Optimization</a></li>
+              <li><a href="<?php echo $tecknify; ?>service/social-media-marketing/" class="dropdown-link">Social Medial Marketing</a></li>
+              <li><a href="<?php echo $tecknify; ?>service/ppc-advertising/" class="dropdown-link">PPC Advertising</a></li>
+              <li><a href="<?php echo $tecknify; ?>service/web-development/" class="dropdown-link">Web Development</a></li>
+              <li><a href="<?php echo $tecknify; ?>service/app-development/" class="dropdown-link">App Development</a></li>
+              <li><a href="<?php echo $tecknify; ?>service/content-marketing/" class="dropdown-link">Content Marketing</a></li>
             </ul>
           </li>
-          <li><a href="<?php echo $tecknify ?>portfolio/" class="navbar-link" data-nav-link>Portfolio</a></li>
-          <li><a href="<?php echo $tecknify ?>blog/" class="navbar-link" data-nav-link>Blog</a></li>
-          <li><a href="<?php echo $tecknify ?>contact/" class="navbar-link" data-nav-link>Contact Us</a></li>
+          <li><a href="<?php echo $tecknify; ?>portfolio/" class="navbar-link" data-nav-link>Portfolio</a></li>
+          <li><a href="<?php echo $tecknify; ?>blog/" class="navbar-link" data-nav-link>Blog</a></li>
+          <li><a href="<?php echo $tecknify; ?>contact/" class="navbar-link" data-nav-link>Contact Us</a></li>
         </ul>
       </nav>
 
@@ -91,6 +94,7 @@ try {
     </div>
   </header>
 
+
   <main>
     <article>
 
@@ -100,7 +104,7 @@ try {
 
       <section class="digital-marketing">
         <div class="container">
-          <h1>Social Medial Marketing</h1>
+          <h1>Search Engine Optimization</h1>
           <!-- <p>Grow Your Client Base With Data-Driven and Targeted Strategies</p> -->
           <form class="proposal-form">
             <input type="text" placeholder="Enter Website Address" required>
@@ -138,16 +142,16 @@ try {
       <section class="aboutus-section">
         <div class="aboutus-container">
           <div class="aboutus-content">
-            <h1>Elevate SMM Marketing Company To Maximize Online Success</h1>
+            <h1>Elevate SEO Marketing Company To Maximize Online Success</h1>
             <p>
-              Want to go viral on social media and turn engagement into real customers? That's exactly what we do at Tecknify.com. We specialize in providing Social Media Marketing in USA that generates strong responses to your ads, helping you reach a wider audience. Our team is dedicated to each service we offer, ensuring your business grows through social media. Most people are active online, especially on social platforms, making them the perfect place to showcase your products. When someone sees what you offer, they’re more likely to buy.
+              Are you spending a significant amount of time and effort into your content, yet you are not seeing any results? Tecknify IT Solutions has significantly enhanced the traffic efficacy of numerous consumers. We offer the highest quality SEO Optimization Service in USA, including off-page SEO, on-page SEO, and local SEO services, to enhance your business by conducting forward research on your content and implementing the appropriate measures. Our conviction is that there is no substitute for experience, and we are fortunate to have a team that has successfully completed numerous projects.
             </p>
             <p>
-              The best social media marketing services are provided by us, and they are designed to assist your company in expanding the reach of your social media postings and attracting a larger audience to your website. On the other hand, we do not believe in providing service just once. Rather, we believe in creating a committed audience that will remain loyal to you for an extended period of time and will also become your trusted clients. What sets us apart from other companies in the market is this particular aspect.
+              Our SEO specialists assist you in achieving the most optimal SEO outcomes to augment the traffic to your website. Being the best SEO Service Providers in USA, our primary objective is to attract the attention of Google in order to increase traffic and reach. This enhances your interaction with your audience in specific ways. Ultimately, we have the ability to elevate you to the top of Google's list. We are present to provide you with the necessary methods to accomplish the objectives set by you. We have served various industries with promising SEO results, which makes us the best SEO Company in USA.
             </p>
           </div>
           <div class="aboutus-image">
-            <img src="<?php echo $tecknify ?>assets/images/seo.jpg" alt="SMO Marketing">
+            <img src="<?php echo $tecknify; ?>assets/images/seo.jpg" alt="SEO Marketing">
           </div>
         </div>
       </section>
@@ -158,7 +162,7 @@ try {
 
       <section class="our-service-section">
         <div class="our-service-header">
-          <h1>Explore The Range Of SMM Services We Offer</h1>
+          <h1>Explore The Range Of SEO Services We Offer</h1>
           <!--  <p>
             As a leading SEO company in India, we bring a complete range of digital marketing services to your business.
             We ensure that your business site makes it to the first page of Google by using the tried and tested SEO
@@ -168,81 +172,67 @@ try {
         <div class="our-service-grid">
           <div class="our-service-card">
             <div class="our-service-icon">
-              <img src="<?php echo $tecknify ?>assets/images/keywords_7773200.png" alt="Keywords Research Icon" />
+              <img src="<?php echo $tecknify; ?>assets/images/keywords_7773200.png" alt="Keywords Research Icon" />
             </div>
-            <h2>Business Marketing </h2>
+            <h2>On-Page Optimization </h2>
             <p style="text-align: justify;">
-              One of the biggest benefits that come with working with Tecknify IT Solutions is that this comes with a lot of know-how involved in handling the brand’s reputation on the social media platforms. We are experts in the creation and management of the brand image across each of the social networks, ensuring that the messages are aimed at the largest audience possible in the shortest amount of time in order to create buzz.
-              One of the biggest benefits that come with working with Tecknify IT Solutions is that this comes with a
-              lot of know-how involved in handling the brand’s reputation on the social media platforms. We are experts
-              in the creation and management of the brand image across each of the social networks, ensuring that the
-              messages are aimed at the largest audience possible in the shortest amount of time in order to create
-              buzz.
+              New algorithms with the search engine appear and disappear. On-page optimisation deals with content on the website from the user perspective and enhances click through rate, usability, keyword placement and internal linking.
             </p>
           </div>
           <div class="our-service-card">
             <div class="our-service-icon">
-              <img src="<?php echo $tecknify ?>assets/images/icons8-website-audit.png" alt="Website Audit Icon" />
+              <img src="<?php echo $tecknify; ?>assets/images/icons8-keywords-64.png" alt="Website Audit Icon" />
             </div>
-            <h2>Building Brand Recognition </h2>
+            <h2>Off-Page Optimization </h2>
             <p style="text-align: justify;">
-              Tecknify never sleeps when it comes to making your brand famous across the different social media platforms. We make sure it is not only seen, but it is also spoken about by the audience. We take advantage of the expertise in combination with equipment to ensure that your brand finds a befitting place in front of the most significant audience base thus creating awareness.
-              Tecknify never sleep when it comes to making your brand famous across the different social media
-              platforms. We make sure it is not only seen, but it is also spoken about by the audience. We take
-              advantage of the expertise in combination with equipment to ensure that your brand finds a befitting place
-              in front of the most significant audience base thus creating awareness.
+              Gaining perfectly targeted and high-quality back links proves to be a major source of traffic to the web site. The final step is very important to enhance the performance and ranking of the site.
             </p>
           </div>
           <div class="our-service-card">
             <div class="our-service-icon">
-              <img src="<?php echo $tecknify ?>assets/images/icons8-website-traffic.png" alt="Traffic Generation Icon" />
+              <img src="<?php echo $tecknify; ?>assets/images/icons8-keyword.png" alt="Traffic Generation Icon" />
             </div>
-            <h2>Projecting Brand Values</h2>
+            <h2>Keyword Ideas and Difficulty </h2>
             <p style="text-align: justify;">
-              We are also good at storytelling, the kind of story that you want to tell the world about your brand. Concern appeal, self-interest, and product appeal, all contribute to defining and branding your business in a way to the needs and wants of the consumer.
-              We are also good at storytelling, the kind of story that you want to tell the world about your brand.
-              Concern appeal, self-interest, and product appeal, all contribute to defining and branding your business
-              in a way to the needs and wants of the consumer.
-            </p>
-          </div>
-          <div class="our-service-card">
-            <div class="our-service-icon">
-              <img src="<?php echo $tecknify ?>assets/images/icons8-website.png" alt="Competitive Analysis Icon" />
-            </div>
-            <h2>Brand Promotion </h2>
-            <p style="text-align: justify;">
-              Social media marketing is considered to be one of the most successful approaches in advertising your brand across a variety of media channels such as Facebook, Twitter and YouTube among others. But it does not end there, your brand can also do well at visually centric networks like Pinterest, Flickr, and Instagram, all fine-tuned for getting the most for your brand.
-            </p>
-          </div>
-          <div class="our-service-card">
-            <div class="our-service-icon">
-              <img src="<?php echo $tecknify ?>assets/images/icons8-social-media-marketing.png" alt="Competitive Analysis Icon" />
-            </div>
-            <h2> Industries We Cater To </h2>
-            <p style="text-align: justify;">
-              Our Social Media Marketing services are highly relevant to industries such as retail, hospitality, healthcare, finance, real estate, technology and many others to reach consumers, foster communities and gain growth in social media channels.
+              Frequently used keywords that are also very popular are expensive and may require time before showing positive ROI.
             </p>
           </div>
           <!-- <div class="our-service-card">
             <div class="our-service-icon">
-              <img src="icons/technical-seo-icon.svg" alt="Technical SEO Icon" />
+              <img src="<?php echo $tecknify; ?>assets/images/icons8-seo-setting.png" alt="Competitive Analysis Icon" />
             </div>
-            <h2>Technical SEO</h2>
+            <h2>Technical SEO </h2>
             <p style="text-align: justify;">
-              Technical SEO improves crawling, indexing, and fixes issues like duplicate content and page speed for
-              better performance.
+              Technical SEO covers optimizing factors relating to your website. These include, the site speed, the crawlability of your pages, URL format, quality of code, and site security.
+            </p>
+          </div> -->
+          <div class="our-service-card">
+            <div class="our-service-icon">
+              <img src="<?php echo $tecknify; ?>assets/images/icons8-website-optimization.png" alt="Technical SEO Icon" />
+            </div>
+            <h2>Local SEO</h2>
+            <p style="text-align: justify;">
+              It is all about enhancing your websites’ rankings for local search queries. This entails listing your business on Google my Business, local citation, reviews and accurate NAPW (Name, Address, Phone Number and Website) on the web.
             </p>
           </div>
           <div class="our-service-card">
             <div class="our-service-icon">
-              <img src="icons/recovery-icon.svg" alt="Search Engine Recovery Icon" />
+              <img src="<?php echo $tecknify; ?>assets/images/content.png" alt="Technical SEO Icon" />
             </div>
-            <h2>Search Engine Recovery</h2>
+            <h2>Content SEO</h2>
             <p style="text-align: justify;">
-              High-quality content powers top search rankings, and we provide end-to-end SEO services to meet your
-              business goals.
+              Content SEO involves creating high-quality, relevant content that aligns with user search intent. It involves things such as keyword optimization, meta descriptions, headers, internal linking and many others in a bid to improve page ranking and in turn engage your target market.
             </p>
-          </div> -->
+          </div>
+          <div class="our-service-card">
+            <div class="our-service-icon">
+              <img src="<?php echo $tecknify; ?>assets/images/icons8-search-engine-optimization.png" alt="Search Engine Recovery Icon" />
+            </div>
+            <h2>Industries We Cater To</h2>
+            <p style="text-align: justify;">
+              Our SEO services include healthcare, e-commerce, finance, education, real estate and technology, hospitality, as we are here to help businesses to make the next step in their growth.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -254,43 +244,40 @@ try {
         <div class="industries-content">
           <h2>Industries We Cater To</h2>
           <p style="text-align: justify;">
-            Our Social Media Marketing services are highly relevant to industries such as retail, hospitality,
-            healthcare, finance, real estate, technology and many others to reach consumers, foster communities and gain
-            growth in social media channels.
+            Our SEO services include healthcare, e-commerce, finance, education, real estate and technology,
+            hospitality, as we are here to help businesses to make the next step in their growth.
           </p>
           <button class="industries-view-all">View All</button>
         </div>
         <div class="industries-carousel-container">
           <div class="industries-carousel">
             <div class="industries-carousel-item industries-fade-in-up">
-              <img src="<?php echo $tecknify ?>assets/images/education.jpg" alt="Education">
+              <img src="<?php echo $tecknify; ?>assets/images/education.jpg" alt="Education">
               <span class="industries-label">Education</span>
             </div>
             <div class="industries-carousel-item industries-fade-in-up">
-              <img src="<?php echo $tecknify ?>assets/images/finance.jpg" alt="Finance">
+              <img src="<?php echo $tecknify; ?>assets/images/finance.jpg" alt="Finance">
               <span class="industries-label">Finance</span>
             </div>
             <div class="industries-carousel-item industries-fade-in-up">
-              <img src="<?php echo $tecknify ?>assets/images/banking.jpg" alt="Banking">
+              <img src="<?php echo $tecknify; ?>assets/images/banking.jpg" alt="Banking">
               <span class="industries-label">Banking</span>
             </div>
             <div class="industries-carousel-item industries-fade-in-up">
-              <img src="<?php echo $tecknify ?>assets/images/food.jpg" alt="Food and Retail">
+              <img src="<?php echo $tecknify; ?>assets/images/food.jpg" alt="Food and Retail">
               <span class="industries-label">Food and Retail</span>
             </div>
             <div class="industries-carousel-item industries-fade-in-up">
-              <img src="<?php echo $tecknify ?>assets/images/healthcare.jpg" alt="Healthcare">
+              <img src="<?php echo $tecknify; ?>assets/images/healthcare.jpg" alt="Healthcare">
               <span class="industries-label">Healthcare</span>
             </div>
             <div class="industries-carousel-item industries-fade-in-up">
-              <img src="<?php echo $tecknify ?>assets/images/technology.jpg" alt="Technology">
+              <img src="<?php echo $tecknify; ?>assets/images/technology.jpg" alt="Technology">
               <span class="industries-label">Technology</span>
             </div>
           </div>
         </div>
       </section>
-
-
 
       <!-- 
         - #FEATURES
@@ -305,39 +292,39 @@ try {
         <div class="services-grid">
           <div class="service-card fade-in-up">
             <div class="service-icon">
-              <img src="<?php echo $tecknify ?>assets/images/marketing_15245336.png" alt="Digital Marketing">
+              <img src="<?php echo $tecknify; ?>assets/images/icons8-voice.png" alt="Digital Marketing">
             </div>
-            <h3>Localized Social Media Marketing</h3>
+            <h3>Voice SEO</h3>
           </div>
           <div class="service-card fade-in-up">
             <div class="service-icon">
-              <img src="<?php echo $tecknify ?>assets/images/icons8-social-media-marketing.png" alt="Content Marketing">
+              <img src="<?php echo $tecknify; ?>assets/images/icons8-video-seo.png" alt="Content Marketing">
             </div>
-            <h3>Influencer Marketing</h3>
+            <h3>Video SEO</h3>
           </div>
           <div class="service-card fade-in-up">
             <div class="service-icon">
-              <img src="<?php echo $tecknify ?>assets/images/icons8-content-marketing.png" alt="Email Marketing">
+              <img src="<?php echo $tecknify; ?>assets/images/icons8-amazon.png" alt="Email Marketing">
             </div>
-            <h3>Interactive Content Creation</h3>
+            <h3>Amazon SEO </h3>
           </div>
           <div class="service-card fade-in-up">
             <div class="service-icon">
-              <img src="<?php echo $tecknify ?>assets/images/icons8-video.png" alt="ORM Service">
+              <img src="<?php echo $tecknify; ?>assets/images/icons8-content-management.png" alt="ORM Service">
             </div>
-            <h3>Video and Live Streaming Optimization</h3>
+            <h3>CMS SEO</h3>
           </div>
           <div class="service-card fade-in-up">
             <div class="service-icon">
-              <img src="<?php echo $tecknify ?>assets/images/icons8-social-media-intigration.png" alt="PPC Service">
+              <img src="<?php echo $tecknify; ?>assets/images/icons8-enterprise.png" alt="PPC Service">
             </div>
-            <h3>Social Media Integration with SEO</h3>
+            <h3>Enterprise SEO</h3>
           </div>
           <div class="service-card fade-in-up">
             <div class="service-icon">
-              <img src="<?php echo $tecknify ?>assets/images/icons8-customer-feedback.png" alt="ASO">
+              <img src="<?php echo $tecknify; ?>assets/images/icons8-chatgpt.png" alt="ASO">
             </div>
-            <h3>Customer Feedback Management</h3>
+            <h3>Generative Engine Optimization</h3>
           </div>
         </div>
       </section>
@@ -362,7 +349,7 @@ try {
 
                 <button class="card-action" data-accordion-action>
                   <h3 class="h3 card-title">
-                    01. Why should I invest in SMM for my business?
+                    01. Do I need to update my website for SEO?
                   </h3>
 
                   <div class="action-icon">
@@ -372,8 +359,8 @@ try {
                 </button>
 
                 <div class="card-content">
-                  <p>
-                    A verified and active SMM can assist brands create brand awareness, cultivate customer relationships and channel targeted traffic to one’s site. It is a successful method to reach a vast, wider audience with even better intents and purposes in developing your company.
+                  <p style="text-align: justify;">
+                    Absolutely, updating site’s content frequently to make it useful and relevant, enhancing site’s speed, and making it mobile-friendly is essential not only to sustain high SEO levels, but also to meet the new trends of changing algorithms of search engines.
                   </p>
                 </div>
 
@@ -385,7 +372,7 @@ try {
 
                 <button class="card-action" data-accordion-action>
                   <h3 class="h3 card-title">
-                    02. How long does it take to see results from SMM?
+                    02. Can you guarantee my website will rank #1 on Google?
                   </h3>
 
                   <div class="action-icon">
@@ -395,8 +382,8 @@ try {
                 </button>
 
                 <div class="card-content">
-                  <p>
-                    No specific timeline is given as the matter depends on the objective of the project, type of business, and market challenges. Usually, the first positive results the website’s owner can observe work within 3 to 6 months providing a consistent activity.
+                  <p style="text-align: justify;">
+                    We can’t promise that you’ll be number one but we have the best SEO solutions to ensure that your website rises to the top gradually. Search engine optimization is a strenuous process, and its outcome influences different aspects including your industry and competition.
                   </p>
                 </div>
 
@@ -408,7 +395,7 @@ try {
 
                 <button class="card-action" data-accordion-action>
                   <h3 class="h3 card-title">
-                    03. Which social media platforms should my business use?
+                    03. Why is SEO important for my business?
                   </h3>
 
                   <div class="action-icon">
@@ -418,8 +405,8 @@ try {
                 </button>
 
                 <div class="card-content">
-                  <p>
-                    The platforms which are best for your business depend with the type/segment of the market you are in. We assist in identifying relevant platforms if you’re unclear as to which would be appropriate; for example, is it Instagram, Facebook, LinkedIn, Twitter, or others depending on the strategy and company type.
+                  <p style="text-align: justify;">
+                    SEO ensures that your business is seen whenever a customer is seeking your product or your service. A good SEO plan and execution results in high visibility, better quality of traffic and hence better sales and brand recognition.
                   </p>
                 </div>
 
@@ -431,7 +418,7 @@ try {
 
                 <button class="card-action" data-accordion-action>
                   <h3 class="h3 card-title">
-                    04. How do you measure success in SMM?
+                    04. How long does it take to see results from SEO?
                   </h3>
 
                   <div class="action-icon">
@@ -441,8 +428,8 @@ try {
                 </button>
 
                 <div class="card-content">
-                  <p>
-                    The Key Performance Indicators (KPI) includes engagement rates and web traffic, conversion and follower growth among the target audience. We make it our responsibility to give accounts of the progress, or the results which can help in tweaking efforts for better outcome.
+                  <p style="text-align: justify;">
+                    SEO is a long-term technique and the results are likely to manifest within 3 to 6 months. It is worth mentioning that, the speed of outcome depends on competition, website condition, and the efficiency of employed mechanisms.
                   </p>
                 </div>
 
@@ -454,7 +441,7 @@ try {
 
                 <button class="card-action" data-accordion-action>
                   <h3 class="h3 card-title">
-                    05. Can you help create content for my social media channels?
+                    05. How do you track SEO performance?
                   </h3>
 
                   <div class="action-icon">
@@ -464,8 +451,8 @@ try {
                 </button>
 
                 <div class="card-content">
-                  <p>
-                    Yes, we offer content creation services where you can request posts, graphics, videos and much more. While working with our team, all the content will maintain your brand’s voice and meet its objectives and appeal to your target audience.
+                  <p style="text-align: justify;">
+                    We track SEO performance using tools like Google Analytics, Google Search Console, and other SEO software to monitor website traffic, keyword rankings, and conversion rates. Regular reports are provided to track progress and adjust strategies.
                   </p>
                 </div>
 
@@ -479,7 +466,6 @@ try {
 
     </article>
   </main>
-
 
   <div class="social-media-buttons">
     <a href="https://www.facebook.com/tecknifyitsolutions" target="_blank" class="social-icon">
@@ -502,7 +488,6 @@ try {
     </a>
   </div>
 
-
   <!-- 
     - #FOOTER
   -->
@@ -515,7 +500,7 @@ try {
         <div class="footer-brand">
 
           <a href="<?php echo $tecknify ?>" class="logo">
-            <img src="<?php echo $tecknify ?>assets/images/tecknify-logo1.png" alt="Tecknify Logo" class="logo-img">
+            <img src="<?php echo $tecknify ?>assets/images/tecknify-logo1.png" alt="Hoolix Logo" class="logo-img">
           </a>
 
           <p class="footer-text">
@@ -540,11 +525,11 @@ try {
           </li>
 
           <li>
-            <a href="<?php echo $tecknify ?>service/seo/" class="footer-link">Search Engine Optimization</a>
+            <a href="<?php echo $tecknify ?>service/seo-optimization/" class="footer-link">Search Engine Optimization</a>
           </li>
 
           <li>
-            <a href="<?php echo $tecknify ?>service/smm/" class="footer-link">Social Media Optimization</a>
+            <a href="<?php echo $tecknify ?>service/social-media-marketing/" class="footer-link">Social Media Marketing</a>
           </li>
 
           <li>
@@ -556,7 +541,7 @@ try {
           </li>
 
           <li>
-            <a href="<?php echo $tecknify ?>service/ppc/" class="footer-link">Pay Per Click</a>
+            <a href="<?php echo $tecknify ?>service/ppc-advertising/" class="footer-link">Pay Per Click</a>
           </li>
 
           <li>
@@ -649,13 +634,9 @@ try {
                   <ion-icon name="logo-linkedin"></ion-icon>
                 </a>
               </li>
-
-
             </ul>
           </li>
-
         </ul>
-
       </div>
     </div>
 
@@ -663,7 +644,7 @@ try {
       <div class="container">
 
         <p class="copyright">
-          &copy; 2022 | All Rights Reserved by <a href="<?php echo $tecknify ?>" class="copyright-link">Tecknify</a>
+          &copy; 2024 | All Rights Reserved by <a href="<?php echo $tecknify ?>" class="copyright-link">Tecknify</a>
         </p>
 
         <ul class="footer-bottom-list">
@@ -692,7 +673,7 @@ try {
   <!-- 
     - custom js link
   -->
-  <script src="<?php echo $tecknify ?>service/smm/script.js"></script>
+  <script src="<?php echo $tecknify ?>/service/seo-optimization/script.js"></script>
 
   <!-- 
     - ionicon link

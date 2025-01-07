@@ -48,9 +48,9 @@ include "../config/config.php";
           <li class="dropdown">
             <a href="<?php echo $tecknify ?>service/" class="navbar-link" data-nav-link>Services</a>
             <ul class="dropdown-menu">
-              <li><a href="<?php echo $tecknify ?>service/seo/" class="dropdown-link">Search Engine Optimization</a></li>
-              <li><a href="<?php echo $tecknify ?>service/smm/" class="dropdown-link">Social Medial Marketing</a></li>
-              <li><a href="<?php echo $tecknify ?>service/ppc/" class="dropdown-link">PPC Advertising</a></li>
+              <li><a href="<?php echo $tecknify ?>service/seo-optimization/" class="dropdown-link">Search Engine Optimization</a></li>
+              <li><a href="<?php echo $tecknify ?>service/social-media-marketing/" class="dropdown-link">Social Medial Marketing</a></li>
+              <li><a href="<?php echo $tecknify ?>service/ppc-advertising/" class="dropdown-link">PPC Advertising</a></li>
               <li><a href="<?php echo $tecknify ?>service/web-development/" class="dropdown-link">Web Development</a></li>
               <li><a href="<?php echo $tecknify ?>service/app-development/" class="dropdown-link">App Development</a></li>
               <li><a href="<?php echo $tecknify ?>service/content-marketing/" class="dropdown-link">Content Marketing</a></li>
@@ -123,18 +123,18 @@ include "../config/config.php";
                 <p class="card-text">
                   Boost your website’s visibility with targeted SEO strategies and techniques.
                 </p>
-                <a href="<?php echo $tecknify ?>service/seo/" class="learn-more-btn">Learn More →</a>
+                <a href="<?php echo $tecknify ?>service/seo-optimization/" class="learn-more-btn">Learn More →</a>
               </div>
             </li>
 
             <li>
               <div class="our-services-card">
                 <img src="<?php echo $tecknify ?>assets/images/smo.png" alt="Free 6 Month Support" class="card-image">
-                <h3 class="h3 card-title">Social Media Optimization</h3>
+                <h3 class="h3 card-title">Social Media Marketing</h3>
                 <p class="card-text">
                   Enhance your brand’s presence across social platforms with tailored strategies.
                 </p>
-                <a href="<?php echo $tecknify ?>service/smm/" class="learn-more-btn">Learn More →</a>
+                <a href="<?php echo $tecknify ?>service/social-media-marketing/" class="learn-more-btn">Learn More →</a>
               </div>
             </li>
 
@@ -167,7 +167,7 @@ include "../config/config.php";
                 <p class="card-text">
                   Maximize ROI with targeted Pay-Per-Click campaigns for instant visibility.
                 </p>
-                <a href="<?php echo $tecknify ?>service/ppc/" class="learn-more-btn">Learn More →</a>
+                <a href="<?php echo $tecknify ?>service/ppc-advertising/" class="learn-more-btn">Learn More →</a>
               </div>
             </li>
 
@@ -594,11 +594,11 @@ include "../config/config.php";
           </li>
 
           <li>
-            <a href="<?php echo $tecknify ?>service/seo/" class="footer-link">Search Engine Optimization</a>
+            <a href="<?php echo $tecknify ?>service/seo-optimization/" class="footer-link">Search Engine Optimization</a>
           </li>
 
           <li>
-            <a href="<?php echo $tecknify ?>service/smm/" class="footer-link">Social Media Optimization</a>
+            <a href="<?php echo $tecknify ?>service/social-media-marketing/" class="footer-link">Social Media Marketing</a>
           </li>
 
           <li>
@@ -610,7 +610,7 @@ include "../config/config.php";
           </li>
 
           <li>
-            <a href="<?php echo $tecknify ?>service/ppc/" class="footer-link">Pay Per Click</a>
+            <a href="<?php echo $tecknify ?>service/ppc-advertising/" class="footer-link">Pay Per Click</a>
           </li>
 
           <li>

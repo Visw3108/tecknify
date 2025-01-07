@@ -44,9 +44,9 @@ include "../config/config.php";
                     <li class="dropdown">
                         <a href="<?php echo $tecknify ?>service/" class="navbar-link" data-nav-link>Services</a>
                         <ul class="dropdown-menu">
-                            <li><a href="<?php echo $tecknify ?>service/seo/" class="dropdown-link">Search Engine Optimization</a></li>
-                            <li><a href="<?php echo $tecknify ?>service/smm/" class="dropdown-link">Social Medial Marketing</a></li>
-                            <li><a href="<?php echo $tecknify ?>service/ppc/" class="dropdown-link">PPC Advertising</a></li>
+                            <li><a href="<?php echo $tecknify ?>service/seo-optimization/" class="dropdown-link">Search Engine Optimization</a></li>
+                            <li><a href="<?php echo $tecknify ?>service/social-media-marketing/" class="dropdown-link">Social Medial Marketing</a></li>
+                            <li><a href="<?php echo $tecknify ?>service/ppc-advertising/" class="dropdown-link">PPC Advertising</a></li>
                             <li><a href="<?php echo $tecknify ?>service/web-development/" class="dropdown-link">Web Development</a></li>
                             <li><a href="<?php echo $tecknify ?>service/app-development/" class="dropdown-link">App Development</a></li>
                             <li><a href="<?php echo $tecknify ?>service/content-marketing/" class="dropdown-link">Content Marketing</a></li>
@@ -110,7 +110,7 @@ include "../config/config.php";
                 <!-- Categories Section -->
                 <div class="our-portfolio-categories">
                     <button class="our-portfolio-filter-btn active" data-category="all">All</button>
-                    <button class="our-portfolio-filter-btn" data-category="Social Media Optimization">Social Media
+                    <button class="our-portfolio-filter-btn" data-category="Social Media Marketing">Social Media
                         Optimization</button>
                     <button class="our-portfolio-filter-btn" data-category="Social Media Marketing">Social Media
                         Marketing</button>
@@ -122,10 +122,10 @@ include "../config/config.php";
 
                 <!-- Projects Section -->
                 <div class="our-portfolio-projects">
-                    <div class="our-portfolio-project" data-category="Social Media Optimization">
+                    <div class="our-portfolio-project" data-category="Social Media Marketing">
                         <img src="<?php echo $tecknify ?>assets/images/Capture1.png" alt="Project 1">
                         <h3>Project 1</h3>
-                        <p>Innovative solutions for social media optimization.</p>
+                        <p>Innovative solutions for Social Media Marketing.</p>
                     </div>
                     <div class="our-portfolio-project" data-category="Social Media Marketing">
                         <img src="<?php echo $tecknify ?>assets/images/Capture2.png" alt="Project 2">
@@ -239,11 +239,11 @@ include "../config/config.php";
                     </li>
 
                     <li>
-                        <a href="<?php echo $tecknify ?>service/seo/" class="footer-link">Search Engine Optimization</a>
+                        <a href="<?php echo $tecknify ?>service/seo-optimization/" class="footer-link">Search Engine Optimization</a>
                     </li>
 
                     <li>
-                        <a href="<?php echo $tecknify ?>service/smm/" class="footer-link">Social Media Optimization</a>
+                        <a href="<?php echo $tecknify ?>service/social-media-marketing/" class="footer-link">Social Media Marketing</a>
                     </li>
 
                     <li>
@@ -255,7 +255,7 @@ include "../config/config.php";
                     </li>
 
                     <li>
-                        <a href="<?php echo $tecknify ?>service/ppc/" class="footer-link">Pay Per Click</a>
+                        <a href="<?php echo $tecknify ?>service/ppc-advertising/" class="footer-link">Pay Per Click</a>
                     </li>
 
                     <li>

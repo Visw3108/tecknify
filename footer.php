@@ -1232,11 +1232,11 @@
         </li>
 
         <li>
-          <a href="<?php echo $tecknify ?>service/seo/" class="footer-link">Search Engine Optimization</a>
+          <a href="<?php echo $tecknify ?>service/seo-optimization/" class="footer-link">Search Engine Optimization</a>
         </li>
 
         <li>
-          <a href="<?php echo $tecknify ?>service/smm/" class="footer-link">Social Media Optimization</a>
+          <a href="<?php echo $tecknify ?>service/social-media-marketing/" class="footer-link">Social Media Marketing</a>
         </li>
 
         <li>
@@ -1248,7 +1248,7 @@
         </li>
 
         <li>
-          <a href="<?php echo $tecknify ?>service/ppc/" class="footer-link">Pay Per Click</a>
+          <a href="<?php echo $tecknify ?>service/ppc-advertising/" class="footer-link">Pay Per Click</a>
         </li>
 
         <li>

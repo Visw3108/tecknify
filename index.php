@@ -48,9 +48,9 @@ include "config/config.php";
           <li class="dropdown">
             <a href="<?php echo $tecknify ?>service/" class="navbar-link" data-nav-link>Services</a>
             <ul class="dropdown-menu">
-              <li><a href="<?php echo $tecknify ?>service/seo/" class="dropdown-link">Search Engine Optimization</a></li>
-              <li><a href="<?php echo $tecknify ?>service/smm/" class="dropdown-link">Social Medial Marketing</a></li>
-              <li><a href="<?php echo $tecknify ?>service/ppc/" class="dropdown-link">PPC Advertising</a></li>
+              <li><a href="<?php echo $tecknify ?>service/seo-optimization/" class="dropdown-link">Search Engine Optimization</a></li>
+              <li><a href="<?php echo $tecknify ?>service/social-media-marketing/" class="dropdown-link">Social Medial Marketing</a></li>
+              <li><a href="<?php echo $tecknify ?>service/ppc-advertising/" class="dropdown-link">PPC Advertising</a></li>
               <li><a href="<?php echo $tecknify ?>service/web-development/" class="dropdown-link">Web Development</a></li>
               <li><a href="<?php echo $tecknify ?>service/app-development/" class="dropdown-link">App Development</a></li>
               <li><a href="<?php echo $tecknify ?>service/content-marketing/" class="dropdown-link">Content Marketing</a></li>
@@ -157,7 +157,7 @@ include "config/config.php";
             <h2 class="h2-sm section-title">Make Your Brand Stand Out Of The Crowd</h2>
 
             <p class="section-text">
-              At Tecknify IT Solutions, we offer a wide range of services to cater to all your digital needs. Our services include Web Designing, Web Development, Search Engine Optimization, Pay Per Click, Social media optimization and Content Marketing services. Whether you are a small, medium or large business, we have the perfect website design and development packages for you at cost-effective rates.
+              At Tecknify IT Solutions, we offer a wide range of services to cater to all your digital needs. Our services include Web Designing, Web Development, Search Engine Optimization, Pay Per Click, Social Media Marketing and Content Marketing services. Whether you are a small, medium or large business, we have the perfect website design and development packages for you at cost-effective rates.
             </p>
             <p class="section-text">
               As the Best Digital Marketing Company in USA that helps companies stand out, we are not your go to branding company. We collaborate with driven enterprises to optimise their marketing initiatives and achieve quantifiable outcomes. Through the integration of creativity, passion and data-driven strategies, we achieve impactful outcomes. Tecknify IT Solutions has built a strong reputation as a leading Digital Advertising Company in USA through years of experience. Our mission is to develop and enhance brands that exude vitality and enthusiasm, enabling them to succeed in the digital environment.
@@ -204,7 +204,7 @@ include "config/config.php";
                     We specialise in personalised digital marketing tactics that boost growth and online visibility at
                     Tecknify IT Solutions. Our commitment to quality assures commercial success.
                   </p>
-                  <a href="<?php echo $tecknify ?>service/seo/" class="btn-link">
+                  <a href="<?php echo $tecknify ?>service/seo-optimization/" class="btn-link">
                     <span class="span">Read More</span>
                     <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
                   </a>
@@ -218,11 +218,11 @@ include "config/config.php";
                     class="img">
                 </figure>
                 <div class="card-content">
-                  <h3 class="h3 card-title">Social Media Optimization</h3>
+                  <h3 class="h3 card-title">Social Media Marketing</h3>
                   <p class="card-text">
                     Enhance your brand’s presence across social platforms with tailored strategies.
                   </p>
-                  <a href="<?php echo $tecknify ?>service/smm/" class="btn-link">
+                  <a href="<?php echo $tecknify ?>service/social-media-marketing/" class="btn-link">
                     <span class="span">Read More</span>
                     <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
                   </a>
@@ -764,11 +764,11 @@ include "config/config.php";
           </li>
 
           <li>
-            <a href="<?php echo $tecknify ?>service/seo/" class="footer-link">Search Engine Optimization</a>
+            <a href="<?php echo $tecknify ?>service/seo-optimization/" class="footer-link">Search Engine Optimization</a>
           </li>
 
           <li>
-            <a href="<?php echo $tecknify ?>service/smm/" class="footer-link">Social Media Optimization</a>
+            <a href="<?php echo $tecknify ?>service/social-media-marketing/" class="footer-link">Social Media Marketing</a>
           </li>
 
           <li>
@@ -780,7 +780,7 @@ include "config/config.php";
           </li>
 
           <li>
-            <a href="<?php echo $tecknify ?>service/ppc/" class="footer-link">Pay Per Click</a>
+            <a href="<?php echo $tecknify ?>service/ppc-advertising/" class="footer-link">Pay Per Click</a>
           </li>
 
           <li>

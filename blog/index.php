@@ -156,9 +156,9 @@ try {
           <li class="dropdown">
             <a href="../service/" class="navbar-link" data-nav-link>Services</a>
             <ul class="dropdown-menu">
-              <li><a href="../service/seo/" class="dropdown-link">Search Engine Optimization</a></li>
-              <li><a href="../service/smm/" class="dropdown-link">Social Medial Marketing</a></li>
-              <li><a href="../service/ppc/" class="dropdown-link">PPC Advertising</a></li>
+              <li><a href="../service/seo-optimization/" class="dropdown-link">Search Engine Optimization</a></li>
+              <li><a href="../service/social-media-marketing/" class="dropdown-link">Social Medial Marketing</a></li>
+              <li><a href="../service/ppc-advertising/" class="dropdown-link">PPC Advertising</a></li>
               <li><a href="../service/web-development/" class="dropdown-link">Web Development</a></li>
               <li><a href="../service/app-development/" class="dropdown-link">App Development</a></li>
               <li><a href="../service/content-marketing/" class="dropdown-link">Content Marketing</a></li>
@@ -382,11 +382,11 @@ try {
           </li>
 
           <li>
-            <a href="<?php echo $tecknify ?>service/seo/" class="footer-link">Search Engine Optimization</a>
+            <a href="<?php echo $tecknify ?>service/seo-optimization/" class="footer-link">Search Engine Optimization</a>
           </li>
 
           <li>
-            <a href="<?php echo $tecknify ?>service/smm/" class="footer-link">Social Media Optimization</a>
+            <a href="<?php echo $tecknify ?>service/social-media-marketing/" class="footer-link">Social Media Marketing</a>
           </li>
 
           <li>
@@ -398,7 +398,7 @@ try {
           </li>
 
           <li>
-            <a href="<?php echo $tecknify ?>service/ppc/" class="footer-link">Pay Per Click</a>
+            <a href="<?php echo $tecknify ?>service/ppc-advertising/" class="footer-link">Pay Per Click</a>
           </li>
 
           <li>
