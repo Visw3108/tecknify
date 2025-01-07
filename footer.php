@@ -1232,7 +1232,7 @@
         </li>
 
         <li>
-          <a href="<?php echo $tecknify ?>service/seo-optimization/" class="footer-link">Search Engine Optimization</a>
+          <a href="<?php echo $tecknify ?>service/seo-optimization/" class="footer-link">SEO Optimization</a>
         </li>
 
         <li>

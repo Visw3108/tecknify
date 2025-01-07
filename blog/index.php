@@ -156,7 +156,7 @@ try {
           <li class="dropdown">
             <a href="../service/" class="navbar-link" data-nav-link>Services</a>
             <ul class="dropdown-menu">
-              <li><a href="../service/seo-optimization/" class="dropdown-link">Search Engine Optimization</a></li>
+              <li><a href="../service/seo-optimization/" class="dropdown-link">SEO Optimization</a></li>
               <li><a href="../service/social-media-marketing/" class="dropdown-link">Social Medial Marketing</a></li>
               <li><a href="../service/ppc-advertising/" class="dropdown-link">PPC Advertising</a></li>
               <li><a href="../service/web-development/" class="dropdown-link">Web Development</a></li>
@@ -382,7 +382,7 @@ try {
           </li>
 
           <li>
-            <a href="<?php echo $tecknify ?>service/seo-optimization/" class="footer-link">Search Engine Optimization</a>
+            <a href="<?php echo $tecknify ?>service/seo-optimization/" class="footer-link">SEO Optimization</a>
           </li>
 
           <li>

@@ -71,7 +71,7 @@ try {
           <li class="dropdown">
             <a href="<?php echo $tecknify; ?>service/" class="navbar-link" data-nav-link>Services</a>
             <ul class="dropdown-menu">
-              <li><a href="<?php echo $tecknify; ?>service/seo-optimization/" class="dropdown-link">Search Engine Optimization</a></li>
+              <li><a href="<?php echo $tecknify; ?>service/seo-optimization/" class="dropdown-link">SEO Optimization</a></li>
               <li><a href="<?php echo $tecknify; ?>service/social-media-marketing/" class="dropdown-link">Social Medial Marketing</a></li>
               <li><a href="<?php echo $tecknify; ?>service/ppc-advertising/" class="dropdown-link">PPC Advertising</a></li>
               <li><a href="<?php echo $tecknify; ?>service/web-development/" class="dropdown-link">Web Development</a></li>
@@ -104,7 +104,7 @@ try {
 
       <section class="digital-marketing">
         <div class="container">
-          <h1>Search Engine Optimization</h1>
+          <h1>SEO Optimization</h1>
           <!-- <p>Grow Your Client Base With Data-Driven and Targeted Strategies</p> -->
           <form class="proposal-form">
             <input type="text" placeholder="Enter Website Address" required>
@@ -383,7 +383,7 @@ try {
 
                 <div class="card-content">
                   <p style="text-align: justify;">
-                    We can’t promise that you’ll be number one but we have the best SEO solutions to ensure that your website rises to the top gradually. Search engine optimization is a strenuous process, and its outcome influences different aspects including your industry and competition.
+                    We can’t promise that you’ll be number one but we have the best SEO solutions to ensure that your website rises to the top gradually. SEO Optimization is a strenuous process, and its outcome influences different aspects including your industry and competition.
                   </p>
                 </div>
 
@@ -525,7 +525,7 @@ try {
           </li>
 
           <li>
-            <a href="<?php echo $tecknify ?>service/seo-optimization/" class="footer-link">Search Engine Optimization</a>
+            <a href="<?php echo $tecknify ?>service/seo-optimization/" class="footer-link">SEO Optimization</a>
           </li>
 
           <li>

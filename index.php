@@ -48,7 +48,7 @@ include "config/config.php";
           <li class="dropdown">
             <a href="<?php echo $tecknify ?>service/" class="navbar-link" data-nav-link>Services</a>
             <ul class="dropdown-menu">
-              <li><a href="<?php echo $tecknify ?>service/seo-optimization/" class="dropdown-link">Search Engine Optimization</a></li>
+              <li><a href="<?php echo $tecknify ?>service/seo-optimization/" class="dropdown-link">SEO Optimization</a></li>
               <li><a href="<?php echo $tecknify ?>service/social-media-marketing/" class="dropdown-link">Social Medial Marketing</a></li>
               <li><a href="<?php echo $tecknify ?>service/ppc-advertising/" class="dropdown-link">PPC Advertising</a></li>
               <li><a href="<?php echo $tecknify ?>service/web-development/" class="dropdown-link">Web Development</a></li>
@@ -157,7 +157,7 @@ include "config/config.php";
             <h2 class="h2-sm section-title">Make Your Brand Stand Out Of The Crowd</h2>
 
             <p class="section-text">
-              At Tecknify IT Solutions, we offer a wide range of services to cater to all your digital needs. Our services include Web Designing, Web Development, Search Engine Optimization, Pay Per Click, Social Media Marketing and Content Marketing services. Whether you are a small, medium or large business, we have the perfect website design and development packages for you at cost-effective rates.
+              At Tecknify IT Solutions, we offer a wide range of services to cater to all your digital needs. Our services include Web Designing, Web Development, SEO Optimization, Pay Per Click, Social Media Marketing and Content Marketing services. Whether you are a small, medium or large business, we have the perfect website design and development packages for you at cost-effective rates.
             </p>
             <p class="section-text">
               As the Best Digital Marketing Company in USA that helps companies stand out, we are not your go to branding company. We collaborate with driven enterprises to optimise their marketing initiatives and achieve quantifiable outcomes. Through the integration of creativity, passion and data-driven strategies, we achieve impactful outcomes. Tecknify IT Solutions has built a strong reputation as a leading Digital Advertising Company in USA through years of experience. Our mission is to develop and enhance brands that exude vitality and enthusiasm, enabling them to succeed in the digital environment.
@@ -199,7 +199,7 @@ include "config/config.php";
                     alt="UI/UX Creative Design" class="img">
                 </figure>
                 <div class="card-content">
-                  <h3 class="h3 card-title">Search Engine Optimization</h3>
+                  <h3 class="h3 card-title">SEO Optimization</h3>
                   <p class="card-text">
                     We specialise in personalised digital marketing tactics that boost growth and online visibility at
                     Tecknify IT Solutions. Our commitment to quality assures commercial success.
@@ -611,7 +611,7 @@ include "config/config.php";
 
                 <div class="card-content card-content-faq">
                   <p>
-                    Yes, we do search engine optimization in a way we redesign site structure in terms of content and keywords. Organic traffic is also promoted through a variety of targeted strategies that enhance your company’s presence on the online search services.
+                    Yes, we do SEO Optimization in a way we redesign site structure in terms of content and keywords. Organic traffic is also promoted through a variety of targeted strategies that enhance your company’s presence on the online search services.
                   </p>
                 </div>
 
@@ -764,7 +764,7 @@ include "config/config.php";
           </li>
 
           <li>
-            <a href="<?php echo $tecknify ?>service/seo-optimization/" class="footer-link">Search Engine Optimization</a>
+            <a href="<?php echo $tecknify ?>service/seo-optimization/" class="footer-link">SEO Optimization</a>
           </li>
 
           <li>

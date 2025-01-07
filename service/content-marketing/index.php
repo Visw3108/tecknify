@@ -65,7 +65,7 @@ include "../../config/config.php";
           <li class="dropdown">
             <a href="<?php echo $tecknify ?>service/" class="navbar-link" data-nav-link>Services</a>
             <ul class="dropdown-menu">
-              <li><a href="<?php echo $tecknify ?>service/seo-optimization/" class="dropdown-link">Search Engine Optimization</a></li>
+              <li><a href="<?php echo $tecknify ?>service/seo-optimization/" class="dropdown-link">SEO Optimization</a></li>
               <li><a href="<?php echo $tecknify ?>service/social-media-marketing/" class="dropdown-link">Social Medial Marketing</a></li>
               <li><a href="<?php echo $tecknify ?>service/ppc-advertising/" class="dropdown-link">PPC Advertising</a></li>
               <li><a href="<?php echo $tecknify ?>service/web-development/" class="dropdown-link">Web Development</a></li>
@@ -235,7 +235,7 @@ include "../../config/config.php";
         <div class="industries-content">
           <h2>Industries We Cater To</h2>
           <p style="text-align: justify;">
-            rangeMantra as a search engine optimization agency offers customized SEO
+            rangeMantra as a SEO Optimization agency offers customized SEO
             solutions to uplift your brand engagement and visibility across the
             industrial verticals among the wider audience.
           </p>
@@ -517,7 +517,7 @@ include "../../config/config.php";
           </li>
 
           <li>
-            <a href="<?php echo $tecknify ?>service/seo-optimization/" class="footer-link">Search Engine Optimization</a>
+            <a href="<?php echo $tecknify ?>service/seo-optimization/" class="footer-link">SEO Optimization</a>
           </li>
 
           <li>
