@@ -49,11 +49,7 @@ include "../config/config.php";
             <a href="<?php echo $tecknify ?>service/" class="navbar-link" data-nav-link>Services</a>
             <ul class="dropdown-menu">
               <li><a href="<?php echo $tecknify ?>service/seo/" class="dropdown-link">Search Engine Optimization</a></li>
-<<<<<<< HEAD
               <li><a href="<?php echo $tecknify ?>service/smm/" class="dropdown-link">Social Medial Marketing</a></li>
-=======
-              <li><a href="<?php echo $tecknify ?>service/smo/" class="dropdown-link">Social Medial Optimization</a></li>
->>>>>>> 3249e6c1b81c75e2ebb519fffc4227c77b9453da
               <li><a href="<?php echo $tecknify ?>service/ppc/" class="dropdown-link">PPC Advertising</a></li>
               <li><a href="<?php echo $tecknify ?>service/web-development/" class="dropdown-link">Web Development</a></li>
               <li><a href="<?php echo $tecknify ?>service/app-development/" class="dropdown-link">App Development</a></li>
@@ -494,11 +490,7 @@ include "../config/config.php";
           </li>
 
           <li>
-<<<<<<< HEAD
             <a href="<?php echo $tecknify ?>service/smm/" class="footer-link">Social Media Optimization</a>
-=======
-            <a href="<?php echo $tecknify ?>service/smo/" class="footer-link">Social Media Optimization</a>
->>>>>>> 3249e6c1b81c75e2ebb519fffc4227c77b9453da
           </li>
 
           <li>
